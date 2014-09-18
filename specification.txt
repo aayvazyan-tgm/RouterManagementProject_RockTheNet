@@ -1,4 +1,4 @@
-A02: Rock the net
+A02 - Rock the net
 
 SEW-Intro-Exercise
 
@@ -28,7 +28,7 @@ Your app should accomplish following tasks:
 
 Additional information:
 
-    Since there is only one firewall-appliance available, the time each team can test with the hardware will be strictly limited. Therefor it is essentially to use mock-objects to allow testing the app during times where the hardware is not available.
+    Since there is only one firewall-appliance available, the time each team can test with the hardware will be strictly limited. Therefore it is essentially to use mock-objects to allow testing the app during times where the hardware is not available.
 
     An additional benefit of using mock-objects will be, that a CI-Server can use them for automated building and testing.
 
