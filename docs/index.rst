@@ -11,6 +11,16 @@ Contents:
 .. toctree::
    :maxdepth: 2
 
+   libraries
+
+Time recordings
+~~~~~~~~~~~~~~~
+
+.. toctree::
+   :maxdepth: 2
+
+   timerecording_ayvazyan
+   timerecording_klepp
 
 
 Indices and tables
