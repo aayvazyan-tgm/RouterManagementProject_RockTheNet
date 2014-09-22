@@ -1,14 +1,12 @@
 A02 - Rock the net
-
 SEW-Intro-Exercise
-
 Trained competencies:
 
     Using APIs, Network programming
 
     Application programming: GUI-programming, parallel programming
 
-    software engineering: buildsystems, testing with mock-objects
+    software engineering: buildsystems, testing with mock-objects, design patterns
 
 Basic tasks
 
@@ -38,12 +36,9 @@ Additional information:
     http://www.oidview.com/mibs/3224/md-3224-1.html
 
     For exploring the SNMP-Data coming from the appliance you can use tools like this:
-
     http://ireasoning.com/mibbrowser.shtml
 
-
-
-Advanced tasks (obligatory for grades better than B3)
+Advanced tasks (obligatory for grades better than C)
 
 Additionally to the basic tasks your app should accomplish the following:
 
@@ -59,6 +54,12 @@ Teams:
 
 Build teams with 3 to 5 participants (5 only if two or more members choose advanced level and at least one member chooses basic level). Each individual team-member has to implement, test and document code and is allowed to choose the level of difficulty he/she wants to achieve. For example: if you have a group of four students and two of them want to achieve advanced level, they can focus their implementation work on the advanced tasks. The other two team-members focus on the basic functionality. In any case there must be a working product, advanced tasks can not stand for themselves.
 
+Ayvazyan (A), Djuric (B), Freudensprung (B), Klepp (A), Willinger (A)
+Schrack (A), Frantar (A), Schmidt (A), Ye (A)
+Scholz (A), Belinic (A), Haidn (A), Siegel (A)
+Soyka (B), Adeyemi (B), Saxinger (B), Schwarzkopf (B)
+Bergler (A), Bobek (B), Janeczek (A), Mair (A), Oezsoy (A), 
+Aly (A), Pitirut (B), Brunner (A)
 Grading:
 
 A team can apply for submission with a (mostly) functional product.
