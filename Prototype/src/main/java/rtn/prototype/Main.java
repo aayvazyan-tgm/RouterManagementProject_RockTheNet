@@ -12,9 +12,11 @@ import org.apache.log4j.*;
  * as efficient as possible
  */
 public class Main {
+    public static final String URL = "udp:127.0.0.1/161";
 
     public static void main(String[] args) {
         runShivasoftTutorial();
+        runQueryOIDs();
     }
 
     private static void runShivasoftTutorial() {
@@ -40,10 +42,14 @@ public class Main {
 
         logger.log(Level.INFO, "Starting up");
         try {
-            SNMPManager.run();
+            SNMPManager.run(URL);
         } catch (IOException e) {
             logger.log(Level.INFO, "A Unhandled exception occurred while executing the SNMPManager");
             e.printStackTrace();
         }
+    }
+
+    private static void runQueryOIDs() {
+        QueryOIDs.run(URL);
     }
 }

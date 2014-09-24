@@ -30,13 +30,14 @@ public class SNMPManager {
         address = add;
     }
 
-    public static void run() throws IOException {
+    public static void run(String url) throws IOException {
         Logger logger = Logger.getLogger("Workflow");
         /**
         * Port 161 is used for Read and Other operations
         * Port 162 is used for the trap generation
         */
-        SNMPManager client = new SNMPManager("udp:127.0.0.1/161");
+        SNMPManager client = new SNMPManager(url);
+
         logger.log(Level.INFO, "Starting client...");
         client.start();
         logger.log(Level.INFO, "Client started");
@@ -59,7 +60,7 @@ public class SNMPManager {
     * and the listen() method listens for answers.
     * @throws IOException
     */
-    private void start() throws IOException {
+    public void start() throws IOException {
         TransportMapping transport = new DefaultUdpTransportMapping();
         snmp = new Snmp(transport);
         // Do not forget this line!
@@ -101,7 +102,7 @@ public class SNMPManager {
     * where the data should be fetched and how.
     * @return
     */
-    private Target getTarget() {
+    public Target getTarget() {
         Address targetAddress = GenericAddress.parse(address);
         CommunityTarget target = new CommunityTarget();
         target.setCommunity(new OctetString("public"));
