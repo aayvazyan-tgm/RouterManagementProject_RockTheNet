@@ -46,7 +46,10 @@ public class SNMPManager {
         * OID - .1.3.6.1.2.1.1.5.0 => SysName
         * => MIB explorer will be usefull here, as discussed in previous article
         */
-        String sysDescr = client.getAsString(new OID(".1.3.6.1.2.1.1.1.0"));
+        String sysDescr = client.getAsString(new OID("1.3.6.1.4.1.3224.10.0")); //Whole MIB
+        //String sysDescr = client.getAsString(new OID("1.3.6.1.4.1.3224.10.1")); //Try this too (two tables)
+        //String sysDescr = client.getAsString(new OID("1.3.6.1.4.1.3224.10.1.1")); //Try this too (one Table)
+        //String sysDescr = client.getAsString(new OID("1.3.6.1.4.1.3224.10.1.1.1")); //Try this too (one Value)
         System.out.println(sysDescr);
         logger.log(Level.DEBUG, "response to OID received: "+sysDescr);
     }
