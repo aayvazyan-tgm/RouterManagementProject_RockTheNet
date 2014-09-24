@@ -22,3 +22,22 @@ dependencies {
     testCompile group: 'junit', name: 'junit', version: '4.11'
     testCompile 'org.mockito:mockito-core:1.9.5'
 }
+
+project (':Prototype') {
+    apply plugin: 'java'
+    apply plugin: 'application'
+
+    repositories {
+        mavenCentral()
+
+        maven {
+            url "https://oosnmp.net/dist/release/" // snmp4j
+        }
+    }
+
+    dependencies {
+        compile group: 'org.snmp4j', name: 'snmp4j', version: '2.3.+'
+    }
+
+    mainClassName = 'rtn.prototype.Main'
+}
