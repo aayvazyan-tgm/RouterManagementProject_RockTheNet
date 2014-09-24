@@ -28,7 +28,7 @@ public class SNMPManager {
         address = add;
     }
 
-    public static void main(String[] args) throws IOException {
+    public static void run() throws IOException {
         /**
         * Port 161 is used for Read and Other operations
         * Port 162 is used for the trap generation
