@@ -60,3 +60,5 @@ local.properties
 .cproject
 # PDT-specific
 .buildpath
+RockTheNet.asta.lock
+docs/_build/
