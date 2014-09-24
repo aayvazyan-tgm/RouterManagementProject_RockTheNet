@@ -62,3 +62,5 @@ local.properties
 .buildpath
 RockTheNet.asta.lock
 docs/_build/
+RouterManagementProject RockTheNet.ipr
+RouterManagementProject RockTheNet.iws
