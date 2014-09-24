@@ -20,6 +20,7 @@ Time recordings
    :maxdepth: 2
 
    timerecording_ayvazyan
+   timerecording_freudensprung
    timerecording_klepp
 
 
