@@ -16,3 +16,15 @@ model. It uses the ``application`` plugin that means you can run it by typing:
 
     gradle :Prototype:run
 
+Tasks
+~~~~~
+
+Extract system description
+--------------------------
+
+- rtn.prototype.SNMPManager
+
+Query a large number of OIDs
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+

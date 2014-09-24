@@ -1,10 +1,75 @@
 package rtn.prototype;
 
+import com.google.gson.Gson;
+import org.snmp4j.event.ResponseEvent;
+import org.snmp4j.smi.OID;
+
+import java.io.File;
+import java.io.FileWriter;
+import java.io.IOException;
+
 /**
  * Query a list of OIDs and prints results
  */
 public class QueryOIDs {
-    static final String[] mibs = new String[] {
+
+    /**
+     * Write String to disk
+     * @param file File path
+     * @param content String
+     */
+    public static void write(String file, String content) {
+        try {
+            FileWriter writer = new FileWriter(file);
+            writer.write(content);
+            writer.close();
+        } catch (IOException e) {
+            e.printStackTrace();
+            System.out.println("Could not write to Disk: " + content);
+        }
+    }
+
+    /**
+     * Query all the OIDs
+     * @param url URL of the SNMP device
+     */
+    public static void run(String url) {
+        SNMPManager client = new SNMPManager(url);
+        Gson gson = new Gson();
+
+        String path = "./QueryOIDs/";
+        File file = new File(path);
+        file.mkdirs();
+
+        try {
+            client.start();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+
+        for (int i = 0; i < oids.length; i++) {
+            System.out.println("[" + i + " / " + oids.length + "]");
+            String oid = oids[i];
+            System.out.println("OID: " + oid);
+
+            ResponseEvent event = null;
+            try {
+                event = client.get(new OID[]{new OID(oid)});
+            } catch (IOException | RuntimeException e) {
+                e.printStackTrace();
+                continue;
+            }
+
+            if(event == null) continue;
+
+            String json = gson.toJson(event);
+            write(path+oid, json);
+            //gson.toJson(event.getResponse());
+        }
+    }
+
+    // all the oids from mibbrowser
+    static final String[] oids = new String[] {
             //iso.org.dod.internet.mgmt.mib-2
             ".1.3.6.1.2.1",
             // system

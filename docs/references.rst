@@ -38,3 +38,10 @@ References
      Volume 3: Administration
      http://www.juniper.net/techpubs/software/screenos/screenos6.2.0/ce_v3.pdf
      last visited: 2014-09-24
+
+.. _7:
+
+[7]  AgenPro 3.1
+     A Java SE Application for SNMP Code Generation and Agent Simulation
+     http://www.agentpp.com/agenpro/AgenProManual.pdf
+     last visited: 2014-09-24
