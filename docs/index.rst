@@ -3,10 +3,11 @@
    You can adapt this file completely to your liking, but it should at least
    contain the root `toctree` directive.
 
-Welcome to Rock The Net's documentation!
-========================================
+Rock The Net!
+=============
 
-Contents:
+Contents
+~~~~~~~~
 
 .. toctree::
    :maxdepth: 2
@@ -28,6 +29,3 @@ Time recordings
    timerecording_freudensprung
    timerecording_klepp
    timerecording_willinger
-
-
-
