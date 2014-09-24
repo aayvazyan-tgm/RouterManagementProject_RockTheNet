@@ -20,8 +20,10 @@ Time recordings
    :maxdepth: 2
 
    timerecording_ayvazyan
+   timerecording_djuric
    timerecording_freudensprung
    timerecording_klepp
+   timerecording_willinger
 
 
 Indices and tables
