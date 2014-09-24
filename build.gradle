@@ -1,5 +1,9 @@
 apply plugin: 'java'
 
+/* IDEs */
+apply plugin: 'eclipse'
+apply plugin: 'idea'
+
 sourceCompatibility = 1.7
 version = '1.0'
 
