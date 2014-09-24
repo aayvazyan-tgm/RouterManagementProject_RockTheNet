@@ -30,10 +30,4 @@ Time recordings
    timerecording_willinger
 
 
-Indices and tables
-==================
-
-* :ref:`genindex`
-* :ref:`modindex`
-* :ref:`search`
 
