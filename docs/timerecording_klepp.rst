@@ -12,5 +12,6 @@ structuring documentation         2014-09-24 18:30 19:00   00:30
 test prototype                    2014-09-24 19:00 19:45   00:45
 reading documentation             2014-09-24 19:45 21:00   01:15
 implement QueryOIDs               2014-09-24 21:00 22:40   01:40
-**TOTAL**                                                **07:30**
+NetscreenPolicyMib                2014-09-24 22:40 23:00   00:20
+**TOTAL**                                                **07:50**
 ================================= ========== ===== ===== =========
