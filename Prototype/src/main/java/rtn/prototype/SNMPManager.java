@@ -1,5 +1,7 @@
 package rtn.prototype;
 
+import org.apache.log4j.Level;
+import org.apache.log4j.Logger;
 import org.snmp4j.*;
 import org.snmp4j.event.ResponseEvent;
 import org.snmp4j.mp.SnmpConstants;
@@ -29,12 +31,15 @@ public class SNMPManager {
     }
 
     public static void run() throws IOException {
+        Logger logger = Logger.getLogger("Workflow");
         /**
         * Port 161 is used for Read and Other operations
         * Port 162 is used for the trap generation
         */
         SNMPManager client = new SNMPManager("udp:127.0.0.1/161");
+        logger.log(Level.INFO, "Starting client...");
         client.start();
+        logger.log(Level.INFO, "Client started");
         /**
         * OID - .1.3.6.1.2.1.1.1.0 => SysDec
         * OID - .1.3.6.1.2.1.1.5.0 => SysName
@@ -42,6 +47,7 @@ public class SNMPManager {
         */
         String sysDescr = client.getAsString(new OID(".1.3.6.1.2.1.1.1.0"));
         System.out.println(sysDescr);
+        logger.log(Level.DEBUG, "response to OID received: "+sysDescr);
     }
 
     /**
