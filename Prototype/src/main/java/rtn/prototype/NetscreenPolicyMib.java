@@ -37,7 +37,7 @@ public class NetscreenPolicyMib {
         SNMPManager client = new SNMPManager(url);
         Gson gson = new Gson();
 
-        String path = "./QueryOIDs/";
+        String path = "./NetscreenPolicyMib/";
         File file = new File(path);
         file.mkdirs();
 
