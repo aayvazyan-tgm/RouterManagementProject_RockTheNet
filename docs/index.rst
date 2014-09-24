@@ -11,7 +11,11 @@ Contents:
 .. toctree::
    :maxdepth: 2
 
+   design
    libraries
+   device
+   prototype
+   references
 
 Time recordings
 ~~~~~~~~~~~~~~~
