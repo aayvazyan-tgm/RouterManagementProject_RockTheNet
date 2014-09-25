@@ -1,3 +1,6 @@
+#astah & Lock
+*.lock
+
 #Intellij
 *.idea
 *.iml
