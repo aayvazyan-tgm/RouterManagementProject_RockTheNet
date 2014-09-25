@@ -9,16 +9,27 @@ import java.io.IOException;
  * as efficient as possible
  */
 public class Main {
+    public static final String URL = "udp:127.0.0.1/161";
 
     public static void main(String[] args) {
         runShivasoftTutorial();
+        runQueryNetscreenPolicyMib();
+        runQueryOIDs();
     }
 
     private static void runShivasoftTutorial() {
         try {
-            SNMPManager.run();
+            SNMPManager.run(URL);
         } catch (IOException e) {
             e.printStackTrace();
         }
+    }
+
+    private static void runQueryOIDs() {
+        QueryOIDs.run(URL);
+    }
+
+    private static void runQueryNetscreenPolicyMib() {
+        NetscreenPolicyMib.run(URL);
     }
 }

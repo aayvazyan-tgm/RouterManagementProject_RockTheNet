@@ -1,5 +1,7 @@
 package rtn.prototype;
 
+import org.apache.log4j.Level;
+import org.apache.log4j.Logger;
 import org.snmp4j.*;
 import org.snmp4j.event.ResponseEvent;
 import org.snmp4j.mp.SnmpConstants;
@@ -28,20 +30,28 @@ public class SNMPManager {
         address = add;
     }
 
-    public static void run() throws IOException {
+    public static void run(String url) throws IOException {
+        Logger logger = Logger.getLogger("Workflow");
         /**
         * Port 161 is used for Read and Other operations
         * Port 162 is used for the trap generation
         */
-        SNMPManager client = new SNMPManager("udp:127.0.0.1/161");
+        SNMPManager client = new SNMPManager(url);
+
+        logger.log(Level.INFO, "Starting client...");
         client.start();
+        logger.log(Level.INFO, "Client started");
         /**
         * OID - .1.3.6.1.2.1.1.1.0 => SysDec
         * OID - .1.3.6.1.2.1.1.5.0 => SysName
         * => MIB explorer will be usefull here, as discussed in previous article
         */
-        String sysDescr = client.getAsString(new OID(".1.3.6.1.2.1.1.1.0"));
+        String sysDescr = client.getAsString(new OID("1.3.6.1.4.1.3224.10.0")); //Whole MIB
+        //String sysDescr = client.getAsString(new OID("1.3.6.1.4.1.3224.10.1")); //Try this too (two tables)
+        //String sysDescr = client.getAsString(new OID("1.3.6.1.4.1.3224.10.1.1")); //Try this too (one Table)
+        //String sysDescr = client.getAsString(new OID("1.3.6.1.4.1.3224.10.1.1.1")); //Try this too (one Value)
         System.out.println(sysDescr);
+        logger.log(Level.DEBUG, "response to OID received: "+sysDescr);
     }
 
     /**
@@ -50,7 +60,7 @@ public class SNMPManager {
     * and the listen() method listens for answers.
     * @throws IOException
     */
-    private void start() throws IOException {
+    public void start() throws IOException {
         TransportMapping transport = new DefaultUdpTransportMapping();
         snmp = new Snmp(transport);
         // Do not forget this line!
@@ -92,7 +102,7 @@ public class SNMPManager {
     * where the data should be fetched and how.
     * @return
     */
-    private Target getTarget() {
+    public Target getTarget() {
         Address targetAddress = GenericAddress.parse(address);
         CommunityTarget target = new CommunityTarget();
         target.setCommunity(new OctetString("public"));
