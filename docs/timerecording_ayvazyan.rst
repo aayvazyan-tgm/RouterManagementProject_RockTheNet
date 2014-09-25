@@ -10,4 +10,5 @@ libraries                         2014-09-22 19:00 19:30 00:30
 user stories                      2014-09-24 21:30 22:00 00:30
 Implemented log4J                 2014-09-24 22:00 22:30 00:30
 Searched for fitting MIBs & OIDs  2014-09-24 22:30 23:00 00:30
+Installation & usage MIB Browser  2014-09-24 08:00 08:30 00:30
 ================================= ========== ===== ===== ========
