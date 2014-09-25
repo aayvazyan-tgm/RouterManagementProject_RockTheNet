@@ -4,7 +4,7 @@ Libaries description
 Log4j
 -----
 Log4j is a java based logging utility. Log4j is one of the most popularest
-and best logging-fram. Today log4j is also in other prison break.
+and best logging-fram.
 
 SNMP4J
 ------

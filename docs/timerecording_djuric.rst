@@ -5,5 +5,6 @@ Djuric Daniel
 Task                              Date       Who                 From  To    Duration
 ================================= ========== =================== ===== ===== ========
 Meeting                           2014-09-24 Daniel Djuric       16:10 17:10 01:00
-Requirements&libaries desc        2014-09-25 Daniel Djuric       23:00 00:20 01:20
+Requirements&libaries desc		  2014-09-25 Daniel Djuric       23:00 00:20 01:20
+**TOTAL**																	 02:20
 ================================= ========== =================== ===== ===== ========
