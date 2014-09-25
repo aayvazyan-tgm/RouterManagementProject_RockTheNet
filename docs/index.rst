@@ -18,6 +18,7 @@ Contents
    libraries
    JavaFX_Evaluation
    device
+   snmp
    prototype
    references
 

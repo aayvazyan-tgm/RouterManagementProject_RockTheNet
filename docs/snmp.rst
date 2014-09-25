@@ -1,0 +1,1 @@
+http://cuddletech.com/articles/snmp/node6.html
