@@ -5,4 +5,5 @@ Fabian Freudensprung
 Task                              Date       Who                  From  To    Duration
 ================================= ========== ==================== ===== ===== ========
 Meeting                           2014-09-24 Fabian Freudensprung 16:10 17:10 01:00
+JavaFX Evaluation				  2014-09-24 Fabian Freudensprung 22:30 23:30 01:00
 ================================= ========== ==================== ===== ===== ========
