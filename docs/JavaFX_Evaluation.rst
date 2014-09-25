@@ -15,6 +15,13 @@ For Eclipse there is the plugin e(fx)clipse available, that also includes tools 
 
 To be honest, there isn't really that much need for a plugin, because JavaFX is just a Library that can be used.
 
+
+GUI Testing
+~~~~~~~~~~~
+
+You can test it using those tests that only repeat things you did and there is a library for testing JavaFX applications (TestFX) 
+https://github.com/TestFX/TestFX
+
 Advantages
 ~~~~~~~~~~
 + Going to be the standard for Java GUI development
