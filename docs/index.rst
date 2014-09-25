@@ -13,7 +13,9 @@ Contents
    :maxdepth: 2
 
    design
+   user_stories
    libraries
+   JavaFX_Evaluation
    device
    prototype
    references

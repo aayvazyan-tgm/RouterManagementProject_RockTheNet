@@ -3,20 +3,18 @@ JavaFX Evaluation
 =================
 
 Description
------------
+~~~~~~~~~~~
 JavaFX is a Java library for developing GUIs, which is included in the JDK as of now. JavaFX offers much better multimedia and animation support than Swing and allows developers to model and style the UI using CSS + FXML. JavaFX is used to develop RIAs (Rich Internet Applications), which means, that the programs most of the time either run in the Browserc(as Applet) or are started via Java Web Start.
 
 
 IDE Integration
----------------
+~~~~~~~~~~~~~~~
 Netbeans and IntelliJ both support JavaFX and offer a few tools for JavaFX devlopers, like the GUI editor for JavaFX that is included in Netbeans. 
 
 For Eclipse there is the plugin e(fx)clipse available, that also includes tools like a FXML-editor or a specialized classpath container.
 
 To be honest, there isn't really that much need for a plugin, because JavaFX is just a Library that can be used.
 
-Advantages & Disadvantages
---------------------------
 Advantages
 ~~~~~~~~~~
 + Going to be the standard for Java GUI development
