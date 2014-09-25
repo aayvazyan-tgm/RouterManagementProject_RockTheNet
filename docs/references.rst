@@ -45,3 +45,9 @@ References
      A Java SE Application for SNMP Code Generation and Agent Simulation
      http://www.agentpp.com/agenpro/AgenProManual.pdf
      last visited: 2014-09-24
+
+.. _8:
+
+[8] Introduction to SNMP4j
+    link:http://www.jayway.com/2010/05/21/introduction-to-snmp4j/
+    last visited: 2012-09-22
