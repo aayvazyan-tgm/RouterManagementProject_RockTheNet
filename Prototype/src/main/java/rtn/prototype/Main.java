@@ -9,7 +9,7 @@ import java.io.IOException;
  * as efficient as possible
  */
 public class Main {
-    public static final String URL = "udp:127.0.0.1/161";
+    public static final String URL = "udp:10.0.100.10/161";
 
     public static void main(String[] args) {
         runShivasoftTutorial();

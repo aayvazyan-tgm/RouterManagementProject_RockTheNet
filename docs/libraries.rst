@@ -17,7 +17,7 @@ implementation for Java SE 1.4 or later. SNMP4J supports command generation
 SNMP is a widely accepted technology and is used in to monitor a wide variety
 of devices, but as it turns out very few people (at least among java
 programmers) seems to know anything about how to build snmp based
-solutions. [8]_
+solutions. [8]
 
 JSch
 ~~~~

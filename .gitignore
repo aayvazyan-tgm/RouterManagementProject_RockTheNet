@@ -64,3 +64,6 @@ RockTheNet.asta.lock
 docs/_build/
 RouterManagementProject RockTheNet.ipr
 RouterManagementProject RockTheNet.iws
+
+Prototype/NetscreenPolicyMib/
+Prototype/QueryOIDs/

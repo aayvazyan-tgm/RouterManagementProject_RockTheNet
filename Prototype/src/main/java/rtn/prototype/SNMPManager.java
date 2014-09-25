@@ -105,7 +105,7 @@ public class SNMPManager {
     public Target getTarget() {
         Address targetAddress = GenericAddress.parse(address);
         CommunityTarget target = new CommunityTarget();
-        target.setCommunity(new OctetString("public"));
+        target.setCommunity(new OctetString("5xHIT"));
         target.setAddress(targetAddress);
         target.setRetries(2);
         target.setTimeout(1500);
