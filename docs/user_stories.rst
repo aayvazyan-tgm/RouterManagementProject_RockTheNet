@@ -14,6 +14,6 @@ User Stories
 
 - As a user, I want the system to serialize administrative tasks to the firewall, so I do not have to worry about other systems and users that work with the firewall.
 
-- As a developer, I want to have a strategy pattern based firewall model implementation, so I am able to add different firewall models with little effort.
+- As a developer, I want to have a extendable firewall model implementation, so I am able to add different firewall models with little effort.
 
 - As a user, I want to be able to set a SNMP Community, so I am able to adapt it when the environment changes.
