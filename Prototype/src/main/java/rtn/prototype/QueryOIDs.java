@@ -37,7 +37,7 @@ public class QueryOIDs {
         SNMPManager client = new SNMPManager(url);
         Gson gson = new Gson();
 
-        String path = "./QueryOIDs/";
+        String path = "../src/test/resources/rtn/dataunit/";
         File file = new File(path);
         file.mkdirs();
 
@@ -63,7 +63,11 @@ public class QueryOIDs {
             if(event == null) continue;
 
             String json = gson.toJson(event);
-            write(path+oid, json);
+            String filepath = path
+                    + ((oid.startsWith(".")?oid.substring(1):oid)
+                    .replace('.', '-'))
+                    + ".json";
+            write(filepath, json);
             //gson.toJson(event.getResponse());
         }
     }
