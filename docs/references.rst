@@ -50,4 +50,10 @@ References
 
 [8] Introduction to SNMP4j
     link:http://www.jayway.com/2010/05/21/introduction-to-snmp4j/
-    last visited: 2012-09-22
+    last visited: 2014-09-22
+
+.. _9:
+
+[9] Commons Email - Home
+    http://commons.apache.org/proper/commons-email/index.html
+    last visited: 2014-09-26
