@@ -1,0 +1,29 @@
+apply plugin: 'eclipse'
+apply plugin: 'idea'
+apply plugin: 'java'
+
+sourceCompatibility = 1.6
+version = '1.0'
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    testCompile 'junit:junit:4.11'
+    testCompile 'org.mockito:mockito-core:1.9.5'
+}
+
+project (':Implementation') {
+    apply plugin: 'java'
+
+    repositories {
+        mavenCentral()
+    }
+
+    dependencies {
+        compile 'com.google.code.gson:gson:2.3'
+        testCompile 'junit:junit:4.11'
+        testCompile 'org.mockito:mockito-core:1.9.5'
+    }
+}
