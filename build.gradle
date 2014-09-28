@@ -10,20 +10,7 @@ repositories {
 }
 
 dependencies {
+    compile 'com.google.code.gson:gson:2.3'
     testCompile 'junit:junit:4.11'
     testCompile 'org.mockito:mockito-core:1.9.5'
-}
-
-project (':Implementation') {
-    apply plugin: 'java'
-
-    repositories {
-        mavenCentral()
-    }
-
-    dependencies {
-        compile 'com.google.code.gson:gson:2.3'
-        testCompile 'junit:junit:4.11'
-        testCompile 'org.mockito:mockito-core:1.9.5'
-    }
 }
