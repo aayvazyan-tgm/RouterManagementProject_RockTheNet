@@ -25,15 +25,15 @@ public class ActionManager {
 	}
 
 	public boolean addPolicy(Policy policy) {
-		return false;
+        return iAdminStrategy.addPolicy(policy);
 	}
 
-	public boolean updatePolicy(Policy policy) {
-		return false;
+	public boolean updatePolicy(Policy newPolicy,Policy oldPolicy) {
+        return iAdminStrategy.updatePolicy(newPolicy,oldPolicy);
 	}
 
 	public boolean deletePolicy(Policy policy) {
-		return false;
+        return iAdminStrategy.deletePolicy(policy);
 	}
 
 }
