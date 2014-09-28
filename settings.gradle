@@ -1,1 +1,2 @@
-rootProject.name = 'dLock'
+rootProject.name = 'RouterManagementProject RockTheNet'
+include 'Prototype', 'EMailExample'
