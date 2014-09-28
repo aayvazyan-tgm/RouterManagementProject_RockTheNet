@@ -1,5 +1,7 @@
 package rtn.networking.device.commands;
 
+import rtn.networking.Policy;
+
 import java.util.List;
 
 public class PullPolicies implements DevCommand {
