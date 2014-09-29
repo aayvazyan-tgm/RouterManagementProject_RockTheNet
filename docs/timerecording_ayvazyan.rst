@@ -14,5 +14,6 @@ Installation & usage MIB Browser               2014-09-24 08:00 08:30   00:30
 Finished UML, MIB browser                      2014-09-24 08:00 08:30   01:00
 Gather info about design patterns              2014-09-25 08:00 08:30   02:00
 Implemented guice, implemented methods, UML    2014-09-28 22:00 00:00   02:00
+dlock, UML, team meeting                       2014-09-29 13:00 14:00   01:00
 *TOTAL*                                                               **09:40**
 ============================================== ========== ===== ===== =========
