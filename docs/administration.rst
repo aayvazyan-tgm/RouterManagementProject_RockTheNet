@@ -68,7 +68,7 @@ The service is *FTP* (see router's documentation about pre-defined services) and
 all traffic matching this policy. 
 
 Read policies
--------------
+~~~~~~~~~~~~~
 
 To get a list of all currently existing rules, one types:
 
