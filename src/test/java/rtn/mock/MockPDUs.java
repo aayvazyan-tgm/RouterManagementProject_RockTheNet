@@ -8,7 +8,7 @@ import static org.mockito.Mockito.mock;
  * Created by jakob on 9/26/14.
  */
 public class MockPDUs {
-    public static PDU getPDU() {
+    public static void getPDU() {
         PDU pdu = mock(PDU.class);
         return pdu;
     }

@@ -1,3 +1,6 @@
+# generated Files
+/src/test/resources/rtn/dataunit/
+
 # astah & Lock
 *.lock
 
@@ -16,7 +19,6 @@
 /bin/
 target/
 # OS Files #
-.DS_Store
 *.class
 # Package Files #
 *.jar
@@ -63,11 +65,6 @@ tmp/**/*
 *.swp
 *~.nib
 
-local.properties
-.classpath
-.settings/
-.loadpath
-/src/main/resources/rebel.xml
 # External tool builders
 .externalToolBuilders/
 # Locally stored "Eclipse launch configurations"

@@ -19,6 +19,7 @@ Contents
    JavaFX_Evaluation
    device
    snmp
+   administration
    prototype
    references
 
