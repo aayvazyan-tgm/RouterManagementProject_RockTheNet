@@ -1,6 +1,6 @@
 package rtn.gui.model;
 
-import rtn.networking.IMonitoringStrategy;
+import rtn.networking.monitoring.IMonitoringStrategy;
 import rtn.networking.MonitoringStrategyFactory;
 import java.util.List;
 
