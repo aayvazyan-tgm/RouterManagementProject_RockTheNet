@@ -1,9 +1,10 @@
 Administration
 ==============
 
-By default, SSH is disabled on the Juniper Netscreen 5gt, so we have to
-enable it.
-First, we go to Configuration > Admin > Management and set the tick at
+By default, SSH is disabled on the Juniper Netscreen 5gt, so in order to use
+it, we have to enable it first.
+
+First, we go to Configuration > Admin > Management and set the tick at 
 "Enable SSH (v2)", we don't need SCP.
 
 Then, we go to Policies and add new policy, as shown in the following 
@@ -27,6 +28,7 @@ Then we enter our password and we are logged on.
 
 In the following, we elaborate the commands required to do the CRUD
 (Create, Read, Update, Delete) operations on the firewall.
+
 Please do note that in our application, the policies are queried via
 SNMP, so the read part is simply there for completeness.
 
@@ -61,8 +63,8 @@ Example:
     set policy name FTP from untrust to trust 10.5.104.0/255.255.254.0 Any FTP permit
 
 In this example, we add a new policy with the name *FTP*, inbound zone is *untrusted*,
-outbound zone *trust*, for requests comming from 10.5.104.0/23 to Any address.
-The service is FTP (see router's documentation about pre-defined services) and we allow
+outbound zone *trust*, for requests comming from *10.5.104.0/23* to *Any* address.
+The service is *FTP* (see router's documentation about pre-defined services) and we allow
 all traffic matching this policy. 
 
 Read policies
