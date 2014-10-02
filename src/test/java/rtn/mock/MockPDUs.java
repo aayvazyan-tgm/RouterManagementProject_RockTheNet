@@ -10,6 +10,6 @@ import static org.mockito.Mockito.mock;
 public class MockPDUs {
     public static PDU getPDU() {
         PDU pdu = mock(PDU.class);
-
+        return pdu;
     }
 }
