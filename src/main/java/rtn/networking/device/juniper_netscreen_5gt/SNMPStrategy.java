@@ -1,6 +1,6 @@
 package rtn.networking.device.juniper_netscreen_5gt;
 
-import rtn.networking.IMonitoringStrategy;
+import rtn.networking.monitoring.IMonitoringStrategy;
 import rtn.networking.AbstractSNMPStrategy;
 import java.util.List;
 import rtn.networking.DataLoad;
@@ -14,7 +14,7 @@ public class SNMPStrategy extends AbstractSNMPStrategy implements IMonitoringStr
 
 
 	/**
-	 * @see rtn.networking.IMonitoringStrategy#getConnection(java.lang.String)
+	 * @see rtn.networking.monitoring.IMonitoringStrategy#getConnection(java.lang.String)
 	 */
 	public boolean getConnection(String address) {
 		return false;
@@ -22,7 +22,7 @@ public class SNMPStrategy extends AbstractSNMPStrategy implements IMonitoringStr
 
 
 	/**
-	 * @see rtn.networking.IMonitoringStrategy#getPolicies()
+	 * @see rtn.networking.monitoring.IMonitoringStrategy#getPolicies()
 	 */
 	public List getPolicies() {
 		return null;
@@ -30,7 +30,7 @@ public class SNMPStrategy extends AbstractSNMPStrategy implements IMonitoringStr
 
 
 	/**
-	 * @see rtn.networking.IMonitoringStrategy#getThroughputUpload(rtn.networking.Policy, int)
+	 * @see rtn.networking.monitoring.IMonitoringStrategy#getThroughputUpload(rtn.networking.Policy, int)
 	 */
 	public DataLoad getThroughputUpload(Policy policy, int since) {
 		return null;
