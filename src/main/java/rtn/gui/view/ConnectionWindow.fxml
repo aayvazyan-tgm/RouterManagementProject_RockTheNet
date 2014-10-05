@@ -13,7 +13,7 @@
 
 <VBox alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" spacing="20.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1">
    <children>
-      <Label text="Welcome!">
+      <Label fx:id="welcome_l" text="Welcome!">
          <font>
             <Font name="System Bold" size="28.0" />
          </font>
@@ -21,7 +21,7 @@
             <Insets bottom="-10.0" />
          </VBox.margin>
       </Label>
-      <Label maxWidth="420.0" text="Please fill out the form to establish a connection to your device!">
+      <Label fx:id="desc_l" maxWidth="420.0" text="Please fill out the form to establish a connection to your device!">
          <font>
             <Font name="System Italic" size="14.0" />
          </font>
@@ -29,26 +29,26 @@
             <Insets bottom="10.0" top="-10.0" />
          </VBox.margin>
       </Label>
-      <ComboBox prefWidth="150.0" promptText="Device Type" />
-      <TextField maxWidth="600.0" promptText="IP-Adress" />
+      <ComboBox fx:id="device_cb" prefWidth="150.0" promptText="Device Type" />
+      <TextField fx:id="ip_tf" maxWidth="600.0" promptText="IP-Adress" />
       <HBox alignment="CENTER" maxWidth="1.7976931348623157E308">
          <children>
-            <TextField minWidth="200.0" promptText="Username">
+            <TextField fx:id="user_tf" minWidth="200.0" promptText="Username">
                <HBox.margin>
                   <Insets right="10.0" />
                </HBox.margin>
             </TextField>
-            <TextField minWidth="200.0" promptText="Password">
+            <TextField fx:id="pass_tf" minWidth="200.0" promptText="Password">
                <HBox.margin>
                   <Insets left="10.0" />
                </HBox.margin>
             </TextField>
          </children>
       </HBox>
-      <TextField maxWidth="600.0" minWidth="370.0" promptText="SNMP-Port (... if empty)" />
+      <TextField fx:id="snmp_tf" maxWidth="600.0" minWidth="370.0" promptText="SNMP-Port (... if empty)" />
       <AnchorPane maxWidth="600.0" prefHeight="200.0" prefWidth="200.0">
          <children>
-            <Button layoutX="454.0" layoutY="33.0" mnemonicParsing="false" text="Connect" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
+            <Button fx:id="connect_b" layoutX="454.0" layoutY="33.0" mnemonicParsing="false" text="Connect" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
          </children>
       </AnchorPane>
    </children>
