@@ -11,41 +11,46 @@
 
 <BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1">
    <top>
-      <MenuBar BorderPane.alignment="CENTER">
+      <MenuBar fx:id="menu_mb" BorderPane.alignment="CENTER">
         <menus>
-          <Menu mnemonicParsing="false" text="Rules">
+            <Menu fx:id="app_m" mnemonicParsing="false" text="Application">
+              <items>
+                <MenuItem fx:id="device_mi" mnemonicParsing="false" text="Change Device" />
+              </items>
+            </Menu>
+          <Menu fx:id="rules_m" mnemonicParsing="false" text="Rules">
             <items>
-              <MenuItem mnemonicParsing="false" text="Refresh">
+              <MenuItem fx:id="refresh_mi" mnemonicParsing="false" text="Refresh">
                      <accelerator>
                         <KeyCodeCombination alt="UP" code="F5" control="UP" meta="UP" shift="UP" shortcut="ANY" />
                      </accelerator>
                   </MenuItem>
-                  <MenuItem mnemonicParsing="false" text="Set Auto-Refresh ..." />
-                  <MenuItem mnemonicParsing="false" text="Display in Graph">
+                  <MenuItem fx:id="auto_mi" mnemonicParsing="false" text="Set Auto-Refresh ..." />
+                  <MenuItem fx:id="graph_mi" mnemonicParsing="false" text="Display in Graph">
                      <accelerator>
                         <KeyCodeCombination alt="UP" code="D" control="DOWN" meta="UP" shift="UP" shortcut="UP" />
                      </accelerator>
                   </MenuItem>
-                  <MenuItem mnemonicParsing="false" text="Change Rule">
+                  <MenuItem fx:id="change_mi" mnemonicParsing="false" text="Change Rule">
                      <accelerator>
                         <KeyCodeCombination alt="UP" code="R" control="DOWN" meta="UP" shift="UP" shortcut="UP" />
                      </accelerator>
                   </MenuItem>
             </items>
           </Menu>
-            <Menu mnemonicParsing="false" text="Graph">
+            <Menu fx:id="graph_m" mnemonicParsing="false" text="Graph">
               <items>
-                <MenuItem mnemonicParsing="false" text="Set Max Items ..." />
+                <MenuItem fx:id="max_mi" mnemonicParsing="false" text="Set Max Items ..." />
               </items>
             </Menu>
-            <Menu mnemonicParsing="false" text="Help">
+            <Menu fx:id="help_m" mnemonicParsing="false" text="Help">
               <items>
-                <MenuItem mnemonicParsing="false" text="Help">
+                <MenuItem fx:id="help_mi" mnemonicParsing="false" text="Help">
                      <accelerator>
                         <KeyCodeCombination alt="UP" code="H" control="DOWN" meta="UP" shift="UP" shortcut="UP" />
                      </accelerator>
                   </MenuItem>
-                  <MenuItem mnemonicParsing="false" text="Guide">
+                  <MenuItem fx:id="guide_mi" mnemonicParsing="false" text="Guide">
                      <accelerator>
                         <KeyCodeCombination alt="UP" code="G" control="DOWN" meta="UP" shift="UP" shortcut="UP" />
                      </accelerator>
@@ -56,15 +61,15 @@
       </MenuBar>
    </top>
    <center>
-      <TabPane prefHeight="200.0" prefWidth="200.0" side="LEFT" tabClosingPolicy="UNAVAILABLE" tabMinHeight="40.0" BorderPane.alignment="CENTER">
+      <TabPane fx:id="tabs_tp" prefHeight="200.0" prefWidth="200.0" side="LEFT" tabClosingPolicy="UNAVAILABLE" tabMinHeight="40.0" BorderPane.alignment="CENTER">
         <tabs>
           <Tab>
                <content>
                   <BorderPane prefHeight="200.0" prefWidth="200.0">
                      <center>
-                        <TableView prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+                        <TableView fx:id="rules_table" prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER">
                           <columns>
-                            <TableColumn prefWidth="75.0" text="Rule" />
+                            <TableColumn fx:id="rule_column" prefWidth="75.0" text="Rule" />
                             <TableColumn prefWidth="75.0" text="Value #1" />
                           </columns>
                            <columnResizePolicy>
@@ -82,7 +87,7 @@
                <content>
                   <BorderPane prefHeight="200.0" prefWidth="200.0">
                   	<center>
-                  		<LineChart BorderPane.alignment="CENTER">
+                  		<LineChart fx:id="graph_lc" BorderPane.alignment="CENTER">
                   			<xAxis>
                   				<CategoryAxis side="BOTTOM" />
                   			</xAxis>
@@ -92,7 +97,7 @@
                   		</LineChart>
                   	</center>
                   	<bottom>
-                  		<FlowPane hgap="10.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+                  		<FlowPane fx:id="items_fp" hgap="10.0" prefWidth="200.0" BorderPane.alignment="CENTER">
                   			<children>
                   				<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity">
                   					<left>
