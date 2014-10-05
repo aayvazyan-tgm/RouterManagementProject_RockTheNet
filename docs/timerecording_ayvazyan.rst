@@ -1,19 +1,20 @@
 Ari Ayvazyan
 ============
 
-============================================== ========== ===== ===== =========
-Task                                           Date       From  To    Duration
-============================================== ========== ===== ===== =========
-concept                                        2014-09-22 16:00 17:20   01:20
-UMLing basic structure                         2014-09-22 18:00 19:00   01:00
-libraries                                      2014-09-22 19:00 19:30   00:30
-user stories                                   2014-09-24 21:30 22:00   00:30
-Implemented log4J                              2014-09-24 22:00 22:30   00:30
-Searched for fitting MIBs & OIDs               2014-09-24 22:30 23:00   00:30
-Installation & usage MIB Browser               2014-09-24 08:00 08:30   00:30
-Finished UML, MIB browser                      2014-09-24 08:00 08:30   01:00
-Gather info about design patterns              2014-09-25 08:00 08:30   02:00
-Implemented guice, implemented methods, UML    2014-09-28 22:00 00:00   02:00
-dlock, UML, team meeting                       2014-09-29 13:00 14:00   01:00
-*TOTAL*                                                               **09:40**
-============================================== ========== ===== ===== =========
+==================================================================== ========== ===== ===== =========
+Task                                                                 Date       From  To    Duration
+==================================================================== ========== ===== ===== =========
+Concept                                                              2014-09-22 16:00 17:20   01:20
+UMLing basic structure                                               2014-09-22 18:00 19:00   01:00
+Libraries                                                            2014-09-22 19:00 19:30   00:30
+user stories                                                         2014-09-24 21:30 22:00   00:30
+Implemented log4J                                                    2014-09-24 22:00 22:30   00:30
+Searched for fitting MIBs & OIDs                                     2014-09-24 22:30 23:00   00:30
+Installation & usage MIB Browser                                     2014-09-24 08:00 08:30   00:30
+Finished UML, MIB browser                                            2014-09-24 08:00 08:30   01:00
+Gather info about design patterns                                    2014-09-25 08:00 08:30   02:00
+Partly implemented Guice, UML                                        2014-09-28 22:00 00:00   02:00
+dlock, UML, team meeting                                             2014-09-29 13:00 14:00   01:00
+Corrected program structure to fit the UML                           2014-09-29 22:30 00:20   01:50
+*TOTAL*                                                                                     **11:40**
+==================================================================== ========== ===== ===== =========
