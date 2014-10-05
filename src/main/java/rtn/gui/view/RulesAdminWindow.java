@@ -1,4 +1,4 @@
-package rtn.gui.controller.view;
+package rtn.gui.view;
 
 public class RulesAdminWindow {
 
