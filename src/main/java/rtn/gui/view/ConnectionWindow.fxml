@@ -21,7 +21,7 @@
             <Insets bottom="-10.0" />
          </VBox.margin>
       </Label>
-      <Label fx:id="desc_l" maxWidth="420.0" text="Please fill out the form to establish a connection to your device!">
+      <Label fx:id="desc_l" maxWidth="420.0" text="Please fill out this form to establish a connection to your device!">
          <font>
             <Font name="System Italic" size="14.0" />
          </font>
