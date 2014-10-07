@@ -13,7 +13,7 @@ public class DataManager {
 		return null;
 	}
 
-	public DataLoad getThroughput() {
+	public DataLoad getThroughput(Policy policy) {
 		return null;
 	}
 }
