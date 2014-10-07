@@ -11,7 +11,6 @@ public class AdminInjector extends AbstractModule {
 
     @Override
     protected void configure() {
-        bind(IAdminStrategy.class).to(SSHStrategy.class);
     }
 }
 

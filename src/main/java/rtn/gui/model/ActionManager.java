@@ -1,17 +1,12 @@
 package rtn.gui.model;
 
-import rtn.networking.IAdminStrategy;
-import rtn.networking.AdminStrategyFactory;
+import java.util.List;
+
 import rtn.networking.Policy;
+import rtn.networking.Service;
+import rtn.networking.Zone;
 
 public class ActionManager {
-
-	private IAdminStrategy admin;
-
-	private IAdminStrategy iAdminStrategy;
-
-	private AdminStrategyFactory adminStrategyFactory;
-
 	private boolean sendEmail(String recipetend, String message) {
 		return false;
 	}
@@ -25,15 +20,22 @@ public class ActionManager {
 	}
 
 	public boolean addPolicy(Policy policy) {
-        return iAdminStrategy.addPolicy(policy);
+        return false;
 	}
 
 	public boolean updatePolicy(Policy newPolicy,Policy oldPolicy) {
-        return iAdminStrategy.updatePolicy(newPolicy,oldPolicy);
+        return false;
 	}
 
 	public boolean deletePolicy(Policy policy) {
-        return iAdminStrategy.deletePolicy(policy);
+        return false;
 	}
 
+	public List<Service> getServices() {
+		return null;
+	}
+	
+	public List<Zone> getZones() {
+		return null;
+	}
 }

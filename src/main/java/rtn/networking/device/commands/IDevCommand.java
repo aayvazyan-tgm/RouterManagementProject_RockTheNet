@@ -1,6 +1,6 @@
 package rtn.networking.device.commands;
 
-public interface DevCommand {
+public interface IDevCommand {
 
 	public void execute();
 
