@@ -1,17 +1,19 @@
 package rtn.gui.model;
 
 import java.util.List;
+import java.util.Map;
+
+import rtn.networking.DataLoad;
+import rtn.networking.Policy;
 
 public class DataManager {
-
-	private int lastcheck;
+	private Map<Policy, Integer> lastchecks;
 	
 	public List getPolicies() {
 		return null;
 	}
 
-	public double getThroughput() {
-		return 0;
+	public DataLoad getThroughput() {
+		return null;
 	}
-
 }
