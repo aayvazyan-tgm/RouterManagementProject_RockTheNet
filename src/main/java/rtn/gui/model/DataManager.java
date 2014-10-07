@@ -8,6 +8,7 @@ import rtn.networking.Policy;
 
 public class DataManager {
 	private Map<Policy, Integer> lastchecks;
+    private Map<Policy, int> lastloads;
 	
 	public List getPolicies() {
 		return null;
