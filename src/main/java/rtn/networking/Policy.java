@@ -1,84 +1,112 @@
 package rtn.networking;
 
-public class Policy {
+public class Policy
+{
+	private Long id;
 
-
-    private String displayname;
-
-	private int type;
+	private String displayname;
 
 	private String source;
 
 	private String destination;
 
-    private boolean enabled;
+	private String action;
 
-    private Service service;
+	private boolean log;
 
-    private Zone zone;
+	private Service service;
 
-    Policy(String displayname,int type,String source,String destination,boolean enabled,Service service){
-        this.displayname = displayname;
-        this.type = type;
-        this.source = source;
-        this.destination = destination;
-        this.enabled = enabled;
-        this.service = service;
-    }
+	private Zone inzone;
 
-    public String getDisplayname() {
-        return displayname;
-    }
+	private Zone outzone;
 
-    public void setDisplayname(String displayname) {
-        this.displayname = displayname;
-    }
+	public Long getId()
+	{
+		return id;
+	}
 
-    public boolean isEnabled() {
-        return enabled;
-    }
+	public void setId(Long id)
+	{
+		this.id = id;
+	}
 
-    public void setEnabled(boolean enabled) {
-        this.enabled = enabled;
-    }
+	public String getDisplayname()
+	{
+		return displayname;
+	}
 
-    public int getType() {
-        return type;
-    }
+	public void setDisplayname(String displayname)
+	{
+		this.displayname = displayname;
+	}
 
-    public void setType(int type) {
-        this.type = type;
-    }
+	public String getSource()
+	{
+		return source;
+	}
 
-    public String getSource() {
-        return source;
-    }
+	public void setSource(String source)
+	{
+		this.source = source;
+	}
 
-    public void setSource(String source) {
-        this.source = source;
-    }
+	public String getDestination()
+	{
+		return destination;
+	}
 
-    public String getDestination() {
-        return destination;
-    }
+	public void setDestination(String destination)
+	{
+		this.destination = destination;
+	}
 
-    public void setDestination(String destination) {
-        this.destination = destination;
-    }
+	public String getAction()
+	{
+		return action;
+	}
 
-    public Service getService() {
-        return service;
-    }
+	public void setAction(String action)
+	{
+		this.action = action;
+	}
 
-    public void setService(Service service) {
-        this.service = service;
-    }
+	public boolean isLog()
+	{
+		return log;
+	}
 
-    public Zone getZone() {
-        return zone;
-    }
+	public void setLog(boolean log)
+	{
+		this.log = log;
+	}
 
-    public void setZone(Zone zone) {
-        this.zone = zone;
-    }
+	public Service getService()
+	{
+		return service;
+	}
+
+	public void setService(Service service)
+	{
+		this.service = service;
+	}
+
+	public Zone getInzone()
+	{
+		return inzone;
+	}
+
+	public void setInzone(Zone inzone)
+	{
+		this.inzone = inzone;
+	}
+
+	public Zone getOutzone()
+	{
+		return outzone;
+	}
+
+	public void setOutzone(Zone outzone)
+	{
+		this.outzone = outzone;
+	}
 }

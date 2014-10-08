@@ -1,25 +1,20 @@
 package rtn.gui.model;
 
-import rtn.networking.monitoring.IMonitoringStrategy;
-import rtn.networking.MonitoringStrategyFactory;
 import java.util.List;
+import java.util.Map;
+
+import rtn.networking.DataLoad;
+import rtn.networking.Policy;
 
 public class DataManager {
-
-	private int lastcheck;
-
-	private IMonitoringStrategy router;
-
-	private IMonitoringStrategy iMonitoringStrategy;
-
-	private MonitoringStrategyFactory monitoringStrategyFactory;
-
+	private Map<Policy, Integer> lastchecks;
+    private Map<Policy, DataLoad> lastloads;
+	
 	public List getPolicies() {
 		return null;
 	}
 
-	public double getThroughput() {
-		return 0;
+	public DataLoad getThroughput(Policy policy) {
+		return null;
 	}
-
 }

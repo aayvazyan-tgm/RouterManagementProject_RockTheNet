@@ -1,0 +1,88 @@
+package rtn.networking;
+
+public class Configuration
+{
+	private String device;
+
+	private String remoteip;
+
+	private String community;
+
+	private String username;
+
+	private String password;
+
+	private int snmpport;
+
+	private int adminport;
+
+	public String getDevice()
+	{
+		return device;
+	}
+
+	public void setDevice(String device)
+	{
+		this.device = device;
+	}
+
+	public String getRemoteip()
+	{
+		return remoteip;
+	}
+
+	public void setRemoteip(String remoteip)
+	{
+		this.remoteip = remoteip;
+	}
+
+	public String getCommunity()
+	{
+		return community;
+	}
+
+	public void setCommunity(String community)
+	{
+		this.community = community;
+	}
+
+	public String getUsername()
+	{
+		return username;
+	}
+
+	public void setUsername(String username)
+	{
+		this.username = username;
+	}
+
+	public String getPassword()
+	{
+		return password;
+	}
+
+	public void setPassword(String password)
+	{
+		this.password = password;
+	}
+
+	public int getSnmpport()
+	{
+		return snmpport;
+	}
+
+	public void setSnmpport(int snmpport)
+	{
+		this.snmpport = snmpport;
+	}
+
+	public int getAdminport()
+	{
+		return adminport;
+	}
+
+	public void setAdminport(int adminport)
+	{
+		this.adminport = adminport;
+	}
+}

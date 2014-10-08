@@ -17,6 +17,9 @@ Implementing EMail example        2014-09-27 12:15 13:20   01:05
 Team meeting                      2014-09-29 13:00 14:00   01:00
 UML Diagram                       2014-09-29 15:00 16:10   01:10
 Enable SSH & find CRUD commands   2014-10-02 10:50 11:40   00:50
-Find CRUD commands & document 'em 2014-10-02 12:30 13:00   00:30 
-**TOTAL**                                                **12:00**
+Find CRUD commands & document 'em 2014-10-02 12:30 13:00   00:30
+UML Diagram                       2014-10-07 14:00 14:25   00:25
+UML Diagram                       2014-10-07 18:30 18:50   00:20
+Organizing codes, clean up        2014-10-07 18.50 19:40   00:50
+**TOTAL**                                                **13:35**
 ================================= ========== ===== ===== =========
