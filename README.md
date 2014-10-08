@@ -3,7 +3,7 @@
 A Router Management Software
 
 * Documentation: 
-  ![RockTheNet.pdf](http://ci.truh.in/job/RockTheNet/lastSuccessfulBuild/artifact/docs/_build/latex/RockTheNet.pdf)
-* Test report: ![JUnit tests](http://ci.truh.in/job/RockTheNet/lastCompletedBuild/testReport/)
+  [RockTheNet.pdf](http://ci.truh.in/job/RockTheNet/lastSuccessfulBuild/artifact/docs/_build/latex/RockTheNet.pdf)
+* Test report: [JUnit tests](http://ci.truh.in/job/RockTheNet/lastCompletedBuild/testReport/)
 * Javadoc:
-  ![RouterManagementProject RockTheNet 1.0 API](http://ci.truh.in/job/RockTheNet/javadoc/)
+  [RouterManagementProject RockTheNet 1.0 API](http://ci.truh.in/job/RockTheNet/javadoc/)
