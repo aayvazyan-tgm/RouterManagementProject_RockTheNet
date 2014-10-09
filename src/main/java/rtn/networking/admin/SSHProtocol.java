@@ -27,6 +27,8 @@ public class SSHProtocol implements IAdminProtocol
 	 */
 	public boolean connect()
 	{
+        if(this.connection != null) return true;
+        
 		JSch ssh = new JSch();
 		
 		// map our singleton instance to a local variable, so that 
