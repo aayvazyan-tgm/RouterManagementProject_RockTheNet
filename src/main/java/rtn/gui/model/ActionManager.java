@@ -2,15 +2,12 @@ package rtn.gui.model;
 
 import java.util.List;
 
+import rtn.networking.Action;
 import rtn.networking.Policy;
 import rtn.networking.Service;
 import rtn.networking.Zone;
 
 public class ActionManager {
-	private boolean sendEmail(String recipetend, String message) {
-		return false;
-	}
-
 	public boolean enableAlarm() {
 		return false;
 	}
@@ -36,6 +33,10 @@ public class ActionManager {
 	}
 	
 	public List<Zone> getZones() {
+		return null;
+	}
+	
+	public List<Action> getActions() {
 		return null;
 	}
 }

@@ -1,15 +1,13 @@
 package rtn.networking.admin;
 
-public class SSHProtocol implements IAdminProtocol {
-
-
+public class SSHProtocol implements IAdminProtocol
+{
 	/**
 	 * @see rtn.networking.admin.IAdminProtocol#connect()
 	 */
 	public boolean connect() {
 		return false;
 	}
-
 
 	/**
 	 * @see rtn.networking.admin.IAdminProtocol#sendCommand(java.lang.String)
@@ -25,5 +23,4 @@ public class SSHProtocol implements IAdminProtocol {
 	public boolean disconnect() {
 		return false;
 	}
-
 }

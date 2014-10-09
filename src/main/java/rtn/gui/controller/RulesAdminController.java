@@ -1,7 +1,5 @@
 package rtn.gui.controller;
 
-import com.google.gson.Gson;
-
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
@@ -10,10 +8,12 @@ import javafx.scene.Node;
 import javafx.scene.control.Button;
 import javafx.scene.control.CheckBox;
 import javafx.scene.control.ComboBox;
+import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
 import rtn.gui.model.ActionManager;
+import rtn.networking.Action;
 import rtn.networking.Policy;
 import rtn.networking.Service;
 import rtn.networking.Zone;
@@ -21,6 +21,9 @@ import rtn.networking.Zone;
 public class RulesAdminController
 {
 	private ActionManager actionManager;
+	
+	@FXML
+	private Label policyId;
 	
 	@FXML
 	private VBox addPolicyWindow;
@@ -75,16 +78,11 @@ public class RulesAdminController
 			policy.setDisplayname(displayname);
 			policy.setSource(ipInbound);
 			policy.setDestination(ipOutbound);
-			policy.setAction(action);
+			policy.setAction(new Action(action));
 			policy.setLog(log);
 			policy.setInzone(new Zone(zoneIn));
 			policy.setOutzone(new Zone(zoneOut));
 			policy.setService(new Service(service));
-			
-			Gson gson = new Gson();
-			String json = gson.toJson(policy);
-			
-			System.out.println(json);
 			
 		}
 		else if(source == this.bCancel)

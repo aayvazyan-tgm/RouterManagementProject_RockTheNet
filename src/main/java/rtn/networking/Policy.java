@@ -10,7 +10,7 @@ public class Policy
 
 	private String destination;
 
-	private String action;
+	private Action action;
 
 	private boolean log;
 
@@ -60,12 +60,12 @@ public class Policy
 		this.destination = destination;
 	}
 
-	public String getAction()
+	public Action getAction()
 	{
 		return action;
 	}
 
-	public void setAction(String action)
+	public void setAction(Action action)
 	{
 		this.action = action;
 	}

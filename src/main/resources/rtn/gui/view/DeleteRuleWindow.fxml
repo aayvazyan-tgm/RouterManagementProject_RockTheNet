@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.text.*?>
+<?import javafx.scene.control.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+
+
+<VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="150.0" prefWidth="400.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="rtn.gui.controller.RulesAdminController">
+   <children>
+      <AnchorPane prefHeight="200.0" prefWidth="200.0">
+         <children>
+            <Label layoutX="15.0" layoutY="15.0" text="Deleting Policy #">
+               <font>
+                  <Font name="System Bold" size="22.0" />
+               </font>
+            </Label>
+            <Label layoutX="15.0" layoutY="50.0" text="Are you sure that you want to delete the selected policy?&#10;This action can not be undone.&#10;&#10;" />
+            <Label layoutX="190.0" layoutY="15.0" text="--">
+               <font>
+                  <Font size="22.0" />
+               </font>
+            </Label>
+            <Button fx:id="bConfirm" layoutX="80.0" layoutY="110.0" mnemonicParsing="false" onAction="#handleButtonAction" text="Yes, confirm deletion" />
+            <Button fx:id="bCancel" layoutX="210.0" layoutY="110.0" mnemonicParsing="false" onAction="#handleButtonAction" text="No, return to list" />
+         </children>
+      </AnchorPane>
+   </children>
+</VBox>
