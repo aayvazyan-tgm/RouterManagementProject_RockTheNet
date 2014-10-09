@@ -5,6 +5,9 @@ apply plugin: 'application'
 apply plugin: 'eclipse'
 apply plugin: 'idea'
 
+/* Coverage reports */
+apply from: 'gradle/plugins/emma.gradle'
+
 sourceCompatibility = 1.8
 
 version = '1.0'
@@ -30,6 +33,9 @@ dependencies {
     testCompile 'org.mockito:mockito-core:1.9.5'
     testCompile 'com.google.code.gson:gson:2.3'
     testCompile 'org.apache.commons:commons-io:1.3.2'
+
+    emma "emma:emma:2.0.5312"
+    emma "emma:emma_ant:2.0.5312"
 }
 
 project (':Prototype') {
@@ -65,4 +71,23 @@ project (':EMailExample') {
     }
 
     mainClassName = 'rtn.email.Main'
+}
+
+project (':TrapPrototype') {
+    apply plugin: 'java'
+    apply plugin: 'application'
+
+    repositories {
+        mavenCentral()
+
+        maven {
+            url "https://oosnmp.net/dist/release/" // snmp4j
+        }
+    }
+
+    dependencies {
+        compile group: 'org.snmp4j', name: 'snmp4j', version: '2.3.+'
+    }
+
+    mainClassName = 'rtn.prototype.snmp.trap'
 }
