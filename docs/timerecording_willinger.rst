@@ -23,5 +23,7 @@ UML Diagram                       2014-10-07 18:30 18:50   00:20
 Organizing codes, clean up        2014-10-07 18.50 19:40   00:50
 GUI (Add policy)                  2014-10-09 08:10 09:55   01:45
 GUI (Add policy, event handlers)  2014-10-09 12:50 13:55   01:05
-**TOTAL**                                                **16:25**
+GUI (Edit/delete policy)          2014-10-09 18:30 19:10   00:40
+UML Diagram, SSH Protocol         2014-10-09 19:10 21:05   01:55
+**TOTAL**                                                **19:00**
 ================================= ========== ===== ===== =========
