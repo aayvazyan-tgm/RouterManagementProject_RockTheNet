@@ -16,6 +16,7 @@ Gather info about design patterns                               2014-09-25 08:00
 Implemented guice, implemented methods, UML                     2014-09-28 22:00 00:00   02:00
 dlock, UML, team meeting                                        2014-09-29 13:00 14:00   01:00
 Corrected program structure to fit the UML                      2014-10-07 22:30 00:30   02:00
-dlock                                                           2014-10-09 09:30 11:30   02:00
-*TOTAL*                                                                                **13:40**
+dlock                                                           2014-10-08 09:30 11:30   02:00
+dlock, EMail                                                    2014-10-09 08:00 12:20   04:20
+*TOTAL*                                                                                **18:00**
 =============================================================== ========== ===== ===== =========
