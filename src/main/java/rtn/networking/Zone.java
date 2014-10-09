@@ -1,17 +1,21 @@
 package rtn.networking;
 
-public class Zone {
-
+public class Zone
+{
 	private String name;
 
-    Zone(String name){
+    public Zone(String name)
+    {
         this.name=name;
     }
-    public String getName() {
+    
+    public String getName()
+    {
         return name;
     }
 
-    public void setName(String name) {
+    public void setName(String name)
+    {
         this.name = name;
     }
 }
