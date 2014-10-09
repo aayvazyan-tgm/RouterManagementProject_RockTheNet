@@ -17,11 +17,11 @@ Contents
    user_stories
    libraries
    JavaFX_Evaluation
+   jenkins
    device
    snmp
    administration
    prototype
-   references
 
 Time recordings
 ~~~~~~~~~~~~~~~
@@ -34,3 +34,5 @@ Time recordings
    timerecording_freudensprung
    timerecording_klepp
    timerecording_willinger
+
+.. include:: references.rst

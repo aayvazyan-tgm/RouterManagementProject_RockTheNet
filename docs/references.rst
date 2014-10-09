@@ -49,7 +49,7 @@ References
 .. _8:
 
 [8] Introduction to SNMP4j
-    link:http://www.jayway.com/2010/05/21/introduction-to-snmp4j/
+    http://www.jayway.com/2010/05/21/introduction-to-snmp4j/
     last visited: 2014-09-22
 
 .. _9:
@@ -57,3 +57,22 @@ References
 [9] Commons Email - Home
     http://commons.apache.org/proper/commons-email/index.html
     last visited: 2014-09-26
+
+.. _10:
+
+[10] Wikipedia - Jenkins (software)
+     https://en.wikipedia.org/wiki/Jenkins_%28software%29
+     last visited: 2014-10-09
+
+.. _11:
+
+[11] Continuous Integration
+     Martin Fowler
+     http://www.martinfowler.com/articles/continuousIntegration.html
+     last visited: 2014-10-09
+
+.. _12:
+
+[12] Using Jenkins
+     https://wiki.jenkins-ci.org/display/JENKINS/Use+Jenkins
+     last visited: 2014-10-09
