@@ -72,7 +72,7 @@ project (':EMailExample') {
     mainClassName = 'rtn.email.Main'
 }
 
-project (':TrapProject') {
+project (':TrapPrototype') {
     apply plugin: 'java'
     apply plugin: 'application'
 
