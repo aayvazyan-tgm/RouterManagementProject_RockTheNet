@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.text.*?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+
+
+<VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="550.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1">
+   <children>
+      <BorderPane prefHeight="400.0" prefWidth="200.0">
+         <top>
+            <TextField fx:id="displayname" prefHeight="25.0" prefWidth="375.0" promptText="Displayname" BorderPane.alignment="CENTER">
+               <BorderPane.margin>
+                  <Insets left="25.0" right="25.0" top="10.0" />
+               </BorderPane.margin>
+               <font>
+                  <Font size="16.0" />
+               </font>
+            </TextField>
+         </top>
+         <center>
+            <GridPane prefHeight="200.0" prefWidth="600.0" BorderPane.alignment="CENTER">
+              <columnConstraints>
+                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+              </columnConstraints>
+              <rowConstraints>
+                <RowConstraints maxHeight="190.0" minHeight="10.0" prefHeight="120.0" vgrow="SOMETIMES" />
+                <RowConstraints maxHeight="262.0" minHeight="0.0" prefHeight="128.0" vgrow="SOMETIMES" />
+                  <RowConstraints maxHeight="262.0" minHeight="10.0" prefHeight="74.0" vgrow="SOMETIMES" />
+              </rowConstraints>
+               <children>
+                  <AnchorPane prefHeight="100.0" prefWidth="600.0">
+                     <children>
+                        <Label layoutX="25.0" layoutY="80.0" text="Zone (outbound):" />
+                        <Label layoutX="25.0" layoutY="14.0" prefHeight="17.0" prefWidth="120.0" text="Firewall " underline="true" />
+                        <Label layoutX="25.0" layoutY="40.0" text="Zone (inbound):" />
+                        <Label layoutX="328.0" layoutY="79.0" text="Action:" />
+                        <Label layoutX="326.0" layoutY="41.0" text="Service:" />
+                        <ComboBox fx:id="zone_in" layoutX="125.0" layoutY="35.0" prefWidth="150.0" />
+                        <ComboBox fx:id="zone_out" layoutX="125.0" layoutY="75.0" prefWidth="150.0" />
+                        <ComboBox fx:id="service" layoutX="375.0" layoutY="35.0" prefWidth="150.0" />
+                        <ComboBox fx:id="action" layoutX="375.0" layoutY="75.0" prefWidth="150.0" />
+                     </children>
+                  </AnchorPane>
+                  <AnchorPane prefHeight="150.0" prefWidth="600.0" GridPane.rowIndex="1">
+                     <children>
+                        <Label layoutX="25.0" prefHeight="17.0" prefWidth="85.0" text="Addresses" underline="true" />
+                        <TextField fx:id="ip_inbound" layoutX="25.0" layoutY="30.0" prefHeight="25.0" prefWidth="235.0" promptText="Inbound" />
+                        <TextField fx:id="ip_outbound" layoutX="290.0" layoutY="30.0" prefHeight="25.0" prefWidth="235.0" promptText="Outbound" />
+                        <Label layoutX="25.0" layoutY="70.0" text="Allowed values are:&#10;A standard IP address (0.0.0.0), a subnet (0.0.0.0/23) and &quot;Any&quot;." wrapText="true" />
+                     </children>
+                  </AnchorPane>
+                  <AnchorPane prefHeight="200.0" prefWidth="200.0" GridPane.rowIndex="2">
+                     <children>
+                        <Label layoutX="25.0" prefHeight="17.0" prefWidth="85.0" text="Optional" underline="true" />
+                        <CheckBox fx:id="log" layoutX="25.0" layoutY="30.0" mnemonicParsing="false" text="Enable logging" />
+                     </children>
+                  </AnchorPane>
+               </children>
+            </GridPane>
+         </center>
+         <bottom>
+            <AnchorPane prefHeight="48.0" prefWidth="600.0" BorderPane.alignment="CENTER">
+               <children>
+                  <Button fx:id="createButton" layoutX="160.0" layoutY="5.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="100.0" text="Add Policy" />
+                  <Button fx:id="cancelButton" layoutX="290.0" layoutY="5.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="100.0" text="Cancel" />
+               </children>
+            </AnchorPane>
+         </bottom>
+      </BorderPane>
+   </children>
+</VBox>
