@@ -1,4 +1,5 @@
 apply plugin: 'java'
+apply plugin: 'application'
 
 /* IDEs */
 apply plugin: 'eclipse'
@@ -18,6 +19,8 @@ repositories {
     	url "https://oosnmp.net/dist/release/" // snmp4j
     }
 }
+
+mainClassName = 'rtn.MainApp'
 
 dependencies {
 	compile 'com.jcraft:jsch:0.1.51'
