@@ -6,11 +6,11 @@ package rtn.networking;
  */
 
 import com.google.inject.AbstractModule;
-import rtn.networking.device.juniper_netscreen_5gt.*;
-public class AdminInjector extends AbstractModule {
 
+public class AdminInjector extends AbstractModule
+{
     @Override
-    protected void configure() {
+    protected void configure()
+    {
     }
 }
-

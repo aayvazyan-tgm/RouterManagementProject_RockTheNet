@@ -15,6 +15,8 @@ public class Configuration
 	private int snmpport;
 
 	private int adminport;
+	
+	private static Configuration configuration;
 
 	public String getDevice()
 	{
@@ -24,6 +26,19 @@ public class Configuration
 	public void setDevice(String device)
 	{
 		this.device = device;
+	}
+	
+	public static Configuration getInstance()
+	{
+		if(configuration != null) return configuration;
+		
+		configuration = new Configuration();
+		return configuration;
+	}
+	
+	public static void setInstance(Configuration config)
+	{
+		if(config != null) configuration = config;
 	}
 
 	public String getRemoteip()

@@ -31,6 +31,30 @@ into your own Java programs. JSch is licensed under BSD style license.
 Is a java implementation of SSH2, it is able to connect to an sshd server
 and use port forwarding, file transfer...
 
+Apache Commons Net
+~~~~~~~~~~~~~~~~~~
+
+Apache Commons Net library implements the client side of many basic Internet protocols.
+The purpose of the library is to provide fundamental protocol access, not higher-level
+abstractions. Therefore, some of the design violates object-oriented design principles.
+Our philosophy is to make the global functionality of a protocol accessible (e.g.,
+TFTP send file and receive file) when possible, but also provide access to the
+fundamental protocols where applicable so that the programmer may construct his own
+custom implementations (e.g, the TFTP packet classes and the TFTP packet send and
+receive methods are exposed). [13]
+
+We are only using this library for the telnet implmentation.
+
+Here are some alternatives:
+
+- JTA (Java Telnet)
+  While this seesm to be a easier-to-use library, it's not being maintained since 2005.
+  Therefore, not going to use it.
+
+- JTelnet
+  Same as JTA, but not updated since 2013.
+  
+
 Apache Commons Email
 ~~~~~~~~~~~~~~~~~~~~
 

@@ -27,7 +27,7 @@ public class MainApp extends Application {
             FXMLLoader loader = new FXMLLoader();
             loader.setLocation(getClass().getClassLoader().getResource("rtn/gui/view/ConnectionWindow.fxml"));
             rootLayout = (Pane) loader.load();
-
+            
             // Show the scene containing the root layout.
             Scene scene = new Scene(rootLayout);
             primaryStage.setScene(scene);
