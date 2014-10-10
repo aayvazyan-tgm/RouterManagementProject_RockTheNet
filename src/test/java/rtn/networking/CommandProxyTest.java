@@ -39,6 +39,6 @@ public class CommandProxyTest
 	@Test
 	public void testSuccessfulInstantion() throws ReflectiveOperationException
 	{
-		assertNotNull(CommandProxy.getCommand("AddPolicy", "juniper_netscreen_5gt"));
+		assertNotNull(CommandProxy.getCommand("TestPolicy", "test"));
 	}
 }
