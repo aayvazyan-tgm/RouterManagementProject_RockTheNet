@@ -7,6 +7,7 @@ public class EMailFactory {
     /**
      * returns a copy of the set Prototype
      * @return returns a copy of the set Prototype, null if a error occurred while copying
+     * @throws CloneNotSupportedException if a sub element is not cloneable
      */
 
 	public static EMail getMail() throws CloneNotSupportedException {

@@ -9,6 +9,7 @@ public class EMailWorker {
     /**
      * Sends a Email using a configured Authentication method
      * @param mail the Mail to be sent.
+     * @throws org.apache.commons.mail.EmailException if the EMail could not be sent.
      */
 	public void send(EMail mail) throws EmailException {
         Authenticator aut=new DefaultAuthenticator("Username","Password");
