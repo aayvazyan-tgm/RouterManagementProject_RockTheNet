@@ -20,6 +20,7 @@ import com.jcraft.jsch.Session;
  */
 public class SSHProtocol implements IAdminProtocol
 {
+	private JSch ssh;
 	private Session connection;
 	
 	/**
@@ -28,8 +29,7 @@ public class SSHProtocol implements IAdminProtocol
 	public boolean connect()
 	{
         if(this.connection != null) return true;
-        
-		JSch ssh = new JSch();
+        if(this.ssh == null) this.ssh = new JSch();
 		
 		// map our singleton instance to a local variable, so that 
 		// we don't have to call it each time we want to use it.
@@ -70,6 +70,8 @@ public class SSHProtocol implements IAdminProtocol
 		{
 			// prepare the channel to execute the specified command
 			ChannelExec channel = (ChannelExec) this.connection.openChannel("exec");
+			
+			if(channel == null) return null;
 			
 			// set up readers for both the "normal" stream (regular output) and error stream (command not found, wrong parameters, etc.)
 			BufferedReader in = new BufferedReader(new InputStreamReader(channel.getInputStream()));
