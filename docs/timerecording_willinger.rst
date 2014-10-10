@@ -29,5 +29,6 @@ UML Diagram                       2014-10-10 08:05 08:40   00:35
 UML Diagram, CommandProxy, Tests  2014-10-10 11:45 12:40   00:55
 SSH Protocol tests                2014-10-10 13:00 14:10   01:10
 SSH Protocol tests                2014-10-10 18:50 20:50   02:00
-**TOTAL**                                                **23:40**
+SSH Protocol tests (finished)     2014-10-10 21:45 22:25   00:30
+**TOTAL**                                                **24:10**
 ================================= ========== ===== ===== =========
