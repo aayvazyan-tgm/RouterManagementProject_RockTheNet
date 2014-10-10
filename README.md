@@ -7,3 +7,11 @@ A Router Management Software
 * Test report: [JUnit tests](http://ci.truh.in/job/RockTheNet/lastCompletedBuild/testReport/)
 * Javadoc:
   [RouterManagementProject RockTheNet 1.0 API](http://ci.truh.in/job/RockTheNet/javadoc/)
+
+### Test Result Trend
+
+![Test Result Trend](http://ci.truh.in/job/RockTheNet/test/trend)
+
+### Code Coverage Trend
+
+[![Code Coverage Trend](http://ci.truh.in/job/RockTheNet/jacoco/graph)](http://ci.truh.in/job/RockTheNet/lastBuild/jacoco/)
