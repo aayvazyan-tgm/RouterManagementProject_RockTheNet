@@ -25,6 +25,7 @@ GUI (Add policy)                  2014-10-09 08:10 09:55   01:45
 GUI (Add policy, event handlers)  2014-10-09 12:50 13:55   01:05
 GUI (Edit/delete policy)          2014-10-09 18:30 19:10   00:40
 UML Diagram, SSH Protocol         2014-10-09 19:10 21:05   01:55
-UML Diagram                       2014-10-10 08:00 08:40   00:40
-**TOTAL**                                                **19:40**
+UML Diagram                       2014-10-10 08:05 08:40   00:35
+UML Diagram, CommandProxy, Tests  2014-10-10 11:45 12:40   00:55
+**TOTAL**                                                **20:30**
 ================================= ========== ===== ===== =========
