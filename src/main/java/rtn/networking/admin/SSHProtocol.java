@@ -84,8 +84,8 @@ public class SSHProtocol implements IAdminProtocol
 			String response = null;
 			
 			// read the command's response
-			while((response = in.readLine()) != null) result += response;
-			while((response = error.readLine()) != null) result += response;
+			while((response = in.readLine()) != null) result += response + "\n";
+			while((response = error.readLine()) != null) result += response + "\n";
 			
 			in.close();
 			error.close();			

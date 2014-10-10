@@ -120,7 +120,7 @@ public class SSHProtocolTest
 		
 		Configuration.setInstance(configuration);
 		
-		assertEquals(this.protocol.sendCommand("test"), "test");
+		assertEquals(this.protocol.sendCommand("test"), "test\n");
 	}
 	
 	@Test
@@ -134,7 +134,7 @@ public class SSHProtocolTest
 		
 		Configuration.setInstance(configuration);
 		
-		assertEquals(this.protocol.sendCommand("error"), "error");
+		assertEquals(this.protocol.sendCommand("error"), "error\n");
 	}
 	
 	@Test
