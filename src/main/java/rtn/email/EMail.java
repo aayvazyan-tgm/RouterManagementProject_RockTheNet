@@ -50,7 +50,7 @@ public class EMail implements Cloneable{
     }
     /**
      * sets the message of this Email
-     * @return the message to set.
+     * @param message the returned Message
      */
     public void setMessage(String message) {
         this.message = message;
