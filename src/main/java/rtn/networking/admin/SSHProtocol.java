@@ -20,7 +20,6 @@ import com.jcraft.jsch.Session;
  */
 public class SSHProtocol implements IAdminProtocol
 {
-	private JSch ssh;
 	private Session connection;
 	
 	/**
@@ -29,7 +28,7 @@ public class SSHProtocol implements IAdminProtocol
 	public boolean connect()
 	{
         if(this.connection != null) return true;
-        if(this.ssh == null) this.ssh = new JSch();
+        JSch ssh = new JSch();
 		
 		// map our singleton instance to a local variable, so that 
 		// we don't have to call it each time we want to use it.
@@ -50,6 +49,7 @@ public class SSHProtocol implements IAdminProtocol
 		}
 		catch(JSchException ex)
 		{
+			System.out.println(ex.getMessage());
 			this.connection = null;
 			
 			return false;
