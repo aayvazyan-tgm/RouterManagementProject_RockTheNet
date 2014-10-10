@@ -16,7 +16,7 @@ import com.jcraft.jsch.Session;
  * This class is an implementation of IAdminProtocol, specific for SSH.
  * 
  * @author Andreas Willinger
- * @version 09.10.2014
+ * @version 10.10.2014
  */
 public class SSHProtocol implements IAdminProtocol
 {
@@ -84,8 +84,8 @@ public class SSHProtocol implements IAdminProtocol
 			String response = null;
 			
 			// read the command's response
-			while((response = in.readLine()) != null) result += response + "\n";
-			while((response = error.readLine()) != null) result += response + "\n";
+			while((response = in.readLine()) != null) result += response;
+			while((response = error.readLine()) != null) result += response;
 			
 			in.close();
 			error.close();			

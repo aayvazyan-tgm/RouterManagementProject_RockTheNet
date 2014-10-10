@@ -79,7 +79,7 @@ References
 
 .. _13:
 
-[13] Apache Commons Net - Overview
-     http://commons.apache.org/proper/commons-net/
-     last visited: 2014-10-09
+[13] SSHD Overview - Apache MINA
+     http://mina.apache.org/sshd-project/
+     last visited: 2014-10-10
      

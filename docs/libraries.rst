@@ -29,7 +29,21 @@ X11 forwarding, file transfer, etc., and you can integrate its functionality
 into your own Java programs. JSch is licensed under BSD style license. 
 
 Is a java implementation of SSH2, it is able to connect to an sshd server
-and use port forwarding, file transfer...  
+and use port forwarding, file transfer...
+
+Apache SSHD
+~~~~~~~~~~~
+
+Apache SSHD is a 100% pure java library to support the SSH protocols on both
+the client and server side. This library is based on Apache MINA, a scalable
+and high performance asynchronous IO library.
+
+SSHD does not really aim at being a replacement for the SSH client or SSH server
+from Unix operating systems, but rather provides support for Java based applications
+requiring SSH support.[13]
+
+We are only using this library to mock the server-side of the SSH implementation.
+The client side is still done using JSch.
 
 Apache Commons Email
 ~~~~~~~~~~~~~~~~~~~~
