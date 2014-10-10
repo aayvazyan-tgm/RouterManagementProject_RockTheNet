@@ -1,5 +1,5 @@
 package rtn.networking.device.commands;
 
-public interface IPullZones extends IDevCommand {
+public interface IPullZones extends IResult {
 
 }

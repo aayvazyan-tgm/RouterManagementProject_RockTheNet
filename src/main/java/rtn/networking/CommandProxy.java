@@ -2,10 +2,33 @@ package rtn.networking;
 
 import rtn.networking.device.commands.IDevCommand;
 
-public class CommandProxy {
+/**
+ * This class provides a way to access commands specified by command and device name.
+ * 
+ * @author Andreas Willinger
+ * @version 10.10.2014
+ */
+public class CommandProxy
+{
+	private CommandProxy(){}
+	/**
+	 * Creates a new instance of a IDevCommand implementation, based on command (implementing class) and device name.
+	 * 
+	 * @param command The name (command) of the implementing class (e.g. AddPolicy)
+	 * @param device The device package where the command is implemented.
+	 * 
+	 * @return An IDevCommand instance implemented by the specified parameters.
+	 * @throws ClassNotFoundException
+	 * @throws InstantiationException
+	 * @throws IllegalAccessException
+	 */
+	public static IDevCommand getCommand(String command, String device) throws ClassNotFoundException, InstantiationException, IllegalAccessException
+	{
+		if(command == null || command.isEmpty()) throw new ClassNotFoundException("Command is a required parameter!");
+		if(device == null || device.isEmpty()) throw new ClassNotFoundException("Device is a required parameter!");
+		
+		String classPath = "rtn.networking.device." + device + "." + command;
 
-	public static IDevCommand getCommand(String command, String device) {
-		return null;
+		return (IDevCommand)Class.forName(classPath).newInstance();
 	}
-
 }

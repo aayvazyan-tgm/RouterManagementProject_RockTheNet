@@ -1,5 +1,5 @@
 package rtn.networking.device.commands;
 
-public interface IUpdatePolicy extends IDevCommand {
+public interface IUpdatePolicy extends IParametrized {
 
 }

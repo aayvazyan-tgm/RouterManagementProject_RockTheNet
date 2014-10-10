@@ -1,5 +1,5 @@
 package rtn.networking.device.commands;
 
-public interface IPullPolicies extends IDevCommand {
+public interface IPullPolicies extends IResult {
 
 }

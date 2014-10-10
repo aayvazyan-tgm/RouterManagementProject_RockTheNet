@@ -4,8 +4,16 @@ import rtn.networking.device.commands.IPullServices;
 
 public class PullServices implements IPullServices {
 	@Override
+	public Object getResult()
+	{
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
 	public void execute()
 	{
+		// TODO Auto-generated method stub
 		
 	}
 }

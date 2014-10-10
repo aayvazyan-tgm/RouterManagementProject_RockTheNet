@@ -1,5 +1,5 @@
 package rtn.networking.device.commands;
 
-public interface IPullThroughput extends IDevCommand {
+public interface IPullThroughput extends IResult {
 
 }
