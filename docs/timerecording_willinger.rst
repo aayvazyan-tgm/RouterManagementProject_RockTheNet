@@ -27,5 +27,6 @@ GUI (Edit/delete policy)          2014-10-09 18:30 19:10   00:40
 UML Diagram, SSH Protocol         2014-10-09 19:10 21:05   01:55
 UML Diagram                       2014-10-10 08:05 08:40   00:35
 UML Diagram, CommandProxy, Tests  2014-10-10 11:45 12:40   00:55
-**TOTAL**                                                **20:30**
+SSH Protocol tests                2014-10-10 13:00 14:10   01:10
+**TOTAL**                                                **21:40**
 ================================= ========== ===== ===== =========
