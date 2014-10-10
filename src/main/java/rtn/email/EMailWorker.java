@@ -37,7 +37,7 @@ public class EMailWorker {
         email.setSubject(m.getSubject());
         email.setMsg(m.getMessage());
         // where to actually send the mail to
-        Iterator<EMailAddress> receipients=m.getReceipients().iterator();
+        Iterator<EMailAddress> receipients=m.getRecipients().iterator();
         while (receipients.hasNext()) {
             EMailAddress next =  receipients.next();
             email.addTo(next.toString());
@@ -92,7 +92,7 @@ public class EMailWorker {
         email.setAuthenticator(new DefaultAuthenticator("username", "password"));
         email.setSSLOnConnect(true);
         email.setSslSmtpPort(""+m.getSmtpPort());
-        Iterator<EMailAddress> receipients=m.getReceipients().iterator();
+        Iterator<EMailAddress> receipients=m.getRecipients().iterator();
         while (receipients.hasNext()) {
             EMailAddress next =  receipients.next();
             email.addTo(next.toString());

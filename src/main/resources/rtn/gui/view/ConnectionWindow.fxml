@@ -11,7 +11,7 @@
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 
-<VBox alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" spacing="20.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1">
+<VBox alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" spacing="20.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="rtn.gui.controller.ConnectionController">
    <children>
       <Label fx:id="welcome_l" text="Welcome!">
          <font>
@@ -21,7 +21,7 @@
             <Insets bottom="-10.0" />
          </VBox.margin>
       </Label>
-      <Label fx:id="desc_l" maxWidth="420.0" text="Please fill out this form to establish a connection to your device!">
+      <Label fx:id="desc_l" maxWidth="420.0" text="Please fill out this form to establish a connection to your device!&#10;You have to at least select a device and enter an IP address!" textAlignment="CENTER">
          <font>
             <Font name="System Italic" size="14.0" />
          </font>
