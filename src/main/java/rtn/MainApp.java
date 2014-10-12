@@ -15,12 +15,16 @@ public class MainApp extends Application {
 	private static Stage addRuleStage;
 	private static Stage removeRuleStage;
 	private static Stage changeRuleStage;
+	private static Stage maxItemStage;
+	private static Stage autoRefreshStage;
 	
 	private static Pane mainLayout;
 	private static Pane connectionLayout;
 	private static Pane addRuleLayout;
 	private static Pane removeRuleLayout;
 	private static Pane changeRuleLayout;
+	private static Pane maxItemLayout;
+	private static Pane autoRefreshLayout;
 	
 	@Override
 	public void start(Stage primaryStage) {
@@ -29,6 +33,8 @@ public class MainApp extends Application {
 	     initAddRuleStage();
 	     initRemoveRuleStage();
 	     initChangeRuleStage();
+	     initMaxItemStage();
+	     initAutoRefreshStage();
 	}
 	
 	/**
@@ -39,7 +45,7 @@ public class MainApp extends Application {
 		mainStage.setTitle("RockTheNet - MainWindow");
 		
 		FXMLLoader loader = new FXMLLoader();
-        loader.setLocation(getClass().getClassLoader().getResource("../../resources/rtn/gui/view/MainWindow.fxml"));
+        loader.setLocation(getClass().getClassLoader().getResource("rtn/gui/view/MainWindow.fxml"));
         
         try {
 			mainLayout = loader.load();
@@ -60,7 +66,7 @@ public class MainApp extends Application {
 		connectionStage.setTitle("RockTheNet - ConnectionWindow");
 		
 		FXMLLoader loader = new FXMLLoader();
-        loader.setLocation(getClass().getResource("../../resources/rtn/gui/view/ConnectionWindow.fxml"));
+        loader.setLocation(getClass().getResource("rtn/gui/view/ConnectionWindow.fxml"));
         
         try {
 			connectionLayout = loader.load();
@@ -72,6 +78,48 @@ public class MainApp extends Application {
         connectionStage.setScene(scene);
         connectionStage.show();
 	}
+	
+	/**
+	 * Loads the .fxml file and initializes the mainStage
+	 */
+	private void initMaxItemStage() {
+		maxItemStage = new Stage();
+		maxItemStage.setTitle("RockTheNet - MaxItemWindow");
+		
+		FXMLLoader loader = new FXMLLoader();
+        loader.setLocation(getClass().getClassLoader().getResource("rtn/gui/view/MaxItemWindow.fxml"));
+        
+        try {
+			maxItemLayout = loader.load();
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
+        
+        Scene scene = new Scene(maxItemLayout);
+        maxItemStage.setScene(scene);
+        maxItemStage.hide();
+	}
+	
+	/**
+	 * Loads the .fxml file and initializes the mainStage
+	 */
+	private void initAutoRefreshStage() {
+		autoRefreshStage = new Stage();
+		autoRefreshStage.setTitle("RockTheNet - AutoRefreshWindow");
+		
+		FXMLLoader loader = new FXMLLoader();
+        loader.setLocation(getClass().getClassLoader().getResource("rtn/gui/view/AutoRefreshWindow.fxml"));
+        
+        try {
+			autoRefreshLayout = loader.load();
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
+        
+        Scene scene = new Scene(autoRefreshLayout);
+        autoRefreshStage.setScene(scene);
+        autoRefreshStage.hide();
+	}
 
 	/**
 	 * Loads the .fxml file and initializes the addRuleStage
@@ -81,7 +129,7 @@ public class MainApp extends Application {
 		addRuleStage.setTitle("RokTheNet - AddRuleWindow");
 		
 		FXMLLoader loader = new FXMLLoader();
-        loader.setLocation(getClass().getClassLoader().getResource("../../resources/rtn/gui/view/AddRuleWindow.fxml"));
+        loader.setLocation(getClass().getClassLoader().getResource("rtn/gui/view/AddRuleWindow.fxml"));
         
         try {
 			addRuleLayout = loader.load();
@@ -102,7 +150,7 @@ public class MainApp extends Application {
 		removeRuleStage.setTitle("RokTheNet - RemoveRuleWindow");
 		
 		FXMLLoader loader = new FXMLLoader();
-        loader.setLocation(getClass().getClassLoader().getResource("../../resources/rtn/gui/view/RemoveRuleWindow.fxml"));
+        loader.setLocation(getClass().getClassLoader().getResource("rtn/gui/view/RemoveRuleWindow.fxml"));
         
         try {
 			removeRuleLayout = loader.load();
@@ -123,7 +171,7 @@ public class MainApp extends Application {
 		changeRuleStage.setTitle("RokTheNet - ChangeRuleWindow");
 		
 		FXMLLoader loader = new FXMLLoader();
-        loader.setLocation(getClass().getClassLoader().getResource("../../resources/rtn/gui/view/ChangeRuleWindow.fxml"));
+        loader.setLocation(getClass().getClassLoader().getResource("rtn/gui/view/ChangeRuleWindow.fxml"));
         
         try {
 			changeRuleLayout = loader.load();
@@ -278,6 +326,62 @@ public class MainApp extends Application {
 	 */
 	public static void setChangeRuleLayout(Pane changeRuleLayout) {
 		MainApp.changeRuleLayout = changeRuleLayout;
+	}
+
+	/**
+	 * @return the maxItemStage
+	 */
+	public static Stage getMaxItemStage() {
+		return maxItemStage;
+	}
+
+	/**
+	 * @param maxItemStage the maxItemStage to set
+	 */
+	public static void setMaxItemStage(Stage maxItemStage) {
+		MainApp.maxItemStage = maxItemStage;
+	}
+
+	/**
+	 * @return the maxItemLayout
+	 */
+	public static Pane getMaxItemLayout() {
+		return maxItemLayout;
+	}
+
+	/**
+	 * @param maxItemLayout the maxItemLayout to set
+	 */
+	public static void setMaxItemLayout(Pane maxItemLayout) {
+		MainApp.maxItemLayout = maxItemLayout;
+	}
+
+	/**
+	 * @return the autoRefreshStage
+	 */
+	public static Stage getAutoRefreshStage() {
+		return autoRefreshStage;
+	}
+
+	/**
+	 * @param autoRefreshStage the autoRefreshStage to set
+	 */
+	public static void setAutoRefreshStage(Stage autoRefreshStage) {
+		MainApp.autoRefreshStage = autoRefreshStage;
+	}
+
+	/**
+	 * @return the autoRefreshLayout
+	 */
+	public static Pane getAutoRefreshLayout() {
+		return autoRefreshLayout;
+	}
+
+	/**
+	 * @param autoRefreshLayout the autoRefreshLayout to set
+	 */
+	public static void setAutoRefreshLayout(Pane autoRefreshLayout) {
+		MainApp.autoRefreshLayout = autoRefreshLayout;
 	}
 
 	
