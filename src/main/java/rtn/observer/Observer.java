@@ -1,10 +1,11 @@
 package rtn.observer;
 
-public interface Observer {
+public interface Observer<T> {
     /**
-     * notifies the observable
-     * @param observable the notifier
+     * Gets notified when event occurs.
+     *
+     * @param event Event that triggered the observer.
      */
-	public abstract void notify(Observable observable);
+	public abstract void notify(T event);
 
 }
