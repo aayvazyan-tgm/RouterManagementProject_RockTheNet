@@ -10,7 +10,7 @@ A Router Management Software
 
 ### Test Result Trend
 
-![Test Result Trend](http://ci.truh.in/job/RockTheNet/test/trend)
+[![Test Result Trend](http://ci.truh.in/job/RockTheNet/test/trend)](http://ci.truh.in/job/RockTheNet/lastCompletedBuild/testReport/)
 
 ### Code Coverage Trend
 
