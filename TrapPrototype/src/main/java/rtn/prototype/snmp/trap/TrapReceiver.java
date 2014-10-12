@@ -16,8 +16,10 @@ import org.snmp4j.util.MultiThreadedMessageDispatcher;
 import org.snmp4j.util.ThreadPool;
 
 import java.io.IOException;
+import java.util.logging.Logger;
 
 public class TrapReceiver implements CommandResponder {
+    final static Logger LOG = Logger.getLogger(TrapReceiver.class.getCanonicalName());
 
     /**
      * Trap Listner

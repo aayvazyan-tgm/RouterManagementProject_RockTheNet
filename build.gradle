@@ -87,5 +87,5 @@ project (':TrapPrototype') {
         compile group: 'org.snmp4j', name: 'snmp4j', version: '2.3.+'
     }
 
-    mainClassName = 'rtn.prototype.snmp.trap'
+    mainClassName = 'rtn.prototype.snmp.trap.Main'
 }
