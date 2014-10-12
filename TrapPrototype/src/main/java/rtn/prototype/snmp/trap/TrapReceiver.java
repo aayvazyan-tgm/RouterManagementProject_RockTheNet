@@ -6,12 +6,6 @@ import org.snmp4j.mp.MPv2c;
 import org.snmp4j.security.Priv3DES;
 import org.snmp4j.security.SecurityProtocols;
 import org.snmp4j.smi.OctetString;
-import org.snmp4j.smi.TcpAddress;
-import org.snmp4j.smi.TransportIpAddress;
-import org.snmp4j.smi.UdpAddress;
-import org.snmp4j.transport.AbstractTransportMapping;
-import org.snmp4j.transport.DefaultTcpTransportMapping;
-import org.snmp4j.transport.DefaultUdpTransportMapping;
 import org.snmp4j.util.MultiThreadedMessageDispatcher;
 import org.snmp4j.util.ThreadPool;
 
@@ -24,14 +18,8 @@ public class TrapReceiver implements CommandResponder {
     /**
      * Trap Listner
      */
-    public synchronized void listen(TransportIpAddress address)
+    public synchronized void listen(TransportMapping transport)
             throws IOException {
-        AbstractTransportMapping transport;
-        if (address instanceof TcpAddress) {
-            transport = new DefaultTcpTransportMapping((TcpAddress) address);
-        } else {
-            transport = new DefaultUdpTransportMapping((UdpAddress) address);
-        }
 
         ThreadPool threadPool = ThreadPool.create("DispatcherPool", 10);
         MessageDispatcher mDispathcher = new MultiThreadedMessageDispatcher(
@@ -53,7 +41,7 @@ public class TrapReceiver implements CommandResponder {
         snmp.addCommandResponder(this);
 
         transport.listen();
-        System.out.println("Listening on " + address);
+        System.out.println("Listening on " + transport.getListenAddress());
 
         try {
             this.wait();

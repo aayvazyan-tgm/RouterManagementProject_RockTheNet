@@ -1,6 +1,12 @@
 package rtn.prototype.snmp.trap;
 
+import com.google.inject.Guice;
+import com.google.inject.Inject;
+import com.google.inject.Injector;
+import org.snmp4j.TransportMapping;
 import org.snmp4j.smi.UdpAddress;
+import org.snmp4j.transport.DefaultUdpTransportMapping;
+import rtn.prototype.snmp.trap.guice.Module;
 
 import java.io.IOException;
 import java.util.logging.Logger;
@@ -9,15 +15,30 @@ import java.util.logging.Logger;
  * Created by jakob on 10/9/14.
  */
 public class Main {
-    final static Logger LOG = Logger.getLogger(Main.class.getCanonicalName());
-    public static void main(String[] args) {
-        LOG.entering(Main.class.getCanonicalName(), "main", "String[]");
-        TrapReceiver snmp4jTrapReceiver = new TrapReceiver();
+    @Inject private Logger logger;
+    private TrapReceiver trapReceiver;
+
+    @Inject
+    public Main(TrapReceiver trapReceiver) {
+        this.trapReceiver = trapReceiver;
+    }
+
+    public void setup(TransportMapping transport) {
+        logger.entering(Main.class.getCanonicalName(), "setup");
         try {
-            snmp4jTrapReceiver.listen(new UdpAddress("localhost/16200"));
+            trapReceiver.listen(transport);
         } catch (IOException e) {
             e.printStackTrace();
         }
-        LOG.exiting(Main.class.getCanonicalName(), "main", "String[]");
+        logger.exiting(Main.class.getCanonicalName(), "setup");
+    }
+
+    public static void main(String[] args) throws IOException {
+        Injector injector = Guice.createInjector(new Module());
+        Main main = injector.getInstance(Main.class);
+
+        main.setup(
+                new DefaultUdpTransportMapping(
+                        new UdpAddress("localhost/16200")));
     }
 }
