@@ -4,6 +4,11 @@ import rtn.networking.Policy;
 import rtn.networking.admin.SSHProtocol;
 import rtn.networking.device.commands.IAddPolicy;
 
+/**
+ * Updates an already existing policy on the Firewall.
+ * 
+ * @version 12.10.2014
+ */
 public class UpdatePolicy implements IAddPolicy
 {
 	private Policy policy;
@@ -14,6 +19,10 @@ public class UpdatePolicy implements IAddPolicy
 		this.protocol = new SSHProtocol();
 	}
 	
+	/**
+	 * @see rtn.networking.device.commands.IParametrized#setParams(Object...)
+	 * Required parameter: Policy
+	 */
 	@Override
 	public void setParams(Object... params)
 	{
@@ -22,6 +31,9 @@ public class UpdatePolicy implements IAddPolicy
 		this.policy = (Policy)params[0];
 	}
 
+	/**
+	 * @see rtn.networking.device.commands.IDevCommand#execute()
+	 */
 	@Override
 	public void execute() throws Exception
 	{

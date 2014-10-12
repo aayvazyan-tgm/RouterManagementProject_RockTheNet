@@ -3,6 +3,9 @@ package rtn.networking.device.juniper_netscreen_5gt;
 import rtn.networking.device.commands.IPullActions;
 
 public class PullActions implements IPullActions {
+	/**
+	 * @see rtn.networking.device.commands.IResult#getResult()
+	 */
 	@Override
 	public Object getResult()
 	{
@@ -10,6 +13,9 @@ public class PullActions implements IPullActions {
 		return null;
 	}
 
+	/**
+	 * @see rtn.networking.device.commands.IDevCommand#execute()
+	 */
 	@Override
 	public void execute()
 	{

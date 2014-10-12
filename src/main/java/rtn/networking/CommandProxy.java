@@ -18,9 +18,9 @@ public class CommandProxy
 	 * @param device The device package where the command is implemented.
 	 * 
 	 * @return An IDevCommand instance implemented by the specified parameters.
-	 * @throws ClassNotFoundException
-	 * @throws InstantiationException
-	 * @throws IllegalAccessException
+	 * @throws ClassNotFoundException Thrown when there was either no class supplied or the class could not be found.
+	 * @throws InstantiationException Thrown when Java couldn't instantiate the given class.
+	 * @throws IllegalAccessException Thrown when the class or constructor is private.
 	 */
 	public static IDevCommand getCommand(String command, String device) throws ClassNotFoundException, InstantiationException, IllegalAccessException
 	{

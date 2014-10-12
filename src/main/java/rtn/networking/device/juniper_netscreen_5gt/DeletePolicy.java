@@ -4,6 +4,11 @@ import rtn.networking.Policy;
 import rtn.networking.admin.SSHProtocol;
 import rtn.networking.device.commands.IDeletePolicy;
 
+/**
+ * Deletes an already existing policy from the Firewall.
+ * 
+ * @version 12.10.2014
+ */
 public class DeletePolicy implements IDeletePolicy
 {
 	private Policy policy;
@@ -14,6 +19,9 @@ public class DeletePolicy implements IDeletePolicy
 		this.protocol = new SSHProtocol();
 	}
 	
+	/**
+	 * @see rtn.networking.device.commands.IParametrized#setParams(Object...)
+	 */
 	@Override
 	public void setParams(Object... params)
 	{
@@ -22,6 +30,9 @@ public class DeletePolicy implements IDeletePolicy
 		this.policy = (Policy)params[0];
 	}
 
+	/**
+	 * @see rtn.networking.device.commands.IDevCommand#execute()
+	 */
 	@Override
 	public void execute()
 	{
