@@ -1,5 +1,6 @@
 package rtn.prototype.snmp.trap;
 
+import org.slf4j.LoggerFactory;
 import org.snmp4j.*;
 import org.snmp4j.mp.MPv1;
 import org.snmp4j.mp.MPv2c;
@@ -10,10 +11,9 @@ import org.snmp4j.util.MultiThreadedMessageDispatcher;
 import org.snmp4j.util.ThreadPool;
 
 import java.io.IOException;
-import java.util.logging.Logger;
 
 public class TrapReceiver implements CommandResponder {
-    final static Logger LOG = Logger.getLogger(TrapReceiver.class.getCanonicalName());
+    private org.slf4j.Logger logger = LoggerFactory.getLogger(Main.class);
 
     /**
      * Trap Listner
@@ -41,7 +41,7 @@ public class TrapReceiver implements CommandResponder {
         snmp.addCommandResponder(this);
 
         transport.listen();
-        System.out.println("Listening on " + transport.getListenAddress());
+        logger.info("Listening on " + transport.getListenAddress());
 
         try {
             this.wait();
@@ -55,11 +55,11 @@ public class TrapReceiver implements CommandResponder {
      * specified in the listen() method
      */
     public synchronized void processPdu(CommandResponderEvent cmdRespEvent) {
-        System.out.println("Received PDU...");
+        logger.info("Received PDU...");
         PDU pdu = cmdRespEvent.getPDU();
         if (pdu != null) {
-            System.out.println("Trap Type = " + pdu.getType());
-            System.out.println("Variables = " + pdu.getVariableBindings());
+            logger.info("Trap Type = " + pdu.getType());
+            logger.info("Variables = " + pdu.getVariableBindings());
         }
     }
 }
