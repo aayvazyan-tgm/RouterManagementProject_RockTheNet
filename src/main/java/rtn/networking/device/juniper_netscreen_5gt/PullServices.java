@@ -1,13 +1,16 @@
 package rtn.networking.device.juniper_netscreen_5gt;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import rtn.networking.Service;
 import rtn.networking.device.commands.IPullServices;
 
 public class PullServices implements IPullServices {
 	
-	private Service service;
+	private List<Service> service;
 	
-	public PullServices(Service service) {
+	public PullServices(List<Service> service) {
 		this.service=service;
 	}
 	/**
@@ -16,8 +19,8 @@ public class PullServices implements IPullServices {
 	@Override
 	public Object getResult()
 	{
-		// TODO Auto-generated method stub
-		return null;
+		List<Object> result = new ArrayList<Object>(service);
+		return result;
 	}
 
 	/**
@@ -26,7 +29,13 @@ public class PullServices implements IPullServices {
 	@Override
 	public void execute()
 	{
-		// TODO Auto-generated method stub
+		for(int i =0; i<service.size();i++){
+			if(service.get(i) == null) throw new IllegalArgumentException("No Service!");
+			if(service.get(i).getName() == null) throw new IllegalArgumentException("No Service");
+		}
+
+		if(service == null) throw new IllegalArgumentException("Policy can not be null!");
+	
 		
 	}
 }
