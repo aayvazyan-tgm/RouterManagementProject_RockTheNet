@@ -17,6 +17,12 @@ public class MaxItemController {
 	@FXML
 	private Text title;
 
+	private MaxItemController instance;
+
+	public void initialize() {
+    	instance = this;
+    }
+	
 	private void handleConfirm() {
 		String text = textfield.getText();
 		

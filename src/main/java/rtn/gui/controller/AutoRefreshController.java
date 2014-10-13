@@ -17,6 +17,12 @@ public class AutoRefreshController {
 	@FXML
 	private Text title;
 
+	private AutoRefreshController instance;
+
+	public void initialize() {
+    	instance = this;
+    }
+	
 	private void handleConfirm() {
 		String text = textfield.getText();
 		
