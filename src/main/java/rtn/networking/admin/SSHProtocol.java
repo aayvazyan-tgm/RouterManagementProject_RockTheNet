@@ -1,13 +1,15 @@
 package rtn.networking.admin;
 
 import java.io.BufferedReader;
+import java.io.BufferedWriter;
 import java.io.IOException;
 import java.io.InputStreamReader;
+import java.io.OutputStreamWriter;
 import java.util.Properties;
 
 import rtn.networking.Configuration;
 
-import com.jcraft.jsch.ChannelExec;
+import com.jcraft.jsch.ChannelShell;
 import com.jcraft.jsch.JSch;
 import com.jcraft.jsch.JSchException;
 import com.jcraft.jsch.Session;
@@ -69,29 +71,44 @@ public class SSHProtocol implements IAdminProtocol
 		try
 		{
 			// prepare the channel to execute the specified command
-			ChannelExec channel = (ChannelExec) this.connection.openChannel("exec");
+			ChannelShell channel = (ChannelShell) this.connection.openChannel("shell");
 			
 			if(channel == null) return null;
 			
-			// set up readers for both the "normal" stream (regular output) and error stream (command not found, wrong parameters, etc.)
-			BufferedReader in = new BufferedReader(new InputStreamReader(channel.getInputStream()));
-			BufferedReader error = new BufferedReader(new InputStreamReader(channel.getErrStream()));
+			// connect the channel and wait a second for the header
+			channel.setInputStream(null);
+			channel.setOutputStream(null);
+			channel.connect();
+			Thread.sleep(1000);
+			
+			// set up the streams
+			BufferedWriter writer = new BufferedWriter(new OutputStreamWriter(channel.getOutputStream()));
+			BufferedReader reader = new BufferedReader(new InputStreamReader(channel.getInputStream()));
 			
 			// actually send the command
-			channel.setCommand(command);
-			channel.connect();
-			
-			String response = null;
+			writer.write(command);
+			writer.flush();
+			writer.close();
 			
 			// read the command's response
-			while((response = in.readLine()) != null) result += response + "\n";
-			while((response = error.readLine()) != null) result += response + "\n";
+			char[] buffer = new char[1024];
+			while (true)
+			{
+				int resp = reader.read(buffer);
+				System.out.println("sent command");
+				if(resp == 0) break;
+				result += new String(buffer) + "\n";
+				System.out.println(result);
+				// close channel
+			    channel.disconnect();
+
+			    if (channel.isClosed()) break;
+			    try{Thread.sleep(1000);}catch(Exception ee){}
+			}
 			
-			in.close();
-			error.close();			
-			channel.disconnect();
+			reader.close();
 		}
-		catch(JSchException | IOException ex)
+		catch(JSchException | IOException | InterruptedException ex)
 		{
 			this.disconnect();
 			
