@@ -1,10 +1,10 @@
 package rtn.gui.controller;
 
-import rtn.gui.model.DataManager;
+import rtn.IDataSource;
 
 public class GraphController {
 
-	private DataManager dataManager;
+	private IDataSource dataSource;
 	
 	private static GraphController instance;
 

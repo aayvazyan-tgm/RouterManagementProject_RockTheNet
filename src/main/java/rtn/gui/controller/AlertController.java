@@ -1,12 +1,12 @@
 package rtn.gui.controller;
 
-import rtn.gui.model.ActionManager;
+import rtn.ICommandCentre;
 
 public class AlertController {
 
 	private static AlertController instance;
 	
-	private ActionManager actionManager;
+	private ICommandCentre commandCentre;
 
 	public void initialize() {
     	instance = this;

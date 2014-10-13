@@ -5,14 +5,10 @@ import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.Node;
-import javafx.scene.control.Button;
-import javafx.scene.control.CheckBox;
-import javafx.scene.control.ComboBox;
-import javafx.scene.control.Label;
-import javafx.scene.control.TextField;
+import javafx.scene.control.*;
 import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
-import rtn.gui.model.ActionManager;
+import rtn.ICommandCentre;
 import rtn.networking.Action;
 import rtn.networking.Policy;
 import rtn.networking.Service;
@@ -20,7 +16,7 @@ import rtn.networking.Zone;
 
 public class RulesAdminController
 {
-	private ActionManager actionManager;
+	private ICommandCentre commandCentre;
 	
 	@FXML
 	private Label policyId;

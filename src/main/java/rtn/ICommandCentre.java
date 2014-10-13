@@ -5,7 +5,7 @@ import java.util.List;
 
 public interface ICommandCentre {
 
-	private boolean sendEmail(String recipetend, String message);
+	public boolean sendEmail(String recipetend, String message);
 
 	public boolean enableAlarm();
 

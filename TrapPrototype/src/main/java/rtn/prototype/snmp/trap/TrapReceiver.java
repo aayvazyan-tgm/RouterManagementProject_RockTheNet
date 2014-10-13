@@ -16,7 +16,7 @@ public class TrapReceiver implements CommandResponder {
     private org.slf4j.Logger logger = LoggerFactory.getLogger(Main.class);
 
     /**
-     * Trap Listner
+     * Trap Listener
      */
     public synchronized void listen(TransportMapping transport)
             throws IOException {
