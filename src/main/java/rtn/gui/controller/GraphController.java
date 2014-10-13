@@ -6,7 +6,7 @@ public class GraphController {
 
 	private DataManager dataManager;
 	
-	private GraphController instance;
+	private static GraphController instance;
 
 	public void initialize() {
     	instance = this;

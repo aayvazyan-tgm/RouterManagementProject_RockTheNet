@@ -6,7 +6,7 @@ public class RulesListController {
 
 	private DataManager dataManager;
 	
-	private RulesListController instance;
+	private static RulesListController instance;
 
 	public void initialize() {
     	instance = this;

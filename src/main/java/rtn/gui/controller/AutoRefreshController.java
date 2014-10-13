@@ -17,7 +17,7 @@ public class AutoRefreshController {
 	@FXML
 	private Text title;
 
-	private AutoRefreshController instance;
+	private static AutoRefreshController instance;
 
 	public void initialize() {
     	instance = this;

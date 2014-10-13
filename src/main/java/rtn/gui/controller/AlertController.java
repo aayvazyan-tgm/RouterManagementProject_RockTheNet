@@ -4,7 +4,7 @@ import rtn.gui.model.ActionManager;
 
 public class AlertController {
 
-	private AlertController instance;
+	private static AlertController instance;
 	
 	private ActionManager actionManager;
 

@@ -51,7 +51,7 @@ public class ConnectionController {
     @FXML
     private TextField userTextField;
     
-	private ConnectionController instance;
+	private static ConnectionController instance;
     
     public void initialize() {
     	instance = this;

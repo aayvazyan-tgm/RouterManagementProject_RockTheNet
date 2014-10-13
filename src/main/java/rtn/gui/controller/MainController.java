@@ -28,7 +28,7 @@ import javafx.scene.layout.FlowPane;
 
 public class MainController {
 
-	MainController instance;
+	private static MainController instance;
 	
 	private DataManager dataManager;
 	
@@ -114,9 +114,12 @@ public class MainController {
 
     @FXML
     private FlowPane graphItemsPane;
+    
+    private int maxItems;
 
     public void initialize() {
     	instance = this;
+    	maxItems=1;
     	initTable();
     }
     
@@ -156,7 +159,7 @@ public class MainController {
     @FXML
     private void handleMaxItemsMenu() {
     	MainApp.getMaxItemStage().show();
-    	//TODO Insert current max-item number
+    	MaxItemController.getInstance().getTextfield().setText(""+maxItems);
     }
     
     @FXML
@@ -191,6 +194,440 @@ public class MainController {
 		//TODO load rules from FW and add them to tableData
 		
 		table.setItems(tableData);
+	}
+
+	/**
+	 * @return the instance
+	 */
+	public static MainController getInstance() {
+		return instance;
+	}
+
+	/**
+	 * @param instance the instance to set
+	 */
+	public static void setInstance(MainController instance) {
+		MainController.instance = instance;
+	}
+
+	/**
+	 * @return the dataManager
+	 */
+	public DataManager getDataManager() {
+		return dataManager;
+	}
+
+	/**
+	 * @param dataManager the dataManager to set
+	 */
+	public void setDataManager(DataManager dataManager) {
+		this.dataManager = dataManager;
+	}
+
+	/**
+	 * @return the tableData
+	 */
+	public ObservableList<TableRule> getTableData() {
+		return tableData;
+	}
+
+	/**
+	 * @param tableData the tableData to set
+	 */
+	public void setTableData(ObservableList<TableRule> tableData) {
+		this.tableData = tableData;
+	}
+
+	/**
+	 * @return the zoneInColumn
+	 */
+	public TableColumn<TableRule, String> getZoneInColumn() {
+		return zoneInColumn;
+	}
+
+	/**
+	 * @param zoneInColumn the zoneInColumn to set
+	 */
+	public void setZoneInColumn(TableColumn<TableRule, String> zoneInColumn) {
+		this.zoneInColumn = zoneInColumn;
+	}
+
+	/**
+	 * @return the guideMenu
+	 */
+	public MenuItem getGuideMenu() {
+		return guideMenu;
+	}
+
+	/**
+	 * @param guideMenu the guideMenu to set
+	 */
+	public void setGuideMenu(MenuItem guideMenu) {
+		this.guideMenu = guideMenu;
+	}
+
+	/**
+	 * @return the graphMenu
+	 */
+	public Menu getGraphMenu() {
+		return graphMenu;
+	}
+
+	/**
+	 * @param graphMenu the graphMenu to set
+	 */
+	public void setGraphMenu(Menu graphMenu) {
+		this.graphMenu = graphMenu;
+	}
+
+	/**
+	 * @return the zoneOutColumn
+	 */
+	public TableColumn<TableRule, String> getZoneOutColumn() {
+		return zoneOutColumn;
+	}
+
+	/**
+	 * @param zoneOutColumn the zoneOutColumn to set
+	 */
+	public void setZoneOutColumn(TableColumn<TableRule, String> zoneOutColumn) {
+		this.zoneOutColumn = zoneOutColumn;
+	}
+
+	/**
+	 * @return the menuBar
+	 */
+	public MenuBar getMenuBar() {
+		return menuBar;
+	}
+
+	/**
+	 * @param menuBar the menuBar to set
+	 */
+	public void setMenuBar(MenuBar menuBar) {
+		this.menuBar = menuBar;
+	}
+
+	/**
+	 * @return the rulesTab
+	 */
+	public Tab getRulesTab() {
+		return rulesTab;
+	}
+
+	/**
+	 * @param rulesTab the rulesTab to set
+	 */
+	public void setRulesTab(Tab rulesTab) {
+		this.rulesTab = rulesTab;
+	}
+
+	/**
+	 * @return the changeDeviceMenu
+	 */
+	public MenuItem getChangeDeviceMenu() {
+		return changeDeviceMenu;
+	}
+
+	/**
+	 * @param changeDeviceMenu the changeDeviceMenu to set
+	 */
+	public void setChangeDeviceMenu(MenuItem changeDeviceMenu) {
+		this.changeDeviceMenu = changeDeviceMenu;
+	}
+
+	/**
+	 * @return the nameColumn
+	 */
+	public TableColumn<TableRule, String> getNameColumn() {
+		return nameColumn;
+	}
+
+	/**
+	 * @param nameColumn the nameColumn to set
+	 */
+	public void setNameColumn(TableColumn<TableRule, String> nameColumn) {
+		this.nameColumn = nameColumn;
+	}
+
+	/**
+	 * @return the refreshMenu
+	 */
+	public MenuItem getRefreshMenu() {
+		return refreshMenu;
+	}
+
+	/**
+	 * @param refreshMenu the refreshMenu to set
+	 */
+	public void setRefreshMenu(MenuItem refreshMenu) {
+		this.refreshMenu = refreshMenu;
+	}
+
+	/**
+	 * @return the helpMenuItem
+	 */
+	public MenuItem getHelpMenuItem() {
+		return helpMenuItem;
+	}
+
+	/**
+	 * @param helpMenuItem the helpMenuItem to set
+	 */
+	public void setHelpMenuItem(MenuItem helpMenuItem) {
+		this.helpMenuItem = helpMenuItem;
+	}
+
+	/**
+	 * @return the displayGraphMenu
+	 */
+	public MenuItem getDisplayGraphMenu() {
+		return displayGraphMenu;
+	}
+
+	/**
+	 * @param displayGraphMenu the displayGraphMenu to set
+	 */
+	public void setDisplayGraphMenu(MenuItem displayGraphMenu) {
+		this.displayGraphMenu = displayGraphMenu;
+	}
+
+	/**
+	 * @return the table
+	 */
+	public TableView<TableRule> getTable() {
+		return table;
+	}
+
+	/**
+	 * @param table the table to set
+	 */
+	public void setTable(TableView<TableRule> table) {
+		this.table = table;
+	}
+
+	/**
+	 * @return the rulesMenu
+	 */
+	public Menu getRulesMenu() {
+		return rulesMenu;
+	}
+
+	/**
+	 * @param rulesMenu the rulesMenu to set
+	 */
+	public void setRulesMenu(Menu rulesMenu) {
+		this.rulesMenu = rulesMenu;
+	}
+
+	/**
+	 * @return the actionColumn
+	 */
+	public TableColumn<TableRule, String> getActionColumn() {
+		return actionColumn;
+	}
+
+	/**
+	 * @param actionColumn the actionColumn to set
+	 */
+	public void setActionColumn(TableColumn<TableRule, String> actionColumn) {
+		this.actionColumn = actionColumn;
+	}
+
+	/**
+	 * @return the addressInColumn
+	 */
+	public TableColumn<TableRule, String> getAddressInColumn() {
+		return addressInColumn;
+	}
+
+	/**
+	 * @param addressInColumn the addressInColumn to set
+	 */
+	public void setAddressInColumn(TableColumn<TableRule, String> addressInColumn) {
+		this.addressInColumn = addressInColumn;
+	}
+
+	/**
+	 * @return the loggedColumn
+	 */
+	public TableColumn<TableRule, Boolean> getLoggedColumn() {
+		return loggedColumn;
+	}
+
+	/**
+	 * @param loggedColumn the loggedColumn to set
+	 */
+	public void setLoggedColumn(TableColumn<TableRule, Boolean> loggedColumn) {
+		this.loggedColumn = loggedColumn;
+	}
+
+	/**
+	 * @return the graphTab
+	 */
+	public Tab getGraphTab() {
+		return graphTab;
+	}
+
+	/**
+	 * @param graphTab the graphTab to set
+	 */
+	public void setGraphTab(Tab graphTab) {
+		this.graphTab = graphTab;
+	}
+
+	/**
+	 * @return the serviceColumn
+	 */
+	public TableColumn<TableRule, String> getServiceColumn() {
+		return serviceColumn;
+	}
+
+	/**
+	 * @param serviceColumn the serviceColumn to set
+	 */
+	public void setServiceColumn(TableColumn<TableRule, String> serviceColumn) {
+		this.serviceColumn = serviceColumn;
+	}
+
+	/**
+	 * @return the maxItemsMenu
+	 */
+	public MenuItem getMaxItemsMenu() {
+		return maxItemsMenu;
+	}
+
+	/**
+	 * @param maxItemsMenu the maxItemsMenu to set
+	 */
+	public void setMaxItemsMenu(MenuItem maxItemsMenu) {
+		this.maxItemsMenu = maxItemsMenu;
+	}
+
+	/**
+	 * @return the helpMenu
+	 */
+	public Menu getHelpMenu() {
+		return helpMenu;
+	}
+
+	/**
+	 * @param helpMenu the helpMenu to set
+	 */
+	public void setHelpMenu(Menu helpMenu) {
+		this.helpMenu = helpMenu;
+	}
+
+	/**
+	 * @return the applicationMenu
+	 */
+	public Menu getApplicationMenu() {
+		return applicationMenu;
+	}
+
+	/**
+	 * @param applicationMenu the applicationMenu to set
+	 */
+	public void setApplicationMenu(Menu applicationMenu) {
+		this.applicationMenu = applicationMenu;
+	}
+
+	/**
+	 * @return the graph
+	 */
+	public LineChart<?, ?> getGraph() {
+		return graph;
+	}
+
+	/**
+	 * @param graph the graph to set
+	 */
+	public void setGraph(LineChart<?, ?> graph) {
+		this.graph = graph;
+	}
+
+	/**
+	 * @return the autoRefreshMenu
+	 */
+	public MenuItem getAutoRefreshMenu() {
+		return autoRefreshMenu;
+	}
+
+	/**
+	 * @param autoRefreshMenu the autoRefreshMenu to set
+	 */
+	public void setAutoRefreshMenu(MenuItem autoRefreshMenu) {
+		this.autoRefreshMenu = autoRefreshMenu;
+	}
+
+	/**
+	 * @return the changeRuleMenu
+	 */
+	public MenuItem getChangeRuleMenu() {
+		return changeRuleMenu;
+	}
+
+	/**
+	 * @param changeRuleMenu the changeRuleMenu to set
+	 */
+	public void setChangeRuleMenu(MenuItem changeRuleMenu) {
+		this.changeRuleMenu = changeRuleMenu;
+	}
+
+	/**
+	 * @return the addressOutColumn
+	 */
+	public TableColumn<TableRule, String> getAddressOutColumn() {
+		return addressOutColumn;
+	}
+
+	/**
+	 * @param addressOutColumn the addressOutColumn to set
+	 */
+	public void setAddressOutColumn(TableColumn<TableRule, String> addressOutColumn) {
+		this.addressOutColumn = addressOutColumn;
+	}
+
+	/**
+	 * @return the tabPane
+	 */
+	public TabPane getTabPane() {
+		return tabPane;
+	}
+
+	/**
+	 * @param tabPane the tabPane to set
+	 */
+	public void setTabPane(TabPane tabPane) {
+		this.tabPane = tabPane;
+	}
+
+	/**
+	 * @return the graphItemsPane
+	 */
+	public FlowPane getGraphItemsPane() {
+		return graphItemsPane;
+	}
+
+	/**
+	 * @param graphItemsPane the graphItemsPane to set
+	 */
+	public void setGraphItemsPane(FlowPane graphItemsPane) {
+		this.graphItemsPane = graphItemsPane;
+	}
+
+	/**
+	 * @return the maxItems
+	 */
+	public int getMaxItems() {
+		return maxItems;
+	}
+
+	/**
+	 * @param maxItems the maxItems to set
+	 */
+	public void setMaxItems(int maxItems) {
+		this.maxItems = maxItems;
 	}
 	
 }

@@ -9,6 +9,8 @@ JavaFX Evaluation                 2014-09-24 22:30 23:45   01:15
 JavaFX Eclipse Setup              2014-09-28 22:30 23:00   00:30
 JavaFX FXML Layout                2014-09-30 22:00 00:00   02:00
 Main Class                        2014-10-01 23:30 00:00   00:30
-GUICE Introduction                2014-10-09 08:10 09:30   01:20  
-**TOTAL**                                                **06:35**
+GUICE Introduction                2014-10-09 08:10 09:30   01:20 
+Controller Classes                2014-10-12 19:00 24:00   05:00
+Controller Classes                2014-10-13 00:00 00:48   00:48
+**TOTAL**                                                **12:23**
 ================================= ========== ===== ===== =========
