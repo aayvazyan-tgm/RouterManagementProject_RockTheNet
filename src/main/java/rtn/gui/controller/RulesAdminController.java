@@ -57,6 +57,12 @@ public class RulesAdminController
 	
 	@FXML
 	private Button bCancel;
+
+	private RulesAdminController instance;
+	
+	public void initialize() {
+    	instance = this;
+    }
 	
 	@FXML
 	public void handleButtonAction(ActionEvent event)

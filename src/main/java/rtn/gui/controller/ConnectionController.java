@@ -7,6 +7,7 @@ package rtn.gui.controller;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
+import rtn.MainApp;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
@@ -50,6 +51,12 @@ public class ConnectionController {
     @FXML
     private TextField userTextField;
     
+	private static ConnectionController instance;
+    
+    public void initialize() {
+    	instance = this;
+    }
+    
     @FXML
     private void handleConnectButton() {
     	errorText.setText("");
@@ -57,11 +64,16 @@ public class ConnectionController {
     	else {
     		readForm();
     		//TODO establish a connection to the device
-    		//TODO close ConnectionWindow + open MainWindow    		
+    		//TODO load rules into table
+    		MainApp.getConnectionStage().hide();
+    		MainApp.getMainStage().show();
     	}
     	
     }
 
+    /**
+     * Reads the values from the form and stores them in the local variables
+     */
 	private void readForm() {
 		device = (String) deviceComboBox.getValue();
 		ip = ipTextField.getText();
@@ -73,9 +85,12 @@ public class ConnectionController {
 		pass.replaceAll("\\s+","");
 		port.replaceAll("\\s+","");
 		
-		if(port==null || port.equals("")) {port="80";} //TODO set standard portnumber
+		if(port==null || port.equals("")) {port="161";} //TODO set standard portnumber
 	}
 
+	/**
+	 * Checks if the form has been filled out sufficiently
+	 */
 	private boolean checkFormEntries() {
 		String device = (String) deviceComboBox.getValue();
 		if(device==null || device==""){
