@@ -5,7 +5,7 @@ import org.apache.commons.mail.EmailException;
 import org.apache.log4j.*;
 import rtn.observer.*;
 
-public class EMailObserver implements Observer {
+public class EMailObserver implements Observer<Observable> {
 
 	private EMailWorker eMailWorker;
 

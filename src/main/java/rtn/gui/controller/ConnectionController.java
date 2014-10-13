@@ -51,6 +51,12 @@ public class ConnectionController {
     @FXML
     private TextField userTextField;
     
+	private static ConnectionController instance;
+    
+    public void initialize() {
+    	instance = this;
+    }
+    
     @FXML
     private void handleConnectButton() {
     	errorText.setText("");
