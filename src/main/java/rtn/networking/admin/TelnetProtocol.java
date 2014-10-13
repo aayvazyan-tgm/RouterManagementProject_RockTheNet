@@ -1,5 +1,8 @@
 package rtn.networking.admin;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
 /**
  * This class is not yet implemented, but can be used to implement Telnet.
  * 
@@ -7,7 +10,9 @@ package rtn.networking.admin;
  * @version 10.10.2014
  */
 public class TelnetProtocol implements IAdminProtocol
-{	
+{
+    private static final Logger logger = LoggerFactory.getLogger(TelnetProtocol.class);
+
 	/**
 	 * @see rtn.networking.admin.IAdminProtocol#connect()
 	 */

@@ -1,6 +1,10 @@
 package rtn.networking;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
 public class Service {
+    private static final Logger logger = LoggerFactory.getLogger(Service.class);
 
 	private String name;
 

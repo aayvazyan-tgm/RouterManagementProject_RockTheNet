@@ -2,8 +2,12 @@ package rtn.gui.model;
 
 import javafx.beans.property.SimpleBooleanProperty;
 import javafx.beans.property.SimpleStringProperty;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 public class TableRule {
+    private static final Logger logger = LoggerFactory.getLogger(TableRule.class);
+
 	private final SimpleStringProperty name;
 	private final SimpleStringProperty zoneIn;
 	private final SimpleStringProperty zoneOut;

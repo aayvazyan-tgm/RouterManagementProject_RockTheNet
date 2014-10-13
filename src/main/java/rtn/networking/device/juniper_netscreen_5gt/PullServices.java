@@ -1,12 +1,15 @@
 package rtn.networking.device.juniper_netscreen_5gt;
 
-import java.util.ArrayList;
-import java.util.List;
-
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import rtn.networking.Service;
 import rtn.networking.device.commands.IPullServices;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class PullServices implements IPullServices {
+    private static final Logger logger = LoggerFactory.getLogger(PullServices.class);
 	
 	private List<Service> service;
 	

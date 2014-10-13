@@ -1,8 +1,12 @@
 package rtn.networking.device.juniper_netscreen_5gt;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import rtn.networking.device.commands.IPullPolicies;
 
 public class PullPolicies implements IPullPolicies {
+    private static final Logger logger = LoggerFactory.getLogger(PullPolicies.class);
+
 	/**
 	 * @see rtn.networking.device.commands.IResult#getResult()
 	 */

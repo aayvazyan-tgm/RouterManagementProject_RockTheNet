@@ -8,6 +8,8 @@ import javafx.scene.Node;
 import javafx.scene.control.*;
 import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import rtn.ICommandCentre;
 import rtn.networking.Action;
 import rtn.networking.Policy;
@@ -16,6 +18,8 @@ import rtn.networking.Zone;
 
 public class RulesAdminController
 {
+    private static final Logger logger = LoggerFactory.getLogger(RulesAdminController.class);
+
 	private ICommandCentre commandCentre;
 	
 	@FXML

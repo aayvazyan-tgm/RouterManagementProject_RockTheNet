@@ -2,10 +2,13 @@ package rtn.email;
 
 
 import org.apache.commons.mail.EmailException;
-import org.apache.log4j.*;
-import rtn.observer.*;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+import rtn.observer.Observable;
+import rtn.observer.Observer;
 
 public class EMailObserver implements Observer<Observable> {
+    private static final Logger logger = LoggerFactory.getLogger(EMailObserver.class);
 
 	private EMailWorker eMailWorker;
 
@@ -18,12 +21,10 @@ public class EMailObserver implements Observer<Observable> {
         try {
             eMailWorker.send(EMailFactory.getMail());
         } catch (EmailException e) {
-            Logger rtnlog=Logger.getLogger("rtn");
-            rtnlog.log(Level.ERROR,"The E-Mail could not be sent: "+e.getMessage());
+            logger.error("The E-Mail could not be sent.", e);
         } catch (CloneNotSupportedException e) {
-            Logger rtnlog=Logger.getLogger("rtn");
-            rtnlog.log(Level.ERROR,"(Internal Error) The E-Mail could not be sent: "+e.getMessage());
-            e.printStackTrace();
+            logger.error("(Internal Error) The E-Mail could not be sent.", e);
+            //e.printStackTrace();
         }
     }
 }

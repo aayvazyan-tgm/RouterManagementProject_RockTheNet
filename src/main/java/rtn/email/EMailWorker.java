@@ -1,11 +1,19 @@
 package rtn.email;
 
-import org.apache.commons.mail.*;
+import com.google.gson.Gson;
+import org.apache.commons.mail.DefaultAuthenticator;
+import org.apache.commons.mail.Email;
+import org.apache.commons.mail.EmailException;
+import org.apache.commons.mail.SimpleEmail;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 import javax.mail.Authenticator;
 import java.util.Iterator;
 
 public class EMailWorker {
+    private static final Logger logger = LoggerFactory.getLogger(EMailWorker.class);
+
     /**
      * Sends a Email using a configured Authentication method
      * @param mail the Mail to be sent.
@@ -49,6 +57,8 @@ public class EMailWorker {
 
         // send the email
         email.send();
+
+        logger.debug("Sent email: " + (new Gson().toJson(email)));
     }
 
     /**

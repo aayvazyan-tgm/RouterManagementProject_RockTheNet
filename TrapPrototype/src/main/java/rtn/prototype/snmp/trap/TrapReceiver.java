@@ -1,5 +1,6 @@
 package rtn.prototype.snmp.trap;
 
+import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.snmp4j.*;
 import org.snmp4j.mp.MPv1;
@@ -13,7 +14,7 @@ import org.snmp4j.util.ThreadPool;
 import java.io.IOException;
 
 public class TrapReceiver implements CommandResponder {
-    private org.slf4j.Logger logger = LoggerFactory.getLogger(Main.class);
+    private static final Logger logger = LoggerFactory.getLogger(TrapReceiver.class);
 
     /**
      * Trap Listener

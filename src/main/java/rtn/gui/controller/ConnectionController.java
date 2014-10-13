@@ -4,19 +4,21 @@ package rtn.gui.controller;
  * Controller Class for 'ConnectionWindow.fxml'
  */
 
-import java.util.regex.Matcher;
-import java.util.regex.Pattern;
-
-import rtn.MainApp;
-import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
 import javafx.scene.control.ComboBox;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 import javafx.scene.text.Text;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+import rtn.MainApp;
+
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 
 public class ConnectionController {
+    private static final Logger logger = LoggerFactory.getLogger(ConnectionController.class);
 	
 	private String device;
 	private String ip;

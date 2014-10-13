@@ -1,14 +1,17 @@
 package rtn;
 
-import java.io.IOException;
-
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
 import javafx.scene.layout.Pane;
 import javafx.stage.Stage;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
+import java.io.IOException;
 
 public class MainApp extends Application {
+    private static final Logger logger = LoggerFactory.getLogger(MainApp.class);
 
 	private static Stage mainStage;
 	private static Stage connectionStage;
@@ -41,16 +44,17 @@ public class MainApp extends Application {
 	 * Loads the .fxml file and initializes the mainStage
 	 */
 	private void initMainStage() {
+        String layoutPath = "rtn/gui/view/MainWindow.fxml";
 		mainStage = new Stage();
 		mainStage.setTitle("RockTheNet - MainWindow");
 		
 		FXMLLoader loader = new FXMLLoader();
-        loader.setLocation(getClass().getClassLoader().getResource("rtn/gui/view/MainWindow.fxml"));
+        loader.setLocation(getClass().getClassLoader().getResource(layoutPath));
         
         try {
 			mainLayout = loader.load();
 		} catch (IOException e) {
-			e.printStackTrace();
+			logger.error("Could not load layout: " + layoutPath, e);
 		}
         
         Scene scene = new Scene(mainLayout);
@@ -62,16 +66,18 @@ public class MainApp extends Application {
 	 * Loads the .fxml file and initializes the connectionStage
 	 */
 	private void initConnectionStage() {
+        String layoutPath = "rtn/gui/view/ConnectionWindow.fxml";
+
 		connectionStage = new Stage();
 		connectionStage.setTitle("RockTheNet - ConnectionWindow");
 		
 		FXMLLoader loader = new FXMLLoader();
-        loader.setLocation(getClass().getResource("rtn/gui/view/ConnectionWindow.fxml"));
+        loader.setLocation(getClass().getResource(layoutPath));
         
         try {
 			connectionLayout = loader.load();
 		} catch (IOException e) {
-			e.printStackTrace();
+            logger.error("Could not load layout: " + layoutPath, e);
 		}
         
         Scene scene = new Scene(connectionLayout);
@@ -83,16 +89,18 @@ public class MainApp extends Application {
 	 * Loads the .fxml file and initializes the mainStage
 	 */
 	private void initMaxItemStage() {
+        String layoutPath = "rtn/gui/view/MaxItemWindow.fxml";
+
 		maxItemStage = new Stage();
 		maxItemStage.setTitle("RockTheNet - MaxItemWindow");
 		
 		FXMLLoader loader = new FXMLLoader();
-        loader.setLocation(getClass().getClassLoader().getResource("rtn/gui/view/MaxItemWindow.fxml"));
+        loader.setLocation(getClass().getClassLoader().getResource(layoutPath));
         
         try {
 			maxItemLayout = loader.load();
 		} catch (IOException e) {
-			e.printStackTrace();
+            logger.error("Could not load layout: " + layoutPath, e);
 		}
         
         Scene scene = new Scene(maxItemLayout);
@@ -104,16 +112,18 @@ public class MainApp extends Application {
 	 * Loads the .fxml file and initializes the mainStage
 	 */
 	private void initAutoRefreshStage() {
+        String layoutPath = "rtn/gui/view/AutoRefreshWindow.fxml";
+
 		autoRefreshStage = new Stage();
 		autoRefreshStage.setTitle("RockTheNet - AutoRefreshWindow");
 		
 		FXMLLoader loader = new FXMLLoader();
-        loader.setLocation(getClass().getClassLoader().getResource("rtn/gui/view/AutoRefreshWindow.fxml"));
+        loader.setLocation(getClass().getClassLoader().getResource(layoutPath));
         
         try {
 			autoRefreshLayout = loader.load();
 		} catch (IOException e) {
-			e.printStackTrace();
+            logger.error("Could not load layout: " + layoutPath, e);
 		}
         
         Scene scene = new Scene(autoRefreshLayout);
@@ -125,16 +135,18 @@ public class MainApp extends Application {
 	 * Loads the .fxml file and initializes the addRuleStage
 	 */
 	private void initAddRuleStage() {
+        String layoutPath = "rtn/gui/view/AddRuleWindow.fxml";
+
 		addRuleStage = new Stage();
 		addRuleStage.setTitle("RokTheNet - AddRuleWindow");
 		
 		FXMLLoader loader = new FXMLLoader();
-        loader.setLocation(getClass().getClassLoader().getResource("rtn/gui/view/AddRuleWindow.fxml"));
+        loader.setLocation(getClass().getClassLoader().getResource(layoutPath));
         
         try {
 			addRuleLayout = loader.load();
 		} catch (IOException e) {
-			e.printStackTrace();
+            logger.error("Could not load layout: " + layoutPath, e);
 		}
         
         Scene scene = new Scene(addRuleLayout);
@@ -146,16 +158,18 @@ public class MainApp extends Application {
 	 * Loads the .fxml file and initializes the removeRuleStage
 	 */
 	private void initRemoveRuleStage() {
+        String layoutPath = "rtn/gui/view/RemoveRuleWindow.fxml";
+
 		removeRuleStage = new Stage();
 		removeRuleStage.setTitle("RokTheNet - RemoveRuleWindow");
 		
 		FXMLLoader loader = new FXMLLoader();
-        loader.setLocation(getClass().getClassLoader().getResource("rtn/gui/view/RemoveRuleWindow.fxml"));
+        loader.setLocation(getClass().getClassLoader().getResource(layoutPath));
         
         try {
 			removeRuleLayout = loader.load();
 		} catch (IOException e) {
-			e.printStackTrace();
+            logger.error("Could not load layout: " + layoutPath, e);
 		}
         
         Scene scene = new Scene(removeRuleLayout);
@@ -167,16 +181,18 @@ public class MainApp extends Application {
 	 * Loads the .fxml file and initializes the changeRuleStage
 	 */
 	private void initChangeRuleStage() {
+        String layoutPath = "rtn/gui/view/ChangeRuleWindow.fxml";
+
 		changeRuleStage = new Stage();
 		changeRuleStage.setTitle("RokTheNet - ChangeRuleWindow");
 		
 		FXMLLoader loader = new FXMLLoader();
-        loader.setLocation(getClass().getClassLoader().getResource("rtn/gui/view/ChangeRuleWindow.fxml"));
+        loader.setLocation(getClass().getClassLoader().getResource(layoutPath));
         
         try {
 			changeRuleLayout = loader.load();
 		} catch (IOException e) {
-			e.printStackTrace();
+            logger.error("Could not load layout: " + layoutPath, e);
 		}
         
         Scene scene = new Scene(changeRuleLayout);

@@ -1,12 +1,15 @@
 package rtn.gui.controller;
 
-import rtn.MainApp;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
 import javafx.scene.control.TextField;
 import javafx.scene.text.Text;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+import rtn.MainApp;
 
 public class AutoRefreshController {
+    private static final Logger logger = LoggerFactory.getLogger(AutoRefreshController.class);
 
 	@FXML
 	private Button confirm;
