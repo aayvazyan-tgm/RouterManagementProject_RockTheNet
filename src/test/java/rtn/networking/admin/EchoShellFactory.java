@@ -12,8 +12,8 @@ import org.apache.sshd.server.Environment;
 import org.apache.sshd.server.ExitCallback;
 
 /**
- * TODO Add javadoc
- *
+ * Simulates a Linux Shell, just with pre-defined commands.
+ * 
  * @author <a href="mailto:dev@mina.apache.org">Apache MINA SSHD Project</a>
  */
 public class EchoShellFactory implements Factory<Command>

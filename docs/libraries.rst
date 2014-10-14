@@ -45,6 +45,23 @@ requiring SSH support.[13]
 We are only using this library to mock the server-side of the SSH implementation.
 The client side is still done using JSch.
 
+ControlsFX
+~~~~~~~~~~
+
+ControlsFX is an open source project for JavaFX that aims to provide really
+high quality UI controls and other tools to complement the core JavaFX distribution.
+It has been developed for JavaFX 8.0 and beyond, and has a guiding principle of
+only accepting new controls / features when all existing code is at an acceptably
+high level, including thankless jobs like having high quality javadoc documentation.
+This ensure a high quality release is available at all times, with all experimental
+work being done in branches of the main code base. [14]
+
+We are using this library to easily show error dialoges on the GUI, for example
+for missing/empty input fields, communication failures etc.
+This library is getting regularly updated (last commit was 5 minutes ago at time of
+writing) and has several active contributors.
+Also using/creating dialoges is very easy.
+
 Apache Commons Email
 ~~~~~~~~~~~~~~~~~~~~
 

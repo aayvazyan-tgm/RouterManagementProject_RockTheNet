@@ -65,8 +65,8 @@
          <bottom>
             <AnchorPane prefHeight="48.0" prefWidth="600.0" BorderPane.alignment="CENTER">
                <children>
-                  <Button fx:id="bCreate" layoutX="160.0" layoutY="5.0" mnemonicParsing="false" onAction="#handleButtonAction" prefHeight="25.0" prefWidth="100.0" text="Add Policy" />
-                  <Button fx:id="bCancel" layoutX="290.0" layoutY="5.0" mnemonicParsing="false" onAction="#handleButtonAction" prefHeight="25.0" prefWidth="100.0" text="Cancel" />
+                  <Button fx:id="bCreate" layoutX="160.0" layoutY="5.0" mnemonicParsing="false" onAction="#handleButtonEditOrNew" prefHeight="25.0" prefWidth="100.0" text="Add Policy" />
+                  <Button fx:id="bCancel" layoutX="290.0" layoutY="5.0" mnemonicParsing="false" onAction="#handleButtonCancel" prefHeight="25.0" prefWidth="100.0" text="Cancel" />
                </children>
             </AnchorPane>
          </bottom>

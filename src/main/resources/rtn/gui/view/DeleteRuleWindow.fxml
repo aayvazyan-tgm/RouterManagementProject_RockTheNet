@@ -21,8 +21,8 @@
                   <Font size="22.0" />
                </font>
             </Label>
-            <Button fx:id="bConfirm" layoutX="80.0" layoutY="110.0" mnemonicParsing="false" onAction="#handleButtonAction" text="Yes, confirm deletion" />
-            <Button fx:id="bCancel" layoutX="210.0" layoutY="110.0" mnemonicParsing="false" onAction="#handleButtonAction" text="No, return to list" />
+            <Button fx:id="bConfirm" layoutX="80.0" layoutY="110.0" mnemonicParsing="false" onAction="#handleButtonDelete" text="Yes, confirm deletion" />
+            <Button fx:id="bCancel" layoutX="210.0" layoutY="110.0" mnemonicParsing="false" onAction="#handleButtonCancel" text="No, return to list" />
          </children>
       </AnchorPane>
    </children>

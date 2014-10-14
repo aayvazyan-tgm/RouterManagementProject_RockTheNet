@@ -46,7 +46,7 @@ public class MainApp extends Application {
 	private void initMainStage() {
         String layoutPath = "rtn/gui/view/MainWindow.fxml";
 		mainStage = new Stage();
-		mainStage.setTitle("RockTheNet - MainWindow");
+		mainStage.setTitle("RockTheNet");
 		
 		FXMLLoader loader = new FXMLLoader();
         loader.setLocation(getClass().getClassLoader().getResource(layoutPath));
@@ -69,10 +69,10 @@ public class MainApp extends Application {
         String layoutPath = "rtn/gui/view/ConnectionWindow.fxml";
 
 		connectionStage = new Stage();
-		connectionStage.setTitle("RockTheNet - ConnectionWindow");
+		connectionStage.setTitle("RockTheNet - Connect");
 		
 		FXMLLoader loader = new FXMLLoader();
-        loader.setLocation(getClass().getResource(layoutPath));
+        loader.setLocation(getClass().getClassLoader().getResource(layoutPath));
         
         try {
 			connectionLayout = loader.load();
@@ -92,7 +92,7 @@ public class MainApp extends Application {
         String layoutPath = "rtn/gui/view/MaxItemWindow.fxml";
 
 		maxItemStage = new Stage();
-		maxItemStage.setTitle("RockTheNet - MaxItemWindow");
+		maxItemStage.setTitle("RockTheNet - Set maximum items (Graph)");
 		
 		FXMLLoader loader = new FXMLLoader();
         loader.setLocation(getClass().getClassLoader().getResource(layoutPath));
@@ -115,7 +115,7 @@ public class MainApp extends Application {
         String layoutPath = "rtn/gui/view/AutoRefreshWindow.fxml";
 
 		autoRefreshStage = new Stage();
-		autoRefreshStage.setTitle("RockTheNet - AutoRefreshWindow");
+		autoRefreshStage.setTitle("RockTheNet - Setup Auto Refresh");
 		
 		FXMLLoader loader = new FXMLLoader();
         loader.setLocation(getClass().getClassLoader().getResource(layoutPath));
@@ -138,7 +138,7 @@ public class MainApp extends Application {
         String layoutPath = "rtn/gui/view/AddRuleWindow.fxml";
 
 		addRuleStage = new Stage();
-		addRuleStage.setTitle("RokTheNet - AddRuleWindow");
+		addRuleStage.setTitle("RockTheNet - Add a new Policy");
 		
 		FXMLLoader loader = new FXMLLoader();
         loader.setLocation(getClass().getClassLoader().getResource(layoutPath));
@@ -151,17 +151,17 @@ public class MainApp extends Application {
         
         Scene scene = new Scene(addRuleLayout);
         addRuleStage.setScene(scene);
-        addRuleStage.hide();
+        addRuleStage.show();
 	}
 	
 	/**
 	 * Loads the .fxml file and initializes the removeRuleStage
 	 */
 	private void initRemoveRuleStage() {
-        String layoutPath = "rtn/gui/view/RemoveRuleWindow.fxml";
+        String layoutPath = "rtn/gui/view/DeleteRuleWindow.fxml";
 
 		removeRuleStage = new Stage();
-		removeRuleStage.setTitle("RokTheNet - RemoveRuleWindow");
+		removeRuleStage.setTitle("RockTheNet - Confirm deletion");
 		
 		FXMLLoader loader = new FXMLLoader();
         loader.setLocation(getClass().getClassLoader().getResource(layoutPath));
@@ -181,10 +181,10 @@ public class MainApp extends Application {
 	 * Loads the .fxml file and initializes the changeRuleStage
 	 */
 	private void initChangeRuleStage() {
-        String layoutPath = "rtn/gui/view/ChangeRuleWindow.fxml";
+        String layoutPath = "rtn/gui/view/EditRuleWindow.fxml";
 
 		changeRuleStage = new Stage();
-		changeRuleStage.setTitle("RokTheNet - ChangeRuleWindow");
+		changeRuleStage.setTitle("RockTheNet - Edit Policy");
 		
 		FXMLLoader loader = new FXMLLoader();
         loader.setLocation(getClass().getClassLoader().getResource(layoutPath));
