@@ -4,9 +4,6 @@ import rtn.networking.Policy;
 import java.util.List;
 
 public interface ICommandCentre {
-
-	public boolean sendEmail(String recipetend, String message);
-
 	public boolean enableAlarm();
 
 	public boolean disableAlarm();
@@ -20,5 +17,6 @@ public interface ICommandCentre {
 	public List getServices();
 
 	public List getZones();
-
+	
+	public List getActions();
 }

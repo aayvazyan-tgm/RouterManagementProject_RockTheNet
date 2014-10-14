@@ -9,6 +9,7 @@ import org.mockito.MockitoAnnotations;
 import org.mockito.Spy;
 
 import rtn.networking.Action;
+import rtn.networking.Configuration;
 import rtn.networking.Policy;
 import rtn.networking.Service;
 import rtn.networking.Zone;
@@ -76,6 +77,8 @@ public class DeletePolicyTest
 	@Test(expected = RuntimeException.class)
 	public void testExecuteNonSuccessfulSend() throws Exception
 	{	
+		Configuration.getInstance().setRemoteip(null);
+		
 		Policy policy = new Policy();
 		this.deletePolicy.setParams(policy);
 		policy.setId(1L);

@@ -32,5 +32,7 @@ SSH Protocol tests                2014-10-10 18:50 20:50   02:00
 SSH Protocol tests (finished)     2014-10-10 21:45 22:25   00:30
 CRUD commands & tests             2014-10-12 18:50 20:40   01:50
 SSH Protocol rewrite (not done)   2014-10-13 11:00 14:00   03:00
-**TOTAL**                                                **29:00**
+UML Diagram                       2014-10-14 09:50 10:30   00:40
+SSH Protocol fixing               2014-10-14 10:30 11:40   01:10
+**TOTAL**                                                **30:50**
 ================================= ========== ===== ===== =========
