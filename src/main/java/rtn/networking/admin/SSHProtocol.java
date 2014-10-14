@@ -28,7 +28,7 @@ public class SSHProtocol implements IAdminProtocol
 	 */
 	public boolean connect()
 	{
-        if(this.connection != null) return true;
+        if(this.connection != null && this.connection.isConnected()) return true;
         JSch ssh = new JSch();
 		
 		// map our singleton instance to a local variable, so that 
@@ -94,17 +94,17 @@ public class SSHProtocol implements IAdminProtocol
 			while (true)
 			{
 				int resp = reader.read(buffer);
-				logger.debug("sent command");
 				if(resp == 0) break;
 				result += new String(buffer) + "\n";
-                logger.debug(result);
-				// close channel
-			    channel.disconnect();
-
+				
+				// close session
+				channel.disconnect();
+			    
 			    if (channel.isClosed()) break;
 			    try{Thread.sleep(1000);}catch(Exception ee){}
 			}
 			
+			// close reader
 			reader.close();
 		}
 		catch(JSchException | IOException | InterruptedException ex)
