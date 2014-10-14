@@ -6,9 +6,13 @@ package rtn.networking;
  */
 
 import com.google.inject.AbstractModule;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 public class AdminInjector extends AbstractModule
 {
+    private static final Logger logger = LoggerFactory.getLogger(AdminInjector.class);
+
     @Override
     protected void configure()
     {

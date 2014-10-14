@@ -1,36 +1,24 @@
 package rtn.gui.controller;
 
-import java.util.Collection;
-import java.util.Iterator;
-import java.util.List;
-import java.util.ListIterator;
-
-import rtn.MainApp;
-import rtn.gui.model.TableRule;
-import rtn.gui.model.DataManager;
-import javafx.beans.InvalidationListener;
 import javafx.collections.FXCollections;
-import javafx.collections.ListChangeListener;
 import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
-import javafx.fxml.Initializable;
 import javafx.scene.chart.LineChart;
-import javafx.scene.control.Menu;
-import javafx.scene.control.MenuBar;
-import javafx.scene.control.MenuItem;
-import javafx.scene.control.Tab;
-import javafx.scene.control.TabPane;
-import javafx.scene.control.TableColumn;
-import javafx.scene.control.TableView;
-import javafx.scene.control.TableView.TableViewSelectionModel;
+import javafx.scene.control.*;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.layout.FlowPane;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+import rtn.IDataSource;
+import rtn.MainApp;
+import rtn.gui.model.TableRule;
 
 public class MainController {
+    private static final Logger logger = LoggerFactory.getLogger(MainController.class);
 
 	private static MainController instance;
 	
-	private DataManager dataManager;
+	private IDataSource dataManager;
 	
 	private ObservableList<TableRule> tableData = FXCollections.observableArrayList();;
 
@@ -213,14 +201,14 @@ public class MainController {
 	/**
 	 * @return the dataManager
 	 */
-	public DataManager getDataManager() {
+	public IDataSource getDataManager() {
 		return dataManager;
 	}
 
 	/**
 	 * @param dataManager the dataManager to set
 	 */
-	public void setDataManager(DataManager dataManager) {
+	public void setDataManager(IDataSource dataManager) {
 		this.dataManager = dataManager;
 	}
 

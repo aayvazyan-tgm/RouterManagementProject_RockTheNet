@@ -1,7 +1,12 @@
 package rtn.networking;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
 public class Policy
 {
+    private static final Logger logger = LoggerFactory.getLogger(Policy.class);
+
 	private Long id;
 
 	private String displayname;

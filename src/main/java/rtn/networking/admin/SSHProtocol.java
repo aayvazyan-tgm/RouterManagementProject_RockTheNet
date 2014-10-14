@@ -1,18 +1,15 @@
 package rtn.networking.admin;
 
-import java.io.BufferedReader;
-import java.io.BufferedWriter;
-import java.io.IOException;
-import java.io.InputStreamReader;
-import java.io.OutputStreamWriter;
-import java.util.Properties;
-
-import rtn.networking.Configuration;
-
 import com.jcraft.jsch.ChannelShell;
 import com.jcraft.jsch.JSch;
 import com.jcraft.jsch.JSchException;
 import com.jcraft.jsch.Session;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+import rtn.networking.Configuration;
+
+import java.io.*;
+import java.util.Properties;
 
 /**
  * This class is an implementation of IAdminProtocol, specific for SSH.
@@ -22,6 +19,8 @@ import com.jcraft.jsch.Session;
  */
 public class SSHProtocol implements IAdminProtocol
 {
+    private static final Logger logger = LoggerFactory.getLogger(SSHProtocol.class);
+
 	private Session connection;
 	
 	/**
@@ -29,7 +28,7 @@ public class SSHProtocol implements IAdminProtocol
 	 */
 	public boolean connect()
 	{
-        if(this.connection != null) return true;
+        if(this.connection != null && this.connection.isConnected()) return true;
         JSch ssh = new JSch();
 		
 		// map our singleton instance to a local variable, so that 
@@ -51,7 +50,7 @@ public class SSHProtocol implements IAdminProtocol
 		}
 		catch(JSchException ex)
 		{
-			System.out.println(ex.getMessage());
+			logger.error("Could not establish SSH connection.", ex);
 			this.connection = null;
 			
 			return false;
@@ -95,17 +94,17 @@ public class SSHProtocol implements IAdminProtocol
 			while (true)
 			{
 				int resp = reader.read(buffer);
-				System.out.println("sent command");
 				if(resp == 0) break;
 				result += new String(buffer) + "\n";
-				System.out.println(result);
-				// close channel
-			    channel.disconnect();
-
+				
+				// close session
+				channel.disconnect();
+			    
 			    if (channel.isClosed()) break;
 			    try{Thread.sleep(1000);}catch(Exception ee){}
 			}
 			
+			// close reader
 			reader.close();
 		}
 		catch(JSchException | IOException | InterruptedException ex)

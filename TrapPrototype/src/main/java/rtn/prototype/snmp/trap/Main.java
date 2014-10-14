@@ -18,7 +18,7 @@ import java.io.IOException;
  * A prototype for evaluating how to use SNMP traps.
  */
 public class Main {
-    private Logger logger = LoggerFactory.getLogger(Main.class);
+    private static final Logger logger = LoggerFactory.getLogger(Main.class);
     private TrapReceiver trapReceiver;
 
     @Inject

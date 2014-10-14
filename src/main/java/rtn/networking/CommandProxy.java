@@ -1,5 +1,7 @@
 package rtn.networking;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import rtn.networking.device.commands.IDevCommand;
 
 /**
@@ -10,6 +12,8 @@ import rtn.networking.device.commands.IDevCommand;
  */
 public class CommandProxy
 {
+    private static final Logger logger = LoggerFactory.getLogger(CommandProxy.class);
+
 	private CommandProxy(){}
 	/**
 	 * Creates a new instance of a IDevCommand implementation, based on command (implementing class) and device name.

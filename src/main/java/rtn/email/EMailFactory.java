@@ -1,6 +1,10 @@
 package rtn.email;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
 public class EMailFactory {
+    private static final Logger logger = LoggerFactory.getLogger(EMailFactory.class);
 
 	private static EMail reference;
 

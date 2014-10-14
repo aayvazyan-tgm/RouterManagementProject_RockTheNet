@@ -1,9 +1,13 @@
 package rtn.networking.device.juniper_netscreen_5gt;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import rtn.networking.device.commands.IPullZones;
 
 public class PullZones implements IPullZones
 {
+    private static final Logger logger = LoggerFactory.getLogger(PullZones.class);
+
 	/**
 	 * @see rtn.networking.device.commands.IResult#getResult()
 	 */
