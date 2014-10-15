@@ -19,7 +19,7 @@ repositories {
     	url "https://oosnmp.net/dist/release/" // snmp4j
     }
     maven {
-        url "http://ci.truh.in/job/dLock/lastSuccessfulBuild/artifact/build/repo/"
+        url "http://ci.truh.in/nexus/content/repositories/releases/"
     }
 }
 
