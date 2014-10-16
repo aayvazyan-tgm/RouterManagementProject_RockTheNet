@@ -35,5 +35,6 @@ SSH Protocol rewrite (not done)   2014-10-13 11:00 14:00   03:00
 UML Diagram                       2014-10-14 09:50 10:30   00:40
 SSH Protocol fixing               2014-10-14 10:30 11:40   01:10
 GUI fixing, RulesAdminController  2014-10-14 20:30 22:00   01:30
-**TOTAL**                                                **32:20**
+PullServices, PullActions         2014-10-16 13:00 13:20   00:20
+**TOTAL**                                                **32:40**
 ================================= ========== ===== ===== =========
