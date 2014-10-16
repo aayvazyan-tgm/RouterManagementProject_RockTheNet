@@ -6,9 +6,6 @@ import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
 
-import rtn.networking.Configuration;
-import rtn.networking.admin.SSHProtocol;
-
 public class PullServicesTest
 {
 
@@ -34,7 +31,6 @@ public class PullServicesTest
 //		
 //		String res = new SSHProtocol().sendCommand("get policy\n");
 //		System.out.println(res);
-		
 		assertTrue(true);
 	}
 
