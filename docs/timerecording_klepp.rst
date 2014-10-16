@@ -35,5 +35,11 @@ fixing syntax errors              2014-10-13 23:00 23:10   00:10
 Apply logging where feasible      2014-10-13 23:10 23:30   00:20
 dLock Javadoc/JUnit               2014-10-13 16:20 16:50   00:30
 dLock Maven publishing            2014-10-13 16:50 19:30   02:40
-**TOTAL**                                                **31:50**
+dLock LLPeerManager Unit test     2014-10-16 13:45 14:30   00:45
+dLock maven dependency doc        2014-10-16 14:30 14:50   00:20
+dLock static factory              2014-10-16 14:50 15:25   00:35
+dLock slf4j logging               2014-10-16 15:25 15:50   00:25
+dLock prototol                    2014-10-16 15:50 17:15   01:25
+dLock PackageHandler unit tests   2014-10-16 17:15 19:05   01:50
+**TOTAL**                                                **37:10**
 ================================= ========== ===== ===== =========
