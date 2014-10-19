@@ -1,230 +1,98 @@
 package rtn.networking.device.juniper_netscreen_5gt;
 
-import org.junit.*;
+import org.junit.After;
+import org.junit.Before;
+import org.junit.Test;
+import org.mockito.InjectMocks;
+import org.mockito.Mockito;
+import org.mockito.MockitoAnnotations;
+import org.mockito.Spy;
+
+import rtn.networking.Action;
+import rtn.networking.Configuration;
 import rtn.networking.Policy;
-import static org.junit.Assert.*;
+import rtn.networking.Service;
+import rtn.networking.Zone;
+import rtn.networking.admin.SSHProtocol;
 
-/**
- * The class <code>DeletePolicyTest</code> contains tests for the class <code>{@link DeletePolicy}</code>.
- *
- * @generatedBy CodePro at 10/19/14 10:27 PM
- * @author jakob
- * @version $Revision: 1.0 $
- */
-public class DeletePolicyTest {
-	/**
-	 * Run the DeletePolicy() constructor test.
-	 *
-	 * @throws Exception
-	 *
-	 * @generatedBy CodePro at 10/19/14 10:27 PM
-	 */
-	@Test
-	public void testDeletePolicy_1()
-		throws Exception {
-
-		DeletePolicy result = new DeletePolicy();
-
-		// add additional test code here
-		// An unexpected exception was thrown in user code while executing this test:
-		//    java.lang.ExceptionInInitializerError
-		//       at org.slf4j.impl.Log4jLoggerFactory.getLogger(Log4jLoggerFactory.java:66)
-		//       at org.slf4j.LoggerFactory.getLogger(LoggerFactory.java:277)
-		//       at org.slf4j.LoggerFactory.getLogger(LoggerFactory.java:288)
-		//       at rtn.networking.device.juniper_netscreen_5gt.DeletePolicy.<clinit>(DeletePolicy.java:16)
-		assertNotNull(result);
-	}
-
-	/**
-	 * Run the void execute() method test.
-	 *
-	 * @throws Exception
-	 *
-	 * @generatedBy CodePro at 10/19/14 10:27 PM
-	 */
-	@Test
-	public void testExecute_1()
-		throws Exception {
-		DeletePolicy fixture = new DeletePolicy();
-
-		fixture.execute();
-
-		// add additional test code here
-		// An unexpected exception was thrown in user code while executing this test:
-		//    java.lang.NoClassDefFoundError: Could not initialize class rtn.networking.device.juniper_netscreen_5gt.DeletePolicy
-	}
-
-	/**
-	 * Run the void execute() method test.
-	 *
-	 * @throws Exception
-	 *
-	 * @generatedBy CodePro at 10/19/14 10:27 PM
-	 */
-	@Test
-	public void testExecute_2()
-		throws Exception {
-		DeletePolicy fixture = new DeletePolicy();
-
-		fixture.execute();
-
-		// add additional test code here
-		// An unexpected exception was thrown in user code while executing this test:
-		//    java.lang.NoClassDefFoundError: Could not initialize class rtn.networking.device.juniper_netscreen_5gt.DeletePolicy
-	}
-
-	/**
-	 * Run the void execute() method test.
-	 *
-	 * @throws Exception
-	 *
-	 * @generatedBy CodePro at 10/19/14 10:27 PM
-	 */
-	@Test
-	public void testExecute_3()
-		throws Exception {
-		DeletePolicy fixture = new DeletePolicy();
-
-		fixture.execute();
-
-		// add additional test code here
-		// An unexpected exception was thrown in user code while executing this test:
-		//    java.lang.NoClassDefFoundError: Could not initialize class rtn.networking.device.juniper_netscreen_5gt.DeletePolicy
-	}
-
-	/**
-	 * Run the void execute() method test.
-	 *
-	 * @throws Exception
-	 *
-	 * @generatedBy CodePro at 10/19/14 10:27 PM
-	 */
-	@Test
-	public void testExecute_4()
-		throws Exception {
-		DeletePolicy fixture = new DeletePolicy();
-
-		fixture.execute();
-
-		// add additional test code here
-		// An unexpected exception was thrown in user code while executing this test:
-		//    java.lang.NoClassDefFoundError: Could not initialize class rtn.networking.device.juniper_netscreen_5gt.DeletePolicy
-	}
-
-	/**
-	 * Run the void execute() method test.
-	 *
-	 * @throws Exception
-	 *
-	 * @generatedBy CodePro at 10/19/14 10:27 PM
-	 */
-	@Test
-	public void testExecute_5()
-		throws Exception {
-		DeletePolicy fixture = new DeletePolicy();
-
-		fixture.execute();
-
-		// add additional test code here
-		// An unexpected exception was thrown in user code while executing this test:
-		//    java.lang.NoClassDefFoundError: Could not initialize class rtn.networking.device.juniper_netscreen_5gt.DeletePolicy
-	}
-
-	/**
-	 * Run the void setParams(Object[]) method test.
-	 *
-	 * @throws Exception
-	 *
-	 * @generatedBy CodePro at 10/19/14 10:27 PM
-	 */
-	@Test
-	public void testSetParams_1()
-		throws Exception {
-		DeletePolicy fixture = new DeletePolicy();
-
-		fixture.setParams();
-
-		// add additional test code here
-		// An unexpected exception was thrown in user code while executing this test:
-		//    java.lang.NoClassDefFoundError: Could not initialize class rtn.networking.device.juniper_netscreen_5gt.DeletePolicy
-	}
-
-	/**
-	 * Run the void setParams(Object[]) method test.
-	 *
-	 * @throws Exception
-	 *
-	 * @generatedBy CodePro at 10/19/14 10:27 PM
-	 */
-	@Test
-	public void testSetParams_2()
-		throws Exception {
-		DeletePolicy fixture = new DeletePolicy();
-		Object param1 = new Object();
-
-		fixture.setParams(param1);
-
-		// add additional test code here
-		// An unexpected exception was thrown in user code while executing this test:
-		//    java.lang.NoClassDefFoundError: Could not initialize class rtn.networking.device.juniper_netscreen_5gt.DeletePolicy
-	}
-
-	/**
-	 * Run the void setParams(Object[]) method test.
-	 *
-	 * @throws Exception
-	 *
-	 * @generatedBy CodePro at 10/19/14 10:27 PM
-	 */
-	@Test
-	public void testSetParams_3()
-		throws Exception {
-		DeletePolicy fixture = new DeletePolicy();
-		Object param1 = new Policy();
-
-		fixture.setParams(param1);
-
-		// add additional test code here
-		// An unexpected exception was thrown in user code while executing this test:
-		//    java.lang.NoClassDefFoundError: Could not initialize class rtn.networking.device.juniper_netscreen_5gt.DeletePolicy
-	}
-
-	/**
-	 * Perform pre-test initialization.
-	 *
-	 * @throws Exception
-	 *         if the initialization fails for some reason
-	 *
-	 * @generatedBy CodePro at 10/19/14 10:27 PM
-	 */
+public class DeletePolicyTest
+{
+	@Spy
+	private SSHProtocol protocol;
+	
+	@InjectMocks
+	private DeletePolicy deletePolicy;
+	
 	@Before
-	public void setUp()
-		throws Exception {
-		// add additional set up code here
+	public void setUp() throws Exception
+	{
+		MockitoAnnotations.initMocks(this);
 	}
 
-	/**
-	 * Perform post-test clean-up.
-	 *
-	 * @throws Exception
-	 *         if the clean-up fails for some reason
-	 *
-	 * @generatedBy CodePro at 10/19/14 10:27 PM
-	 */
 	@After
-	public void tearDown()
-		throws Exception {
-		// Add additional tear down code here
+	public void tearDown() throws Exception
+	{
 	}
 
-	/**
-	 * Launch the test.
-	 *
-	 * @param args the command line arguments
-	 *
-	 * @generatedBy CodePro at 10/19/14 10:27 PM
-	 */
-	public static void main(String[] args) {
-		new org.junit.runner.JUnitCore().run(DeletePolicyTest.class);
+	@Test(expected = IllegalArgumentException.class)
+	public void testSetParamsNullEmpty() throws Exception
+	{
+		this.deletePolicy.setParams(null);
+		this.deletePolicy.execute();
+		this.deletePolicy.setParams();
+		this.deletePolicy.execute();
+	}
+	
+	@Test(expected = IllegalArgumentException.class)
+	public void testSetParamsNonPolicy() throws Exception
+	{
+		this.deletePolicy.setParams(new DeletePolicy());
+		this.deletePolicy.execute();
+	}
+	
+	@Test(expected = IllegalArgumentException.class)
+	public void testSetParamsValidPolicy() throws Exception
+	{
+		this.deletePolicy.setParams(new Policy());
+		this.deletePolicy.execute();
+	}
+	
+	@Test(expected = IllegalArgumentException.class)
+	public void testExecuteMissingID() throws Exception
+	{
+		Policy policy = new Policy();
+		this.deletePolicy.setParams(policy);
+		this.deletePolicy.execute();
+	}
+	
+	@Test(expected = IllegalArgumentException.class)
+	public void testExecuteOutOfRangeID() throws Exception
+	{
+		Policy policy = new Policy();
+		this.deletePolicy.setParams(policy);
+		policy.setId(-1L);
+		this.deletePolicy.execute();
+	}
+	
+	@Test(expected = RuntimeException.class)
+	public void testExecuteNonSuccessfulSend() throws Exception
+	{	
+		Configuration.getInstance().setRemoteip(null);
+		
+		Policy policy = new Policy();
+		this.deletePolicy.setParams(policy);
+		policy.setId(1L);
+		this.deletePolicy.execute();
+	}
+	
+	@Test
+	public void testExecuteSuccessfulSendNoOptional() throws Exception
+	{	
+		Mockito.doReturn("").when(protocol).sendCommand("unset policy id 1");
+		
+		Policy policy = new Policy();
+		this.deletePolicy.setParams(policy);
+		policy.setId(1L);
+		this.deletePolicy.execute();
 	}
 }

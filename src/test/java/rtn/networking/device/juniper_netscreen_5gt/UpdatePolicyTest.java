@@ -1,439 +1,227 @@
 package rtn.networking.device.juniper_netscreen_5gt;
 
-import org.junit.*;
+import org.junit.After;
+import org.junit.Before;
+import org.junit.Test;
+import org.mockito.InjectMocks;
+import org.mockito.Mockito;
+import org.mockito.MockitoAnnotations;
+import org.mockito.Spy;
+
+import rtn.networking.Action;
+import rtn.networking.Configuration;
 import rtn.networking.Policy;
-import static org.junit.Assert.*;
+import rtn.networking.Service;
+import rtn.networking.Zone;
+import rtn.networking.admin.SSHProtocol;
 
-/**
- * The class <code>UpdatePolicyTest</code> contains tests for the class <code>{@link UpdatePolicy}</code>.
- *
- * @generatedBy CodePro at 10/19/14 10:27 PM
- * @author jakob
- * @version $Revision: 1.0 $
- */
-public class UpdatePolicyTest {
-	/**
-	 * Run the UpdatePolicy() constructor test.
-	 *
-	 * @throws Exception
-	 *
-	 * @generatedBy CodePro at 10/19/14 10:27 PM
-	 */
-	@Test
-	public void testUpdatePolicy_1()
-		throws Exception {
-
-		UpdatePolicy result = new UpdatePolicy();
-
-		// add additional test code here
-		// An unexpected exception was thrown in user code while executing this test:
-		//    java.lang.ExceptionInInitializerError
-		//       at org.slf4j.impl.Log4jLoggerFactory.getLogger(Log4jLoggerFactory.java:66)
-		//       at org.slf4j.LoggerFactory.getLogger(LoggerFactory.java:277)
-		//       at org.slf4j.LoggerFactory.getLogger(LoggerFactory.java:288)
-		//       at rtn.networking.device.juniper_netscreen_5gt.UpdatePolicy.<clinit>(UpdatePolicy.java:16)
-		assertNotNull(result);
-	}
-
-	/**
-	 * Run the void execute() method test.
-	 *
-	 * @throws Exception
-	 *
-	 * @generatedBy CodePro at 10/19/14 10:27 PM
-	 */
-	@Test
-	public void testExecute_1()
-		throws Exception {
-		UpdatePolicy fixture = new UpdatePolicy();
-
-		fixture.execute();
-
-		// add additional test code here
-		// An unexpected exception was thrown in user code while executing this test:
-		//    java.lang.NoClassDefFoundError: Could not initialize class rtn.networking.device.juniper_netscreen_5gt.UpdatePolicy
-	}
-
-	/**
-	 * Run the void execute() method test.
-	 *
-	 * @throws Exception
-	 *
-	 * @generatedBy CodePro at 10/19/14 10:27 PM
-	 */
-	@Test
-	public void testExecute_2()
-		throws Exception {
-		UpdatePolicy fixture = new UpdatePolicy();
-
-		fixture.execute();
-
-		// add additional test code here
-		// An unexpected exception was thrown in user code while executing this test:
-		//    java.lang.NoClassDefFoundError: Could not initialize class rtn.networking.device.juniper_netscreen_5gt.UpdatePolicy
-	}
-
-	/**
-	 * Run the void execute() method test.
-	 *
-	 * @throws Exception
-	 *
-	 * @generatedBy CodePro at 10/19/14 10:27 PM
-	 */
-	@Test
-	public void testExecute_3()
-		throws Exception {
-		UpdatePolicy fixture = new UpdatePolicy();
-
-		fixture.execute();
-
-		// add additional test code here
-		// An unexpected exception was thrown in user code while executing this test:
-		//    java.lang.NoClassDefFoundError: Could not initialize class rtn.networking.device.juniper_netscreen_5gt.UpdatePolicy
-	}
-
-	/**
-	 * Run the void execute() method test.
-	 *
-	 * @throws Exception
-	 *
-	 * @generatedBy CodePro at 10/19/14 10:27 PM
-	 */
-	@Test
-	public void testExecute_4()
-		throws Exception {
-		UpdatePolicy fixture = new UpdatePolicy();
-
-		fixture.execute();
-
-		// add additional test code here
-		// An unexpected exception was thrown in user code while executing this test:
-		//    java.lang.NoClassDefFoundError: Could not initialize class rtn.networking.device.juniper_netscreen_5gt.UpdatePolicy
-	}
-
-	/**
-	 * Run the void execute() method test.
-	 *
-	 * @throws Exception
-	 *
-	 * @generatedBy CodePro at 10/19/14 10:27 PM
-	 */
-	@Test
-	public void testExecute_5()
-		throws Exception {
-		UpdatePolicy fixture = new UpdatePolicy();
-
-		fixture.execute();
-
-		// add additional test code here
-		// An unexpected exception was thrown in user code while executing this test:
-		//    java.lang.NoClassDefFoundError: Could not initialize class rtn.networking.device.juniper_netscreen_5gt.UpdatePolicy
-	}
-
-	/**
-	 * Run the void execute() method test.
-	 *
-	 * @throws Exception
-	 *
-	 * @generatedBy CodePro at 10/19/14 10:27 PM
-	 */
-	@Test
-	public void testExecute_6()
-		throws Exception {
-		UpdatePolicy fixture = new UpdatePolicy();
-
-		fixture.execute();
-
-		// add additional test code here
-		// An unexpected exception was thrown in user code while executing this test:
-		//    java.lang.NoClassDefFoundError: Could not initialize class rtn.networking.device.juniper_netscreen_5gt.UpdatePolicy
-	}
-
-	/**
-	 * Run the void execute() method test.
-	 *
-	 * @throws Exception
-	 *
-	 * @generatedBy CodePro at 10/19/14 10:27 PM
-	 */
-	@Test
-	public void testExecute_7()
-		throws Exception {
-		UpdatePolicy fixture = new UpdatePolicy();
-
-		fixture.execute();
-
-		// add additional test code here
-		// An unexpected exception was thrown in user code while executing this test:
-		//    java.lang.NoClassDefFoundError: Could not initialize class rtn.networking.device.juniper_netscreen_5gt.UpdatePolicy
-	}
-
-	/**
-	 * Run the void execute() method test.
-	 *
-	 * @throws Exception
-	 *
-	 * @generatedBy CodePro at 10/19/14 10:27 PM
-	 */
-	@Test
-	public void testExecute_8()
-		throws Exception {
-		UpdatePolicy fixture = new UpdatePolicy();
-
-		fixture.execute();
-
-		// add additional test code here
-		// An unexpected exception was thrown in user code while executing this test:
-		//    java.lang.NoClassDefFoundError: Could not initialize class rtn.networking.device.juniper_netscreen_5gt.UpdatePolicy
-	}
-
-	/**
-	 * Run the void execute() method test.
-	 *
-	 * @throws Exception
-	 *
-	 * @generatedBy CodePro at 10/19/14 10:27 PM
-	 */
-	@Test
-	public void testExecute_9()
-		throws Exception {
-		UpdatePolicy fixture = new UpdatePolicy();
-
-		fixture.execute();
-
-		// add additional test code here
-		// An unexpected exception was thrown in user code while executing this test:
-		//    java.lang.NoClassDefFoundError: Could not initialize class rtn.networking.device.juniper_netscreen_5gt.UpdatePolicy
-	}
-
-	/**
-	 * Run the void execute() method test.
-	 *
-	 * @throws Exception
-	 *
-	 * @generatedBy CodePro at 10/19/14 10:27 PM
-	 */
-	@Test
-	public void testExecute_10()
-		throws Exception {
-		UpdatePolicy fixture = new UpdatePolicy();
-
-		fixture.execute();
-
-		// add additional test code here
-		// An unexpected exception was thrown in user code while executing this test:
-		//    java.lang.NoClassDefFoundError: Could not initialize class rtn.networking.device.juniper_netscreen_5gt.UpdatePolicy
-	}
-
-	/**
-	 * Run the void execute() method test.
-	 *
-	 * @throws Exception
-	 *
-	 * @generatedBy CodePro at 10/19/14 10:27 PM
-	 */
-	@Test
-	public void testExecute_11()
-		throws Exception {
-		UpdatePolicy fixture = new UpdatePolicy();
-
-		fixture.execute();
-
-		// add additional test code here
-		// An unexpected exception was thrown in user code while executing this test:
-		//    java.lang.NoClassDefFoundError: Could not initialize class rtn.networking.device.juniper_netscreen_5gt.UpdatePolicy
-	}
-
-	/**
-	 * Run the void execute() method test.
-	 *
-	 * @throws Exception
-	 *
-	 * @generatedBy CodePro at 10/19/14 10:27 PM
-	 */
-	@Test
-	public void testExecute_12()
-		throws Exception {
-		UpdatePolicy fixture = new UpdatePolicy();
-
-		fixture.execute();
-
-		// add additional test code here
-		// An unexpected exception was thrown in user code while executing this test:
-		//    java.lang.NoClassDefFoundError: Could not initialize class rtn.networking.device.juniper_netscreen_5gt.UpdatePolicy
-	}
-
-	/**
-	 * Run the void execute() method test.
-	 *
-	 * @throws Exception
-	 *
-	 * @generatedBy CodePro at 10/19/14 10:27 PM
-	 */
-	@Test
-	public void testExecute_13()
-		throws Exception {
-		UpdatePolicy fixture = new UpdatePolicy();
-
-		fixture.execute();
-
-		// add additional test code here
-		// An unexpected exception was thrown in user code while executing this test:
-		//    java.lang.NoClassDefFoundError: Could not initialize class rtn.networking.device.juniper_netscreen_5gt.UpdatePolicy
-	}
-
-	/**
-	 * Run the void execute() method test.
-	 *
-	 * @throws Exception
-	 *
-	 * @generatedBy CodePro at 10/19/14 10:27 PM
-	 */
-	@Test
-	public void testExecute_14()
-		throws Exception {
-		UpdatePolicy fixture = new UpdatePolicy();
-
-		fixture.execute();
-
-		// add additional test code here
-		// An unexpected exception was thrown in user code while executing this test:
-		//    java.lang.NoClassDefFoundError: Could not initialize class rtn.networking.device.juniper_netscreen_5gt.UpdatePolicy
-	}
-
-	/**
-	 * Run the void execute() method test.
-	 *
-	 * @throws Exception
-	 *
-	 * @generatedBy CodePro at 10/19/14 10:27 PM
-	 */
-	@Test
-	public void testExecute_15()
-		throws Exception {
-		UpdatePolicy fixture = new UpdatePolicy();
-
-		fixture.execute();
-
-		// add additional test code here
-		// An unexpected exception was thrown in user code while executing this test:
-		//    java.lang.NoClassDefFoundError: Could not initialize class rtn.networking.device.juniper_netscreen_5gt.UpdatePolicy
-	}
-
-	/**
-	 * Run the void execute() method test.
-	 *
-	 * @throws Exception
-	 *
-	 * @generatedBy CodePro at 10/19/14 10:27 PM
-	 */
-	@Test
-	public void testExecute_16()
-		throws Exception {
-		UpdatePolicy fixture = new UpdatePolicy();
-
-		fixture.execute();
-
-		// add additional test code here
-		// An unexpected exception was thrown in user code while executing this test:
-		//    java.lang.NoClassDefFoundError: Could not initialize class rtn.networking.device.juniper_netscreen_5gt.UpdatePolicy
-	}
-
-	/**
-	 * Run the void setParams(Object[]) method test.
-	 *
-	 * @throws Exception
-	 *
-	 * @generatedBy CodePro at 10/19/14 10:27 PM
-	 */
-	@Test
-	public void testSetParams_1()
-		throws Exception {
-		UpdatePolicy fixture = new UpdatePolicy();
-
-		fixture.setParams();
-
-		// add additional test code here
-		// An unexpected exception was thrown in user code while executing this test:
-		//    java.lang.NoClassDefFoundError: Could not initialize class rtn.networking.device.juniper_netscreen_5gt.UpdatePolicy
-	}
-
-	/**
-	 * Run the void setParams(Object[]) method test.
-	 *
-	 * @throws Exception
-	 *
-	 * @generatedBy CodePro at 10/19/14 10:27 PM
-	 */
-	@Test
-	public void testSetParams_2()
-		throws Exception {
-		UpdatePolicy fixture = new UpdatePolicy();
-		Object param1 = new Object();
-
-		fixture.setParams(param1);
-
-		// add additional test code here
-		// An unexpected exception was thrown in user code while executing this test:
-		//    java.lang.NoClassDefFoundError: Could not initialize class rtn.networking.device.juniper_netscreen_5gt.UpdatePolicy
-	}
-
-	/**
-	 * Run the void setParams(Object[]) method test.
-	 *
-	 * @throws Exception
-	 *
-	 * @generatedBy CodePro at 10/19/14 10:27 PM
-	 */
-	@Test
-	public void testSetParams_3()
-		throws Exception {
-		UpdatePolicy fixture = new UpdatePolicy();
-		Object param1 = new Policy();
-
-		fixture.setParams(param1);
-
-		// add additional test code here
-		// An unexpected exception was thrown in user code while executing this test:
-		//    java.lang.NoClassDefFoundError: Could not initialize class rtn.networking.device.juniper_netscreen_5gt.UpdatePolicy
-	}
-
-	/**
-	 * Perform pre-test initialization.
-	 *
-	 * @throws Exception
-	 *         if the initialization fails for some reason
-	 *
-	 * @generatedBy CodePro at 10/19/14 10:27 PM
-	 */
+public class UpdatePolicyTest
+{
+	@Spy
+	private SSHProtocol protocol;
+	
+	@InjectMocks
+	private UpdatePolicy updatePolicy;
+	
 	@Before
-	public void setUp()
-		throws Exception {
-		// add additional set up code here
+	public void setUp() throws Exception
+	{
+		MockitoAnnotations.initMocks(this);
 	}
 
-	/**
-	 * Perform post-test clean-up.
-	 *
-	 * @throws Exception
-	 *         if the clean-up fails for some reason
-	 *
-	 * @generatedBy CodePro at 10/19/14 10:27 PM
-	 */
 	@After
-	public void tearDown()
-		throws Exception {
-		// Add additional tear down code here
+	public void tearDown() throws Exception
+	{
 	}
 
-	/**
-	 * Launch the test.
-	 *
-	 * @param args the command line arguments
-	 *
-	 * @generatedBy CodePro at 10/19/14 10:27 PM
-	 */
-	public static void main(String[] args) {
-		new org.junit.runner.JUnitCore().run(UpdatePolicyTest.class);
+	@Test(expected = IllegalArgumentException.class)
+	public void testSetParamsNullEmpty() throws Exception
+	{
+		this.updatePolicy.setParams(null);
+		this.updatePolicy.execute();
+		this.updatePolicy.setParams();
+		this.updatePolicy.execute();
+	}
+	
+	@Test(expected = IllegalArgumentException.class)
+	public void testSetParamsNonPolicy() throws Exception
+	{
+		this.updatePolicy.setParams(new UpdatePolicy());
+		this.updatePolicy.execute();
+	}
+	
+	@Test(expected = IllegalArgumentException.class)
+	public void testSetParamsValidPolicy() throws Exception
+	{
+		this.updatePolicy.setParams(new Policy());
+		this.updatePolicy.execute();
+	}
+	
+	@Test(expected = IllegalArgumentException.class)
+	public void testExecuteMissingID() throws Exception
+	{
+		Policy policy = new Policy();
+		this.updatePolicy.setParams(policy);
+		this.updatePolicy.execute();
+	}
+	
+	@Test(expected = IllegalArgumentException.class)
+	public void testExecuteOutOfRangeID() throws Exception
+	{
+		Policy policy = new Policy();
+		this.updatePolicy.setParams(policy);
+		policy.setId(-1L);
+		this.updatePolicy.execute();
+	}
+	
+	@Test(expected = IllegalArgumentException.class)
+	public void testExecuteMissingInzone() throws Exception
+	{
+		Policy policy = new Policy();
+		this.updatePolicy.setParams(policy);
+		policy.setId(1L);
+		this.updatePolicy.execute();
+	}
+	@Test(expected = IllegalArgumentException.class)
+	public void testExecuteMissingOutzone() throws Exception
+	{
+		Policy policy = new Policy();
+		this.updatePolicy.setParams(policy);
+		policy.setId(1L);
+		policy.setInzone(new Zone("test"));
+		this.updatePolicy.execute();
+	}
+	
+	@Test(expected = IllegalArgumentException.class)
+	public void testExecuteMissingSource() throws Exception
+	{
+		Policy policy = new Policy();
+		this.updatePolicy.setParams(policy);
+		policy.setId(1L);
+		policy.setInzone(new Zone("test"));
+		policy.setOutzone(new Zone("test2"));
+		this.updatePolicy.execute();
+	}
+	
+	@Test(expected = IllegalArgumentException.class)
+	public void testExecuteEmptySource() throws Exception
+	{
+		Policy policy = new Policy();
+		this.updatePolicy.setParams(policy);
+		policy.setId(1L);
+		policy.setInzone(new Zone("test"));
+		policy.setOutzone(new Zone("test2"));
+		policy.setSource("");
+		this.updatePolicy.execute();
+	}
+	
+	@Test(expected = IllegalArgumentException.class)
+	public void testExecuteMissingDestination() throws Exception
+	{
+		Policy policy = new Policy();
+		this.updatePolicy.setParams(policy);
+		policy.setId(1L);
+		policy.setInzone(new Zone("test"));
+		policy.setOutzone(new Zone("test2"));
+		policy.setSource("test");
+		this.updatePolicy.execute();
+	}
+	
+	@Test(expected = IllegalArgumentException.class)
+	public void testExecuteEmptyDestination() throws Exception
+	{
+		Policy policy = new Policy();
+		this.updatePolicy.setParams(policy);
+		policy.setId(1L);
+		policy.setInzone(new Zone("test"));
+		policy.setOutzone(new Zone("test2"));
+		policy.setSource("test");
+		policy.setDestination("");
+		this.updatePolicy.execute();
+	}
+	
+	@Test(expected = IllegalArgumentException.class)
+	public void testExecuteMissingService() throws Exception
+	{
+		Policy policy = new Policy();
+		this.updatePolicy.setParams(policy);
+		policy.setId(1L);
+		policy.setInzone(new Zone("test"));
+		policy.setOutzone(new Zone("test2"));
+		policy.setSource("test");
+		policy.setSource("test");
+		policy.setDestination("test");
+		this.updatePolicy.execute();
+	}
+	
+	@Test(expected = IllegalArgumentException.class)
+	public void testExecuteMissingAction() throws Exception
+	{
+		Policy policy = new Policy();
+		this.updatePolicy.setParams(policy);
+		policy.setId(1L);
+		policy.setInzone(new Zone("test"));
+		policy.setOutzone(new Zone("test2"));
+		policy.setSource("test");
+		policy.setSource("test");
+		policy.setDestination("test");
+		policy.setService(new Service("test"));
+		this.updatePolicy.execute();
+	}
+	
+	@Test(expected = RuntimeException.class)
+	public void testExecuteNonSuccessfulSend() throws Exception
+	{
+		Configuration.getInstance().setRemoteip(null);
+		
+		Policy policy = new Policy();
+		this.updatePolicy.setParams(policy);
+		policy.setId(1L);
+		policy.setInzone(new Zone("test"));
+		policy.setOutzone(new Zone("test2"));
+		policy.setSource("test");
+		policy.setSource("test");
+		policy.setDestination("test");
+		policy.setService(new Service("test"));
+		policy.setAction(new Action("test"));
+		this.updatePolicy.execute();
+	}
+	
+	@Test
+	public void testExecuteSuccessfulSendNoOptional() throws Exception
+	{	
+		Mockito.doReturn("").when(protocol).sendCommand("set policy id 1 from test to test2 test test test test");
+		
+		Policy policy = new Policy();
+		this.updatePolicy.setParams(policy);
+		policy.setId(1L);
+		policy.setInzone(new Zone("test"));
+		policy.setOutzone(new Zone("test2"));
+		policy.setSource("test");
+		policy.setSource("test");
+		policy.setDestination("test");
+		policy.setService(new Service("test"));
+		policy.setAction(new Action("test"));
+		this.updatePolicy.execute();
+	}
+	
+	@Test
+	public void testExecuteSuccessfulSendWithOptional() throws Exception
+	{	
+		Mockito.doReturn("").when(protocol).sendCommand("set policy id 1 name testing from test to test2 test test test test log");
+		
+		Policy policy = new Policy();
+		this.updatePolicy.setParams(policy);
+		policy.setId(1L);
+		policy.setDisplayname("testing");
+		policy.setInzone(new Zone("test"));
+		policy.setOutzone(new Zone("test2"));
+		policy.setSource("test");
+		policy.setSource("test");
+		policy.setDestination("test");
+		policy.setService(new Service("test"));
+		policy.setAction(new Action("test"));
+		policy.setLog(true);
+		this.updatePolicy.execute();
 	}
 }
