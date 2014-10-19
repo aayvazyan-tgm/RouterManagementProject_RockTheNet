@@ -2,6 +2,7 @@ package rtn.networking;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import rtn.email.EMail;
 
 public class Configuration
 {
@@ -20,6 +21,8 @@ public class Configuration
 	private int snmpport;
 
 	private int adminport;
+
+    private EMail referenceEMail;
 	
 	private static Configuration configuration;
 
@@ -105,4 +108,12 @@ public class Configuration
 	{
 		this.adminport = adminport;
 	}
+
+    public EMail getReferenceEMail() {
+        return referenceEMail;
+    }
+
+    public void setReferenceEMail(EMail referenceEMail) {
+        this.referenceEMail = referenceEMail;
+    }
 }

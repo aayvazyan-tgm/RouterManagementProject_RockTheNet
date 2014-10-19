@@ -97,7 +97,8 @@ public class Test_GuiceModule {
                 rtn.observer.Observable.class,
                 rtn.GuiceModule.class,
                 rtn.MainApp.class,
-                rtn.IDataSource.class
+                rtn.IDataSource.class,
+                rtn.networking.trap.EmailCommandResponder.class
         };
         ArrayList<Object[]> data = new ArrayList<>();
 

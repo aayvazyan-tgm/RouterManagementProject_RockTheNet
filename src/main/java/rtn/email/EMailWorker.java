@@ -1,18 +1,21 @@
 package rtn.email;
 
 import com.google.gson.Gson;
-import org.apache.commons.mail.DefaultAuthenticator;
+import com.google.inject.Guice;
+import com.google.inject.Injector;
 import org.apache.commons.mail.Email;
 import org.apache.commons.mail.EmailException;
 import org.apache.commons.mail.SimpleEmail;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import rtn.GuiceModule;
 
 import javax.mail.Authenticator;
 import java.util.Iterator;
 
 public class EMailWorker {
     private static final Logger logger = LoggerFactory.getLogger(EMailWorker.class);
+    private Injector injector = Guice.createInjector(new GuiceModule());
 
     /**
      * Sends a Email using a configured Authentication method
@@ -20,8 +23,7 @@ public class EMailWorker {
      * @throws org.apache.commons.mail.EmailException if the EMail could not be sent.
      */
 	public void send(EMail mail) throws EmailException {
-        Authenticator aut=new DefaultAuthenticator("Username","Password");
-        sendSimpleMail(mail,aut);
+        sendSimpleMail(mail, injector.getInstance(Authenticator.class));
 	}
 
     /**
@@ -30,7 +32,7 @@ public class EMailWorker {
      * @param authenticator the authenticator used to login to the server
      * @throws org.apache.commons.mail.EmailException
      */
-    private static void sendSimpleMail(EMail m,Authenticator authenticator) throws EmailException {
+    private static void sendSimpleMail(EMail m, Authenticator authenticator) throws EmailException {
         Email email = new SimpleEmail();
         // where to send it to
         email.setHostName(m.getHostName());
