@@ -17,7 +17,7 @@ import org.controlsfx.dialog.Dialogs;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-import rtn.GUIModule;
+import rtn.GuiceModule;
 import rtn.ICommandCentre;
 import rtn.networking.Action;
 import rtn.networking.Policy;
@@ -79,7 +79,7 @@ public class RulesAdminController
 	
 	public void initialize()
 	{
-		Injector injector = Guice.createInjector(new GUIModule());
+		Injector injector = Guice.createInjector(new GuiceModule());
 	    this.commandCentre = injector.getInstance(ICommandCentre.class);
     }
 	
