@@ -1,42 +1,44 @@
-package rtn.networking.admin;
+package rtn.email;
 
 import org.junit.*;
+import rtn.observer.Observable;
 import static org.junit.Assert.*;
 
 /**
- * The class <code>TelnetProtocolTest</code> contains tests for the class <code>{@link TelnetProtocol}</code>.
+ * The class <code>EMailObserverTest</code> contains tests for the class <code>{@link EMailObserver}</code>.
  *
- * @generatedBy CodePro at 10/19/14 10:27 PM
+ * @generatedBy CodePro at 10/19/14 10:28 PM
  * @author jakob
  * @version $Revision: 1.0 $
  */
-public class TelnetProtocolTest {
+public class EMailObserverTest {
 	/**
-	 * Run the TelnetProtocol() constructor test.
+	 * Run the EMailObserver() constructor test.
 	 *
-	 * @generatedBy CodePro at 10/19/14 10:27 PM
+	 * @generatedBy CodePro at 10/19/14 10:28 PM
 	 */
 	@Test
-	public void testTelnetProtocol_1()
+	public void testEMailObserver_1()
 		throws Exception {
-		TelnetProtocol result = new TelnetProtocol();
+		EMailObserver result = new EMailObserver();
 		assertNotNull(result);
 		// add additional test code here
 	}
 
 	/**
-	 * Run the boolean connect() method test.
+	 * Run the void notify(Observable) method test.
 	 *
 	 * @throws Exception
 	 *
-	 * @generatedBy CodePro at 10/19/14 10:27 PM
+	 * @generatedBy CodePro at 10/19/14 10:28 PM
 	 */
 	@Test
-	public void testConnect_1()
+	public void testNotify_1()
 		throws Exception {
-		TelnetProtocol fixture = new TelnetProtocol();
+		EMailObserver fixture = new EMailObserver();
+		Observable observable = null;
 
-		boolean result = fixture.connect();
+		fixture.notify(observable);
 
 		// add additional test code here
 		// An unexpected exception was thrown in user code while executing this test:
@@ -44,49 +46,47 @@ public class TelnetProtocolTest {
 		//       at org.slf4j.impl.Log4jLoggerFactory.getLogger(Log4jLoggerFactory.java:66)
 		//       at org.slf4j.LoggerFactory.getLogger(LoggerFactory.java:277)
 		//       at org.slf4j.LoggerFactory.getLogger(LoggerFactory.java:288)
-		//       at rtn.networking.admin.TelnetProtocol.<clinit>(TelnetProtocol.java:14)
-		assertTrue(result);
+		//       at rtn.email.EMailObserver.<clinit>(EMailObserver.java:11)
 	}
 
 	/**
-	 * Run the boolean disconnect() method test.
+	 * Run the void notify(Observable) method test.
 	 *
 	 * @throws Exception
 	 *
-	 * @generatedBy CodePro at 10/19/14 10:27 PM
+	 * @generatedBy CodePro at 10/19/14 10:28 PM
 	 */
 	@Test
-	public void testDisconnect_1()
+	public void testNotify_2()
 		throws Exception {
-		TelnetProtocol fixture = new TelnetProtocol();
+		EMailObserver fixture = new EMailObserver();
+		Observable observable = null;
 
-		boolean result = fixture.disconnect();
+		fixture.notify(observable);
 
 		// add additional test code here
 		// An unexpected exception was thrown in user code while executing this test:
-		//    java.lang.NoClassDefFoundError: Could not initialize class rtn.networking.admin.TelnetProtocol
-		assertTrue(result);
+		//    java.lang.NoClassDefFoundError: Could not initialize class rtn.email.EMailObserver
 	}
 
 	/**
-	 * Run the String sendCommand(String) method test.
+	 * Run the void notify(Observable) method test.
 	 *
 	 * @throws Exception
 	 *
-	 * @generatedBy CodePro at 10/19/14 10:27 PM
+	 * @generatedBy CodePro at 10/19/14 10:28 PM
 	 */
 	@Test
-	public void testSendCommand_1()
+	public void testNotify_3()
 		throws Exception {
-		TelnetProtocol fixture = new TelnetProtocol();
-		String command = "";
+		EMailObserver fixture = new EMailObserver();
+		Observable observable = null;
 
-		String result = fixture.sendCommand(command);
+		fixture.notify(observable);
 
 		// add additional test code here
 		// An unexpected exception was thrown in user code while executing this test:
-		//    java.lang.NoClassDefFoundError: Could not initialize class rtn.networking.admin.TelnetProtocol
-		assertNotNull(result);
+		//    java.lang.NoClassDefFoundError: Could not initialize class rtn.email.EMailObserver
 	}
 
 	/**
@@ -95,7 +95,7 @@ public class TelnetProtocolTest {
 	 * @throws Exception
 	 *         if the initialization fails for some reason
 	 *
-	 * @generatedBy CodePro at 10/19/14 10:27 PM
+	 * @generatedBy CodePro at 10/19/14 10:28 PM
 	 */
 	@Before
 	public void setUp()
@@ -109,7 +109,7 @@ public class TelnetProtocolTest {
 	 * @throws Exception
 	 *         if the clean-up fails for some reason
 	 *
-	 * @generatedBy CodePro at 10/19/14 10:27 PM
+	 * @generatedBy CodePro at 10/19/14 10:28 PM
 	 */
 	@After
 	public void tearDown()
@@ -122,9 +122,9 @@ public class TelnetProtocolTest {
 	 *
 	 * @param args the command line arguments
 	 *
-	 * @generatedBy CodePro at 10/19/14 10:27 PM
+	 * @generatedBy CodePro at 10/19/14 10:28 PM
 	 */
 	public static void main(String[] args) {
-		new org.junit.runner.JUnitCore().run(TelnetProtocolTest.class);
+		new org.junit.runner.JUnitCore().run(EMailObserverTest.class);
 	}
 }

@@ -1,42 +1,29 @@
-package rtn.networking.admin;
+package rtn.networking;
 
 import org.junit.*;
 import static org.junit.Assert.*;
 
 /**
- * The class <code>TelnetProtocolTest</code> contains tests for the class <code>{@link TelnetProtocol}</code>.
+ * The class <code>ZoneTest</code> contains tests for the class <code>{@link Zone}</code>.
  *
  * @generatedBy CodePro at 10/19/14 10:27 PM
  * @author jakob
  * @version $Revision: 1.0 $
  */
-public class TelnetProtocolTest {
+public class ZoneTest {
 	/**
-	 * Run the TelnetProtocol() constructor test.
-	 *
-	 * @generatedBy CodePro at 10/19/14 10:27 PM
-	 */
-	@Test
-	public void testTelnetProtocol_1()
-		throws Exception {
-		TelnetProtocol result = new TelnetProtocol();
-		assertNotNull(result);
-		// add additional test code here
-	}
-
-	/**
-	 * Run the boolean connect() method test.
+	 * Run the Zone(String) constructor test.
 	 *
 	 * @throws Exception
 	 *
 	 * @generatedBy CodePro at 10/19/14 10:27 PM
 	 */
 	@Test
-	public void testConnect_1()
+	public void testZone_1()
 		throws Exception {
-		TelnetProtocol fixture = new TelnetProtocol();
+		String name = "";
 
-		boolean result = fixture.connect();
+		Zone result = new Zone(name);
 
 		// add additional test code here
 		// An unexpected exception was thrown in user code while executing this test:
@@ -44,49 +31,48 @@ public class TelnetProtocolTest {
 		//       at org.slf4j.impl.Log4jLoggerFactory.getLogger(Log4jLoggerFactory.java:66)
 		//       at org.slf4j.LoggerFactory.getLogger(LoggerFactory.java:277)
 		//       at org.slf4j.LoggerFactory.getLogger(LoggerFactory.java:288)
-		//       at rtn.networking.admin.TelnetProtocol.<clinit>(TelnetProtocol.java:14)
-		assertTrue(result);
-	}
-
-	/**
-	 * Run the boolean disconnect() method test.
-	 *
-	 * @throws Exception
-	 *
-	 * @generatedBy CodePro at 10/19/14 10:27 PM
-	 */
-	@Test
-	public void testDisconnect_1()
-		throws Exception {
-		TelnetProtocol fixture = new TelnetProtocol();
-
-		boolean result = fixture.disconnect();
-
-		// add additional test code here
-		// An unexpected exception was thrown in user code while executing this test:
-		//    java.lang.NoClassDefFoundError: Could not initialize class rtn.networking.admin.TelnetProtocol
-		assertTrue(result);
-	}
-
-	/**
-	 * Run the String sendCommand(String) method test.
-	 *
-	 * @throws Exception
-	 *
-	 * @generatedBy CodePro at 10/19/14 10:27 PM
-	 */
-	@Test
-	public void testSendCommand_1()
-		throws Exception {
-		TelnetProtocol fixture = new TelnetProtocol();
-		String command = "";
-
-		String result = fixture.sendCommand(command);
-
-		// add additional test code here
-		// An unexpected exception was thrown in user code while executing this test:
-		//    java.lang.NoClassDefFoundError: Could not initialize class rtn.networking.admin.TelnetProtocol
+		//       at rtn.networking.Zone.<clinit>(Zone.java:8)
 		assertNotNull(result);
+	}
+
+	/**
+	 * Run the String getName() method test.
+	 *
+	 * @throws Exception
+	 *
+	 * @generatedBy CodePro at 10/19/14 10:27 PM
+	 */
+	@Test
+	public void testGetName_1()
+		throws Exception {
+		Zone fixture = new Zone("");
+
+		String result = fixture.getName();
+
+		// add additional test code here
+		// An unexpected exception was thrown in user code while executing this test:
+		//    java.lang.NoClassDefFoundError: Could not initialize class rtn.networking.Zone
+		assertNotNull(result);
+	}
+
+	/**
+	 * Run the void setName(String) method test.
+	 *
+	 * @throws Exception
+	 *
+	 * @generatedBy CodePro at 10/19/14 10:27 PM
+	 */
+	@Test
+	public void testSetName_1()
+		throws Exception {
+		Zone fixture = new Zone("");
+		String name = "";
+
+		fixture.setName(name);
+
+		// add additional test code here
+		// An unexpected exception was thrown in user code while executing this test:
+		//    java.lang.NoClassDefFoundError: Could not initialize class rtn.networking.Zone
 	}
 
 	/**
@@ -125,6 +111,6 @@ public class TelnetProtocolTest {
 	 * @generatedBy CodePro at 10/19/14 10:27 PM
 	 */
 	public static void main(String[] args) {
-		new org.junit.runner.JUnitCore().run(TelnetProtocolTest.class);
+		new org.junit.runner.JUnitCore().run(ZoneTest.class);
 	}
 }

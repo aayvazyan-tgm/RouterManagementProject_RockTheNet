@@ -1,28 +1,29 @@
-package rtn.networking.device.juniper_netscreen_5gt;
+package rtn.networking;
 
 import org.junit.*;
 import static org.junit.Assert.*;
 
 /**
- * The class <code>PullActionsTest</code> contains tests for the class <code>{@link PullActions}</code>.
+ * The class <code>ServiceTest</code> contains tests for the class <code>{@link Service}</code>.
  *
- * @generatedBy CodePro at 10/19/14 10:27 PM
+ * @generatedBy CodePro at 10/19/14 10:28 PM
  * @author jakob
  * @version $Revision: 1.0 $
  */
-public class PullActionsTest {
+public class ServiceTest {
 	/**
-	 * Run the PullActions() constructor test.
+	 * Run the Service(String) constructor test.
 	 *
 	 * @throws Exception
 	 *
-	 * @generatedBy CodePro at 10/19/14 10:27 PM
+	 * @generatedBy CodePro at 10/19/14 10:28 PM
 	 */
 	@Test
-	public void testPullActions_1()
+	public void testService_1()
 		throws Exception {
+		String name = "";
 
-		PullActions result = new PullActions();
+		Service result = new Service(name);
 
 		// add additional test code here
 		// An unexpected exception was thrown in user code while executing this test:
@@ -30,47 +31,48 @@ public class PullActionsTest {
 		//       at org.slf4j.impl.Log4jLoggerFactory.getLogger(Log4jLoggerFactory.java:66)
 		//       at org.slf4j.LoggerFactory.getLogger(LoggerFactory.java:277)
 		//       at org.slf4j.LoggerFactory.getLogger(LoggerFactory.java:288)
-		//       at rtn.networking.device.juniper_netscreen_5gt.PullActions.<clinit>(PullActions.java:15)
+		//       at rtn.networking.Service.<clinit>(Service.java:7)
 		assertNotNull(result);
 	}
 
 	/**
-	 * Run the void execute() method test.
+	 * Run the String getName() method test.
 	 *
 	 * @throws Exception
 	 *
-	 * @generatedBy CodePro at 10/19/14 10:27 PM
+	 * @generatedBy CodePro at 10/19/14 10:28 PM
 	 */
 	@Test
-	public void testExecute_1()
+	public void testGetName_1()
 		throws Exception {
-		PullActions fixture = new PullActions();
+		Service fixture = new Service("");
 
-		fixture.execute();
+		String result = fixture.getName();
 
 		// add additional test code here
 		// An unexpected exception was thrown in user code while executing this test:
-		//    java.lang.NoClassDefFoundError: Could not initialize class rtn.networking.device.juniper_netscreen_5gt.PullActions
+		//    java.lang.NoClassDefFoundError: Could not initialize class rtn.networking.Service
+		assertNotNull(result);
 	}
 
 	/**
-	 * Run the Object getResult() method test.
+	 * Run the void setName(String) method test.
 	 *
 	 * @throws Exception
 	 *
-	 * @generatedBy CodePro at 10/19/14 10:27 PM
+	 * @generatedBy CodePro at 10/19/14 10:28 PM
 	 */
 	@Test
-	public void testGetResult_1()
+	public void testSetName_1()
 		throws Exception {
-		PullActions fixture = new PullActions();
+		Service fixture = new Service("");
+		String name = "";
 
-		Object result = fixture.getResult();
+		fixture.setName(name);
 
 		// add additional test code here
 		// An unexpected exception was thrown in user code while executing this test:
-		//    java.lang.NoClassDefFoundError: Could not initialize class rtn.networking.device.juniper_netscreen_5gt.PullActions
-		assertNotNull(result);
+		//    java.lang.NoClassDefFoundError: Could not initialize class rtn.networking.Service
 	}
 
 	/**
@@ -79,7 +81,7 @@ public class PullActionsTest {
 	 * @throws Exception
 	 *         if the initialization fails for some reason
 	 *
-	 * @generatedBy CodePro at 10/19/14 10:27 PM
+	 * @generatedBy CodePro at 10/19/14 10:28 PM
 	 */
 	@Before
 	public void setUp()
@@ -93,7 +95,7 @@ public class PullActionsTest {
 	 * @throws Exception
 	 *         if the clean-up fails for some reason
 	 *
-	 * @generatedBy CodePro at 10/19/14 10:27 PM
+	 * @generatedBy CodePro at 10/19/14 10:28 PM
 	 */
 	@After
 	public void tearDown()
@@ -106,9 +108,9 @@ public class PullActionsTest {
 	 *
 	 * @param args the command line arguments
 	 *
-	 * @generatedBy CodePro at 10/19/14 10:27 PM
+	 * @generatedBy CodePro at 10/19/14 10:28 PM
 	 */
 	public static void main(String[] args) {
-		new org.junit.runner.JUnitCore().run(PullActionsTest.class);
+		new org.junit.runner.JUnitCore().run(ServiceTest.class);
 	}
 }

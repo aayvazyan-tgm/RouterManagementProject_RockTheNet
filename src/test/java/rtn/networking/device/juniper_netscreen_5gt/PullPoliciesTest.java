@@ -4,34 +4,24 @@ import org.junit.*;
 import static org.junit.Assert.*;
 
 /**
- * The class <code>PullActionsTest</code> contains tests for the class <code>{@link PullActions}</code>.
+ * The class <code>PullPoliciesTest</code> contains tests for the class <code>{@link PullPolicies}</code>.
  *
  * @generatedBy CodePro at 10/19/14 10:27 PM
  * @author jakob
  * @version $Revision: 1.0 $
  */
-public class PullActionsTest {
+public class PullPoliciesTest {
 	/**
-	 * Run the PullActions() constructor test.
-	 *
-	 * @throws Exception
+	 * Run the PullPolicies() constructor test.
 	 *
 	 * @generatedBy CodePro at 10/19/14 10:27 PM
 	 */
 	@Test
-	public void testPullActions_1()
+	public void testPullPolicies_1()
 		throws Exception {
-
-		PullActions result = new PullActions();
-
-		// add additional test code here
-		// An unexpected exception was thrown in user code while executing this test:
-		//    java.lang.ExceptionInInitializerError
-		//       at org.slf4j.impl.Log4jLoggerFactory.getLogger(Log4jLoggerFactory.java:66)
-		//       at org.slf4j.LoggerFactory.getLogger(LoggerFactory.java:277)
-		//       at org.slf4j.LoggerFactory.getLogger(LoggerFactory.java:288)
-		//       at rtn.networking.device.juniper_netscreen_5gt.PullActions.<clinit>(PullActions.java:15)
+		PullPolicies result = new PullPolicies();
 		assertNotNull(result);
+		// add additional test code here
 	}
 
 	/**
@@ -44,13 +34,13 @@ public class PullActionsTest {
 	@Test
 	public void testExecute_1()
 		throws Exception {
-		PullActions fixture = new PullActions();
+		PullPolicies fixture = new PullPolicies();
 
 		fixture.execute();
 
 		// add additional test code here
 		// An unexpected exception was thrown in user code while executing this test:
-		//    java.lang.NoClassDefFoundError: Could not initialize class rtn.networking.device.juniper_netscreen_5gt.PullActions
+		//    java.lang.NoClassDefFoundError: Could not initialize class rtn.networking.device.juniper_netscreen_5gt.PullPolicies
 	}
 
 	/**
@@ -63,13 +53,17 @@ public class PullActionsTest {
 	@Test
 	public void testGetResult_1()
 		throws Exception {
-		PullActions fixture = new PullActions();
+		PullPolicies fixture = new PullPolicies();
 
 		Object result = fixture.getResult();
 
 		// add additional test code here
 		// An unexpected exception was thrown in user code while executing this test:
-		//    java.lang.NoClassDefFoundError: Could not initialize class rtn.networking.device.juniper_netscreen_5gt.PullActions
+		//    java.lang.ExceptionInInitializerError
+		//       at org.slf4j.impl.Log4jLoggerFactory.getLogger(Log4jLoggerFactory.java:66)
+		//       at org.slf4j.LoggerFactory.getLogger(LoggerFactory.java:277)
+		//       at org.slf4j.LoggerFactory.getLogger(LoggerFactory.java:288)
+		//       at rtn.networking.device.juniper_netscreen_5gt.PullPolicies.<clinit>(PullPolicies.java:8)
 		assertNotNull(result);
 	}
 
@@ -109,6 +103,6 @@ public class PullActionsTest {
 	 * @generatedBy CodePro at 10/19/14 10:27 PM
 	 */
 	public static void main(String[] args) {
-		new org.junit.runner.JUnitCore().run(PullActionsTest.class);
+		new org.junit.runner.JUnitCore().run(PullPoliciesTest.class);
 	}
 }
