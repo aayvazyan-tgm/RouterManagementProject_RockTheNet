@@ -23,8 +23,10 @@ public class Test_GuiceModule {
         this.clazz = clazz;
     }
 
-    @Test
+    @Test(timeout = 500)
     public void test_canProvideNessesaryClasses() {
+        logger.info("Trying to find a binding for class: " + clazz.toString());
+
         Module module = new AbstractModule() {
             @Override
             protected void configure() {
