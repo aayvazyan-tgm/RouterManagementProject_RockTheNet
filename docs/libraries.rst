@@ -3,7 +3,7 @@ Libraries
 
 Guice
 ~~~~~
-Guice is a open source Dependency (DI)Injection framework that simplifies DI.
+Guice is a open source Dependency Injection (DI) framework that simplifies DI.
 
 
 log4j
