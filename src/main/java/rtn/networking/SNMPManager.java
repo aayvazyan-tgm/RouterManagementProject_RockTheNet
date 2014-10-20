@@ -20,6 +20,11 @@ import org.snmp4j.util.PDUFactory;
 import org.snmp4j.util.TableEvent;
 import org.snmp4j.util.TableUtils;
 
+/**
+ * Handles Connections and loads tables from the Firewall
+ * @author Fabian Freudensprung
+ *
+ */
 public class SNMPManager {
 	
 	private static SNMPManager instance;
@@ -38,6 +43,7 @@ public class SNMPManager {
 		
 		return instance;
 	}
+	
 	
 	/**
 	 * 
@@ -68,7 +74,6 @@ public class SNMPManager {
 	        open = true;
 		}
 		catch(IOException ioe) {
-			ioe.printStackTrace();
 			return false;
 		}
 		
@@ -80,9 +85,8 @@ public class SNMPManager {
 		try {
 			snmp.close(); 
 			open = false;
-		} catch (IOException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
+		} catch (IOException ioe) {
+			return false;
 		}
 		
 		return true;
@@ -93,7 +97,7 @@ public class SNMPManager {
 	 * @param oid
 	 * @return
 	 */
-	public List<TableEvent> getTable(OID oid) {
+	public List<TableEvent> getTable(OID[] oid) {
 		if(!open) return null;
 		
 		PDUFactory pF = new DefaultPDUFactory (PDU.GETNEXT);
@@ -101,12 +105,19 @@ public class SNMPManager {
 		TableUtils tableUtils = new TableUtils(snmp, pF);
 		tableUtils.setMaxNumRowsPerPDU(100);
        
-		OID[] columns = new OID[1];
-		columns[0] = new VariableBinding(oid).getOid();
-       
-		List<TableEvent> snmpList =  tableUtils.getTable(target, columns, null, null);
+		OID[] columns = new OID[oid.length];
+		for(int i=0; i<oid.length; i++) {
+			columns[i] = new VariableBinding(oid[i]).getOid();
+		}
 		
-		return snmpList;
+       
+		try{
+			List<TableEvent> snmpList =  tableUtils.getTable(target, columns, null, null);
+			return snmpList;
+		}
+		catch(Exception e) {
+			return null;
+		}
 	}
 	
 	/**
