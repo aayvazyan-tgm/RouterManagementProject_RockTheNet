@@ -36,5 +36,6 @@ UML Diagram                       2014-10-14 09:50 10:30   00:40
 SSH Protocol fixing               2014-10-14 10:30 11:40   01:10
 GUI fixing, RulesAdminController  2014-10-14 20:30 22:00   01:30
 PullServices, PullActions         2014-10-16 13:00 13:20   00:20
-**TOTAL**                                                **32:40**
+PullServices, PullZones & tests   2014-10-20 20:45 21:45   01:00
+**TOTAL**                                                **33:40**
 ================================= ========== ===== ===== =========
