@@ -5,6 +5,11 @@ import javafx.beans.property.SimpleStringProperty;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
+/**
+ * Definition of the Data in the Rules Table
+ * 
+ * @author Fabian Freudensprung
+ */
 public class TableRule {
     private static final Logger logger = LoggerFactory.getLogger(TableRule.class);
 
