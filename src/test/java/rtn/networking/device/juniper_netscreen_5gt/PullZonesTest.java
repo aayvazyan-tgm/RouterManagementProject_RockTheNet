@@ -21,15 +21,15 @@ import org.snmp4j.util.TableEvent;
 import org.snmp4j.util.TableUtils.TableRequest;
 
 import rtn.networking.SNMPManager;
-import rtn.networking.Service;
+import rtn.networking.Zone;
 
-public class PullServicesTest
+public class PullZonesTest
 {
 	@Spy
 	private SNMPManager manager;
 	
 	@InjectMocks
-	private PullServices services;
+	private PullZones zones;
 	
 	@Before
 	public void setUp() throws Exception
@@ -46,13 +46,13 @@ public class PullServicesTest
 	@Test
 	public void testGetResultNoPreviousExecute()
 	{
-		assertEquals(((ArrayList<Service>)this.services.getResult()).size(), 0);
+		assertEquals(((ArrayList<Zone>)this.zones.getResult()).size(), 0);
 	}
 	
 	@Test(expected = NullPointerException.class)
 	public void testExecuteEmptyResponse()
 	{
-		this.services.execute();
+		this.zones.execute();
 	}
 	
 	@Test(expected = RuntimeException.class)
@@ -60,18 +60,18 @@ public class PullServicesTest
 	{
 		List<TableEvent> mocked = new LinkedList<TableEvent>();
 		mocked.add(new TableEvent(Mockito.mock(TableRequest.class), null, 1));
-		Mockito.doReturn(mocked).when(manager).getTable(new OID[]{new OID("1.3.6.1.4.1.3224.13.1.1.2")});
+		Mockito.doReturn(mocked).when(manager).getTable(new OID[]{new OID("1.3.6.1.4.1.3224.8.1.1.1.2")});
 	
-		this.services.execute();
+		this.zones.execute();
 	}
 	
 	@Test
 	public void testExecuteWithResponseEmpty()
 	{
 		List<TableEvent> mocked = new LinkedList<TableEvent>();
-		Mockito.doReturn(mocked).when(manager).getTable(new OID[]{new OID("1.3.6.1.4.1.3224.13.1.1.2")});
+		Mockito.doReturn(mocked).when(manager).getTable(new OID[]{new OID("1.3.6.1.4.1.3224.8.1.1.1.2")});
 		
-		this.services.execute();
+		this.zones.execute();
 	}
 	
 	@SuppressWarnings("unchecked")
@@ -91,9 +91,9 @@ public class PullServicesTest
 		List<TableEvent> mocked = new LinkedList<TableEvent>();
 		mocked.add(event);
 		
-		Mockito.doReturn(mocked).when(manager).getTable(new OID[]{new OID("1.3.6.1.4.1.3224.13.1.1.2")});
+		Mockito.doReturn(mocked).when(manager).getTable(new OID[]{new OID("1.3.6.1.4.1.3224.8.1.1.1.2")});
+		this.zones.execute();
 		
-		this.services.execute();
-		assertEquals(((ArrayList<Service>)this.services.getResult()).size(), 1);
+		assertEquals(((ArrayList<Zone>)this.zones.getResult()).size(), 1);
 	}
 }
