@@ -119,15 +119,4 @@ public class SNMPManager {
 		return target;
 	}
 	
-	/**
-	 * 
-	 * @return
-	 */
-	public String getString() {
-		String ret = "";
-		
-		
-		return ret;
-	}
-	
 }
