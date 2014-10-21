@@ -18,7 +18,7 @@ public class Configuration
 
 	private String password;
 
-	private int snmpport;
+	private int snmpport = 161;
 
 	private int adminport;
 

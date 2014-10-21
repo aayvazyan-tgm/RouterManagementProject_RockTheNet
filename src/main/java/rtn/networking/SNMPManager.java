@@ -13,7 +13,6 @@ import org.snmp4j.smi.Address;
 import org.snmp4j.smi.GenericAddress;
 import org.snmp4j.smi.OID;
 import org.snmp4j.smi.OctetString;
-import org.snmp4j.smi.VariableBinding;
 import org.snmp4j.transport.DefaultUdpTransportMapping;
 import org.snmp4j.util.DefaultPDUFactory;
 import org.snmp4j.util.PDUFactory;
@@ -26,12 +25,10 @@ import org.snmp4j.util.TableUtils;
  *
  */
 public class SNMPManager {
-	
 	private static SNMPManager instance;
 	private Snmp snmp;
 	private CommunityTarget target;
-	private boolean open;
-	
+	private boolean open = false;
 	
 	/**
 	 * 
@@ -44,26 +41,26 @@ public class SNMPManager {
 		return instance;
 	}
 	
-	
 	/**
 	 * 
 	 * @param ip
 	 * @param com
 	 * @return
 	 */
-	public boolean connect(String ip, String com) {
-		if(!open) return false;
+	@SuppressWarnings("rawtypes")
+	public boolean connect() {
+		if(open) return true;
 		
-		Configuration.getInstance().setRemoteip(ip);
-		Configuration.getInstance().setCommunity(com);
+		String ip = Configuration.getInstance().getRemoteip() + "/" + Configuration.getInstance().getSnmpport();
+		String community = Configuration.getInstance().getCommunity();
 		
 		try {
 			TransportMapping transport = new DefaultUdpTransportMapping();
 			snmp = new Snmp(transport);
-			Address address = GenericAddress.parse(Configuration.getInstance().getRemoteip());
+			Address address = GenericAddress.parse(ip);
 			target = new CommunityTarget();
 			
-			target.setCommunity(new OctetString(Configuration.getInstance().getCommunity()));
+			target.setCommunity(new OctetString(community));
 	        target.setAddress(address);
 	        target.setRetries(2);
 	        target.setTimeout(1500);
@@ -82,6 +79,7 @@ public class SNMPManager {
 	
 	public boolean disconnect() {
 		if(!open) return false;
+		
 		try {
 			snmp.close(); 
 			open = false;
@@ -98,21 +96,15 @@ public class SNMPManager {
 	 * @return
 	 */
 	public List<TableEvent> getTable(OID[] oid) {
-		if(!open) return null;
+		if(!this.connect()) return null;
 		
 		PDUFactory pF = new DefaultPDUFactory (PDU.GETNEXT);
 	      
 		TableUtils tableUtils = new TableUtils(snmp, pF);
 		tableUtils.setMaxNumRowsPerPDU(100);
-       
-		OID[] columns = new OID[oid.length];
-		for(int i=0; i<oid.length; i++) {
-			columns[i] = new VariableBinding(oid[i]).getOid();
-		}
 		
-       
 		try{
-			List<TableEvent> snmpList =  tableUtils.getTable(target, columns, null, null);
+			List<TableEvent> snmpList =  tableUtils.getTable(target, oid, null, null);
 			return snmpList;
 		}
 		catch(Exception e) {
@@ -129,5 +121,4 @@ public class SNMPManager {
 		
 		return target;
 	}
-	
 }
