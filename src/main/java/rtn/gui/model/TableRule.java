@@ -21,7 +21,24 @@ public class TableRule {
 	private final SimpleStringProperty addressIn;
 	private final SimpleStringProperty addressOut;
 	private final SimpleBooleanProperty logged;
-	
+
+    /**
+     * __        _______ _____ ___ ___ ___
+     * \ \      / /_   _|  ___|__ \__ \__ \
+     *  \ \ /\ / /  | | | |_    / / / / / /
+     *   \ V  V /   | | |  _|  |_| |_| |_|
+     *    \_/\_/    |_| |_|    (_) (_) (_)
+     *
+     * TODO ???
+     * @param n ?
+     * @param zi ?
+     * @param zo ?
+     * @param s ?
+     * @param a ?
+     * @param ai ?
+     * @param ao ?
+     * @param l ?
+     */
 	public TableRule(String n, String zi, String zo, String s, String a, String ai, String ao, Boolean l) {
         this.name = new SimpleStringProperty(n);
         this.zoneIn = new SimpleStringProperty(zi);

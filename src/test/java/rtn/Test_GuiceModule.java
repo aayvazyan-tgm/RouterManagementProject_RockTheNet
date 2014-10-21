@@ -36,6 +36,8 @@ public class Test_GuiceModule {
             }
         };
         Injector injector = Guice.createInjector(module);
+        // coverage!1einself
+        injector.getInstance(clazz);
     }
 
     @Parameterized.Parameters
@@ -43,7 +45,7 @@ public class Test_GuiceModule {
         Class[] clazzes = new Class[] {
                 rtn.networking.Action.class,
                 rtn.networking.Policy.class,
-                rtn.networking.CommandProxy.class,
+                //rtn.networking.CommandProxy.class,
                 rtn.networking.trap.LoggerCommandResponder.class,
                 rtn.networking.trap.TrapReceiver.class,
                 rtn.networking.Zone.class,
@@ -59,16 +61,16 @@ public class Test_GuiceModule {
                 rtn.networking.device.juniper_netscreen_5gt.PullPolicies.class,
                 rtn.networking.device.juniper_netscreen_5gt.PullServices.class,
                 rtn.networking.device.juniper_netscreen_5gt.AddPolicy.class,
-                rtn.networking.device.commands.IResult.class,
+                //rtn.networking.device.commands.IResult.class,
                 rtn.networking.device.commands.IPullZones.class,
                 rtn.networking.device.commands.IPullServices.class,
                 rtn.networking.device.commands.IDeletePolicy.class,
                 rtn.networking.device.commands.IPullThroughput.class,
                 rtn.networking.device.commands.IUpdatePolicy.class,
-                rtn.networking.device.commands.IDevCommand.class,
+                //rtn.networking.device.commands.IDevCommand.class,
                 rtn.networking.device.commands.IAddPolicy.class,
                 rtn.networking.device.commands.IPullActions.class,
-                rtn.networking.device.commands.IParametrized.class,
+                //rtn.networking.device.commands.IParametrized.class,
                 rtn.networking.device.commands.IPullPolicies.class,
                 rtn.networking.Service.class,
                 rtn.networking.DataLoad.class,
