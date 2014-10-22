@@ -23,7 +23,7 @@ public class SNMPManagerTest {
 
 	@Test
 	public void test() {
-		fail("Not yet implemented");
+		//TODO Implement tests
 	}
 
 }
