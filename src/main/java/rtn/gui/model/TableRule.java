@@ -23,21 +23,16 @@ public class TableRule {
 	private final SimpleBooleanProperty logged;
 
     /**
-     * __        _______ _____ ___ ___ ___
-     * \ \      / /_   _|  ___|__ \__ \__ \
-     *  \ \ /\ / /  | | | |_    / / / / / /
-     *   \ V  V /   | | |  _|  |_| |_| |_|
-     *    \_/\_/    |_| |_|    (_) (_) (_)
-     *
-     * TODO ???
-     * @param n ?
-     * @param zi ?
-     * @param zo ?
-     * @param s ?
-     * @param a ?
-     * @param ai ?
-     * @param ao ?
-     * @param l ?
+     * Creates a new TableRule object.
+     * 
+     * @param n Name of the zone
+     * @param zi The inbound zone
+     * @param zo The outbound zone
+     * @param s The service of the policy
+     * @param a The action to perform
+     * @param ai The source address
+     * @param ao The destination address
+     * @param l Enable logging yes/no
      */
 	public TableRule(String n, String zi, String zo, String s, String a, String ai, String ao, Boolean l) {
         this.name = new SimpleStringProperty(n);

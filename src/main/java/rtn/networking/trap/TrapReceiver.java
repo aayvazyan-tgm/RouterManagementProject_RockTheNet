@@ -45,6 +45,8 @@ public class TrapReceiver {
 
     /**
      * Trap Listener
+     * 
+     * @throws IOException A communication failure
      */
     public synchronized void listen()
             throws IOException {

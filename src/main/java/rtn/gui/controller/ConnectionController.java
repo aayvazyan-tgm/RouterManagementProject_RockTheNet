@@ -111,6 +111,9 @@ public class ConnectionController {
 	
 	/**
 	 * Checks if a String is a valid IPv4 address
+	 * 
+	 * @param ip The IP to check
+	 * @return true, if the given IP is valid, false otherwise
 	 */
 	public static boolean validIP(String ip) {
 	    if (ip == null || ip.isEmpty()) return false;

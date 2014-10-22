@@ -31,8 +31,9 @@ public class SNMPManager {
 	private boolean open = false;
 	
 	/**
+	 * Returns a SNMPManager instance.
 	 * 
-	 * @return
+	 * @return A SNMPManager instance
 	 */
 	public static SNMPManager getInstance() {
 		if(instance==null) 
@@ -42,10 +43,9 @@ public class SNMPManager {
 	}
 	
 	/**
+	 * Establishes a connection to the device using the Remoteip/Port set in Configuration.
 	 * 
-	 * @param ip
-	 * @param com
-	 * @return
+	 * @return true if connecting was successful, false if not (host down/not found/general error).
 	 */
 	@SuppressWarnings("rawtypes")
 	public boolean connect() {
@@ -77,6 +77,11 @@ public class SNMPManager {
 		return true;
 	}
 	
+	/**
+	 * Disconnects from the device, if a connection is open.
+	 * 
+	 * @return true, if disconnecting was successful, false if otherwise (no open connection/I/O error)
+	 */
 	public boolean disconnect() {
 		if(!open) return false;
 		
@@ -91,9 +96,10 @@ public class SNMPManager {
 	}
 	
 	/**
-	 * Returns the table of the oid
-	 * @param oid
-	 * @return
+	 * Returns the table using the given OIDs (columns)
+	 * 
+	 * @param oid The columns to query
+	 * @return A List containing TableEvents, on failure null
 	 */
 	public List<TableEvent> getTable(OID[] oid) {
 		if(!this.connect()) return null;
