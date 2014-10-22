@@ -1,10 +1,13 @@
 package rtn;
 
+import rtn.networking.Configuration;
+
 import com.google.inject.AbstractModule;
 import com.google.inject.Guice;
 import com.google.inject.Injector;
 import com.google.inject.Module;
 import org.junit.Test;
+import org.junit.Before;
 import org.junit.runner.RunWith;
 import org.junit.runners.Parameterized;
 import org.slf4j.Logger;
@@ -21,6 +24,13 @@ public class Test_GuiceModule {
 
     public Test_GuiceModule(Class clazz) {
         this.clazz = clazz;
+    }
+
+    @Before
+    public void setup() {
+        Injector injector = Guice.createInjector(new GuiceModule());
+        Configuration conf = injector.getInstance(Configuration.class);
+        conf.setRemoteip("0.0.0.0");
     }
 
     @Test(timeout = 500)
