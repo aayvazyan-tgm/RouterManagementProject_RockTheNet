@@ -47,6 +47,8 @@ public class TableRule {
 
 	/**
 	 * sets the name
+	 * 
+	 * @param n Name of the zone
 	 */
 	public void setName(String n) {
 		name.set(n);
@@ -60,6 +62,7 @@ public class TableRule {
 
 	/**
 	 * sets the zoneIn
+	 * @param zi The inbound zone
 	 */
 	public void setZoneIn(String zi) {
 		zoneIn.set(zi);
@@ -73,6 +76,7 @@ public class TableRule {
 
 	/**
 	 * sets the zoneOut
+	 * @param zo The outbound zone
 	 */
 	public void setZoneOut(String zo) {
 		zoneOut.set(zo);
@@ -86,6 +90,7 @@ public class TableRule {
 
 	/**
 	 * sets the service
+	 * @param s The zone
 	 */
 	public void setService(String s) {
 		service.set(s);
@@ -99,6 +104,7 @@ public class TableRule {
 
 	/**
 	 * sets the action
+	 * @param a The action to perform
 	 */
 	public void setAction(String a) {
 		action.set(a);
@@ -112,6 +118,7 @@ public class TableRule {
 
 	/**
 	 * sets the addressIn
+	 * @param ai The inbound address
 	 */
 	public void setAddressIn(String ai) {
 		addressIn.set(ai);
@@ -125,6 +132,7 @@ public class TableRule {
 
 	/**
 	 * sets the addressOut
+	 * @param ao The outbound address
 	 */
 	public void setAddressOut(String ao) {
 		addressOut.set(ao);
@@ -138,6 +146,7 @@ public class TableRule {
 
 	/**
 	 * sets the logged
+	 * @param l Enable/Disable logging
 	 */
 	public void setLogged(Boolean l) {
 		logged.set(l);
