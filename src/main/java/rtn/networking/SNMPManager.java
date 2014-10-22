@@ -120,7 +120,7 @@ public class SNMPManager {
 	
 	/**
 	 * 
-	 * @return
+	 * @return The target
 	 */
 	public Target getTarget() {
 		if(!open) return null;

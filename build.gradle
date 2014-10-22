@@ -43,26 +43,6 @@ dependencies {
     testCompile 'org.controlsfx:controlsfx:8.20.7'
 }
 
-project (':Prototype') {
-    apply plugin: 'java'
-    apply plugin: 'application'
-
-    repositories {
-        mavenCentral()
-
-        maven {
-            url "https://oosnmp.net/dist/release/" // snmp4j
-        }
-    }
-
-    dependencies {
-        compile group: 'org.snmp4j', name: 'snmp4j', version: '2.3.+'
-        compile 'com.google.code.gson:gson:2.3'
-    }
-
-    mainClassName = 'rtn.prototype.Main'
-}
-
 project (':EMailExample') {
     apply plugin: 'java'
     apply plugin: 'application'
