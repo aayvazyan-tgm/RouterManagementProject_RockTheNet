@@ -30,7 +30,9 @@ public class Test_GuiceModule {
     public void setup() {
         Injector injector = Guice.createInjector(new GuiceModule());
         Configuration conf = injector.getInstance(Configuration.class);
-        conf.setRemoteip("0.0.0.0");
+        conf.setRemoteip("localhost");
+        conf.setRemoteip("localhost");
+        Configuration.setInstance(conf);
     }
 
     @Test(timeout = 500)

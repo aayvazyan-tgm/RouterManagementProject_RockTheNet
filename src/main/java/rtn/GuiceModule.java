@@ -1,22 +1,23 @@
 package rtn;
 
-import java.io.IOException;
-
+import com.google.inject.AbstractModule;
+import com.google.inject.Provides;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.snmp4j.CommandResponder;
 import org.snmp4j.TransportMapping;
 import org.snmp4j.smi.UdpAddress;
 import org.snmp4j.transport.DefaultUdpTransportMapping;
-
 import rtn.networking.Configuration;
 import rtn.networking.admin.IAdminProtocol;
 import rtn.networking.admin.SSHProtocol;
 import rtn.networking.trap.LoggerCommandResponder;
 
-import com.google.inject.AbstractModule;
-import com.google.inject.Provides;
+import java.io.IOException;
 
 public class GuiceModule extends AbstractModule
 {
+    private static final Logger logger = LoggerFactory.getLogger(GuiceModule.class);
 	@Override
 	protected void configure()
 	{
@@ -38,6 +39,10 @@ public class GuiceModule extends AbstractModule
     @Provides
     public static TransportMapping getTransportMapping() throws IOException
     {
-    	return new DefaultUdpTransportMapping(new UdpAddress(Configuration.getInstance().getRemoteip()+"/"+Configuration.getInstance().getSnmpport()));
+        UdpAddress address = new UdpAddress(
+                Configuration.getInstance().getRemoteip()+"/"+Configuration.getInstance().getTrapListeningPort());
+        DefaultUdpTransportMapping mapping = new DefaultUdpTransportMapping(address);
+        logger.debug("Creating TransportMapping for: " + String.valueOf(mapping.getListenAddress()));
+    	return mapping;
     }
 }

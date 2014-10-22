@@ -23,6 +23,8 @@ public class Configuration
 	private int adminport;
 
     private EMail referenceEMail;
+
+    private int trapListeningPort = 13037;
 	
 	private static Configuration configuration;
 
@@ -115,5 +117,13 @@ public class Configuration
 
     public void setReferenceEMail(EMail referenceEMail) {
         this.referenceEMail = referenceEMail;
+    }
+
+    public int getTrapListeningPort() {
+        return trapListeningPort;
+    }
+
+    public void setTrapListeningPort(int trapListeningPort) {
+        this.trapListeningPort = trapListeningPort;
     }
 }
