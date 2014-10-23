@@ -43,5 +43,6 @@ Fixing GuiceModule tests, UML     2014-10-22 10:45 11:15   00:30
 Fixing JavaDocs                   2014-10-22 11:30 11:35   00:05
 Device documentation, JavaDoc     2014-10-23 10:40 11:30   00:50
 JavaDoc, fixing RulesAdminContr.  2014-10-23 12:10 12:45   00:35
-**TOTAL**                                                **36:20**
+Logging in JLV (Eclipse)          2014-10-23 14:20 14:40   00:20
+**TOTAL**                                                **36:40**
 ================================= ========== ===== ===== =========
