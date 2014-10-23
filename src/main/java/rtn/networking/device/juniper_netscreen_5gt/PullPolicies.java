@@ -7,7 +7,9 @@ import java.util.List;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-import rtn.networking.Policy;
+import org.snmp4j.smi.OID;
+import org.snmp4j.util.TableEvent;
+import rtn.networking.*;
 import rtn.networking.device.commands.IPullPolicies;
 /**
  * 
@@ -17,7 +19,7 @@ import rtn.networking.device.commands.IPullPolicies;
 
 public class PullPolicies implements IPullPolicies {
     private static final Logger logger = LoggerFactory.getLogger(PullPolicies.class);
-
+	private SNMPManager manager = SNMPManager.getInstance();
     private List<Policy> policies;
 	/**
 	 * @see rtn.networking.device.commands.IResult#getResult()
@@ -59,26 +61,30 @@ public class PullPolicies implements IPullPolicies {
 			TableEvent event = result.get(i);
 			
 			if(event.getStatus() != 0) throw new RuntimeException("There was an error getting the services from the device, message was: "+event.getErrorMessage());
-				Policy py = new Policy();
-				py.setId(event.getColumns()[0].getVariable().toString());
-				
-				py.setInzone(event.getColumns()[1].getVariable().toString()); // source zone
-				
-				py.setOutzone(event.getColumns()[2].getVariable().toString());
-				
-				py.setSource(event.getColumns()[3].getVariable().toString());
-				
-				py.setDestination(event.getColumns()[4].getVariable().toString());
-				
-				py.setService(event.getColumns()[5].getVariable().toString());
-				
-				py.setAction(event.getColumns()[6].getVariable().toString());
-				
-				py.setLog(event.getColumns()[7].getVariable().toString());
-				
-				py.setDisplayname(event.getColumns()[8].getVariable().toString());
-				
-				this.policies.add(py);
+			Policy py = new Policy();
+			py.setId(Long.parseLong(event.getColumns()[0].getVariable().toString()));
+
+			Zone inZone=new Zone(event.getColumns()[1].getVariable().toString());
+			py.setInzone(inZone); // source zone
+			Zone outZone=new Zone(event.getColumns()[2].getVariable().toString());
+			py.setOutzone(outZone);
+
+			py.setSource(event.getColumns()[3].getVariable().toString());
+
+			py.setDestination(event.getColumns()[4].getVariable().toString());
+
+			Service service=new Service(event.getColumns()[5].getVariable().toString());
+
+			py.setService(service);
+			Action action = new Action(event.getColumns()[6].getVariable().toString());
+			py.setAction(action);
+
+			boolean log=Boolean.parseBoolean(event.getColumns()[7].getVariable().toString());
+			py.setLog(log);
+
+			py.setDisplayname(event.getColumns()[8].getVariable().toString());
+
+			this.policies.add(py);
 		}
 	}
 		

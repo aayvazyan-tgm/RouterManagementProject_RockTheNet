@@ -5,8 +5,6 @@ import java.util.List;
 
 import com.sun.media.sound.AlawCodec;
 
-import javafx.scene.control.Alert;
-import javafx.scene.control.Alert.AlertType;
 import rtn.networking.Action;
 import rtn.networking.CommandProxy;
 import rtn.networking.Configuration;
@@ -22,10 +20,8 @@ import rtn.networking.device.commands.IPullServices;
 import rtn.networking.device.commands.IPullZones;
 import rtn.networking.device.commands.IResult;
 import rtn.networking.device.commands.IUpdatePolicy;
-import rtn.networking.device.commands.IUpdatePolicyTest;
 import rtn.networking.device.juniper_netscreen_5gt.AddPolicy;
 import rtn.networking.device.juniper_netscreen_5gt.DeletePolicy;
-import rtn.networking.device.juniper_netscreen_5gt.TableEvent;
 import rtn.networking.device.juniper_netscreen_5gt.UpdatePolicy;
 /**
  * 
@@ -144,35 +140,47 @@ public class CommandCentreImpl implements ICommandCentre {
 
 	@Override
 	public List<Service> getServices() {
-		IPullServices ir = (IPullServices) CommandProxy.getCommand("PullServices"
-				,Configuration.getInstance().getDevice());
-		
-		ir.execute();
-		
-		List<Service> ab = (List<Service>) ir.getResult();
-		
+		List<Service> ab;
+		try {
+			IPullServices ir = (IPullServices) CommandProxy.getCommand("PullServices"
+					, Configuration.getInstance().getDevice());
+
+			ir.execute();
+
+			ab = (List<Service>) ir.getResult();
+		}catch (Exception e){
+			return null;
+		}
 		return ab;
 	}
 
 	@Override
 	public List<Zone> getZones() {
-		IPullZones pz = (IPullZones) CommandProxy.getCommand("PullZones", 
-				Configuration.getInstance().getDevice());
-		pz.execute();
-		
-		List<Zone> ab = (List<Zone>) pz.getResult();
-		
+		List<Zone> ab;
+		try {
+			IPullZones pz = (IPullZones) CommandProxy.getCommand("PullZones",
+					Configuration.getInstance().getDevice());
+			pz.execute();
+
+			ab = (List<Zone>) pz.getResult();
+		}catch (Exception e){
+			return null;
+		}
 		return ab;
 	}
 
 	@Override
 	public List<Action> getActions() {
-		IPullActions pz = (IPullActions) CommandProxy.getCommand("PullAction", 
-				Configuration.getInstance().getDevice());
-		pz.execute();
-		
-		List<Action> ab = (List<Action>) pz.getResult();
-		
+		List<Action> ab;
+		try{
+			IPullActions pz = (IPullActions) CommandProxy.getCommand("PullAction",
+					Configuration.getInstance().getDevice());
+			pz.execute();
+
+			ab = (List<Action>) pz.getResult();
+		}catch (Exception e){
+			return null;
+		}
 		return ab;
 
 	}
