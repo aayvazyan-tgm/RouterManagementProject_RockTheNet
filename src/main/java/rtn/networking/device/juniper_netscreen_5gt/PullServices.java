@@ -12,6 +12,11 @@ import rtn.networking.SNMPManager;
 import rtn.networking.Service;
 import rtn.networking.device.commands.IPullServices;
 
+/**
+ * Gets all services available on this device.
+ * 
+ * @author Andreas Willinger
+ */
 public class PullServices implements IPullServices
 {
     @SuppressWarnings("unused")

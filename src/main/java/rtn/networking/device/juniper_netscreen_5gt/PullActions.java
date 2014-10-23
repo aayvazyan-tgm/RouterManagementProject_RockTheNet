@@ -3,17 +3,17 @@ package rtn.networking.device.juniper_netscreen_5gt;
 import java.util.ArrayList;
 import java.util.List;
 
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
-
 import rtn.networking.Action;
 import rtn.networking.device.commands.IPullActions;
 
+/**
+ * Gets all actions available on this device.
+ * 
+ * @author Andreas Willinger
+ *
+ */
 public class PullActions implements IPullActions
 {
-    @SuppressWarnings("unused")
-	private static final Logger logger = LoggerFactory.getLogger(PullActions.class);
-    
     private List<Action> actions;
     
     public PullActions()

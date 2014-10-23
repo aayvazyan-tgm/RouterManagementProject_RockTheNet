@@ -3,8 +3,6 @@ package rtn.networking.device.juniper_netscreen_5gt;
 import java.util.ArrayList;
 import java.util.List;
 
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
 import org.snmp4j.smi.OID;
 import org.snmp4j.util.TableEvent;
 
@@ -12,11 +10,13 @@ import rtn.networking.SNMPManager;
 import rtn.networking.Zone;
 import rtn.networking.device.commands.IPullZones;
 
+/**
+ * Gets all zones available on this device.
+ * 
+ * @author Andreas Willinger
+ */
 public class PullZones implements IPullZones
-{
-    @SuppressWarnings("unused")
-	private static final Logger logger = LoggerFactory.getLogger(PullZones.class);
-    
+{    
     private List<Zone> zones;
     private SNMPManager manager;
     
