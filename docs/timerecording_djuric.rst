@@ -10,5 +10,6 @@ Get starting with JavaFX          2014-09-30 Daniel Djuric       21:30 23:30   0
 GUI with JavaFX                   2014-10-01 Daniel Djuric       08:50 09:40   00:50
 GUI with JavaFX                   2014-10-01 Daniel Djuric       14:10 15:00   00:50
 GUICE introduction                2014-10-09 Daniel Djuric       08:10 09:30   01:20
-**TOTAL**                                                                    **07:20**
+Pullservices                      2014-10-13 Daniel Djuric       10:00 10:45   00:45
+**TOTAL**                                                                    **08:05**
 ================================= ========== =================== ===== ===== =========

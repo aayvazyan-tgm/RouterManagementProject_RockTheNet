@@ -10,7 +10,7 @@ public interface ICommandCentre {
 
 	public boolean addPolicy(Policy policy);
 
-	public boolean updatePolicy(Policy newPolicy, Policy oldPolicy);
+	public boolean updatePolicy(Policy newPolicy);
 
 	public boolean deletePolicy(Policy policy);
 
