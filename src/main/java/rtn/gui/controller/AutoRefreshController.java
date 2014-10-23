@@ -6,7 +6,7 @@ import javafx.scene.control.TextField;
 import javafx.scene.text.Text;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-import rtn.MainApp;
+import rtn.gui.view.StageLoader;
 
 public class AutoRefreshController {
     private static final Logger logger = LoggerFactory.getLogger(AutoRefreshController.class);
@@ -44,7 +44,7 @@ public class AutoRefreshController {
 				int time = Integer.parseInt(text);
 				if(time>=0 && time<=10) {
 					//TODO start auto-refresh
-					MainApp.getAutoRefreshStage().hide();
+					StageLoader.getAutoRefreshStage().hide();
 				}
 				else {
 					title.setText("Only numbers from 1-10");

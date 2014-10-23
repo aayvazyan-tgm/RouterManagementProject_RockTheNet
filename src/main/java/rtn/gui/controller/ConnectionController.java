@@ -9,10 +9,9 @@ import javafx.scene.control.Button;
 import javafx.scene.control.ComboBox;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
-import javafx.scene.text.Text;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-import rtn.MainApp;
+import rtn.gui.view.StageLoader;
 
 import javax.mail.internet.AddressException;
 import javax.mail.internet.InternetAddress;
@@ -89,7 +88,7 @@ public class ConnectionController {
     	if(!checkFormEntries()){}
     	else {
     		//TODO establish a connection to the device
-    		MainApp.getConnectionStage().hide();
+    		StageLoader.getConnectionStage().hide();
             MainController.getInstance().refreshTable();
     	}
     	

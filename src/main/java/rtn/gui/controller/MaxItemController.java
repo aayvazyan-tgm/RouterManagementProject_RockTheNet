@@ -6,7 +6,7 @@ import javafx.scene.control.TextField;
 import javafx.scene.text.Text;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-import rtn.MainApp;
+import rtn.gui.view.StageLoader;
 
 public class MaxItemController {
     private static final Logger logger = LoggerFactory.getLogger(MaxItemController.class);
@@ -43,7 +43,7 @@ public class MaxItemController {
 				if(max>=1 && max<=10) {
 					MainController.getInstance().setMaxItems(max);
 					//TODO remove items over max number from graph list
-					MainApp.getMaxItemStage().hide();
+					StageLoader.getMaxItemStage().hide();
 				}
 				else {
 					title.setText("Only numbers from 1-10");
