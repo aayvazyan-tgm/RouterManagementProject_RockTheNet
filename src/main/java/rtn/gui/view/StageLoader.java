@@ -1,8 +1,7 @@
-package rtn.gui.controller;
+package rtn.gui.view;
 
 import javafx.scene.layout.Pane;
 import javafx.stage.Stage;
-import rtn.gui.view.*;
 
 /**
  * Created by Fabian on 23.10.2014.

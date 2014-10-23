@@ -1,18 +1,10 @@
 package rtn;
 
 import javafx.application.Application;
-import javafx.event.EventHandler;
-import javafx.fxml.FXMLLoader;
-import javafx.scene.Scene;
-import javafx.scene.layout.Pane;
-import javafx.stage.Modality;
 import javafx.stage.Stage;
-import javafx.stage.WindowEvent;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-import rtn.gui.controller.StageLoader;
-
-import java.io.IOException;
+import rtn.gui.view.StageLoader;
 
 public class MainApp extends Application {
 

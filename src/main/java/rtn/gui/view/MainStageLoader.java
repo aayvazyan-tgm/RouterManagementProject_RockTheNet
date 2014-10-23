@@ -7,7 +7,6 @@ import javafx.scene.layout.Pane;
 import javafx.stage.Stage;
 import javafx.stage.WindowEvent;
 import rtn.MainApp;
-import rtn.gui.controller.StageLoader;
 
 import java.io.IOException;
 

@@ -10,8 +10,8 @@ import javafx.scene.layout.FlowPane;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import rtn.IDataSource;
-import rtn.MainApp;
 import rtn.gui.model.TableRule;
+import rtn.gui.view.StageLoader;
 
 public class MainController {
     private static final Logger logger = LoggerFactory.getLogger(MainController.class);
@@ -121,7 +121,7 @@ public class MainController {
     private void handleChangeDeviceMenu() {
     	//TODO disconnect from current device
 
-    	MainApp.getConnectionStage().show();
+    	StageLoader.getConnectionStage().show();
     }
     
     /**
@@ -137,7 +137,7 @@ public class MainController {
      */
     @FXML
     private void handleAutoRefreshMenu() {
-    	MainApp.getAutoRefreshStage().show();
+    	StageLoader.getAutoRefreshStage().show();
 
     	//TODO insert current refresh-rate
     }
@@ -157,7 +157,7 @@ public class MainController {
      */
     @FXML
     private void handleChangeRuleMenu() {
-    	MainApp.getChangeRuleStage().show();
+    	StageLoader.getChangeRuleStage().show();
 
     	//TODO fill current values into changeRule form
     	//Example: ChangeRuleControler.setNameField(table.getSelectionModel().getSelectedItem().getName());
@@ -168,7 +168,7 @@ public class MainController {
      */
     @FXML
     private void handleMaxItemsMenu() {
-    	MainApp.getMaxItemStage().show();
+    	StageLoader.getMaxItemStage().show();
     	MaxItemController.getInstance().getTextfield().setText(""+maxItems);
     }
     
