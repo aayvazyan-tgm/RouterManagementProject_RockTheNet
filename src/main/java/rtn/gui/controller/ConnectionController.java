@@ -4,6 +4,8 @@ package rtn.gui.controller;
  * Controller Class for 'ConnectionWindow.fxml'
  */
 
+import javafx.collections.ObservableList;
+import javafx.collections.transformation.SortedList;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
 import javafx.scene.control.ComboBox;
@@ -15,6 +17,8 @@ import rtn.gui.view.StageLoader;
 
 import javax.mail.internet.AddressException;
 import javax.mail.internet.InternetAddress;
+import java.util.ArrayList;
+import java.util.List;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
@@ -47,7 +51,7 @@ public class ConnectionController {
     private Label desc_l;
 
     @FXML
-    private ComboBox<?> device_cb;
+    private ComboBox<String> device_cb;
 
     @FXML
     private Label welcome_l;
@@ -74,7 +78,8 @@ public class ConnectionController {
 	 * Sets the instance
 	 */
     public void initialize() {
-    	instance = this;
+        device_cb.getItems().add("Juniper Netscreen 5gt");
+        instance = this;
     }
     
     /**
@@ -87,7 +92,8 @@ public class ConnectionController {
                 "You have to at least select a device and enter an IP address!");
     	if(!checkFormEntries()){}
     	else {
-    		//TODO establish a connection to the device
+            //TODO set device information
+            //TODO establish a connection to the device
     		StageLoader.getConnectionStage().hide();
             MainController.getInstance().refreshTable();
     	}
@@ -126,7 +132,6 @@ public class ConnectionController {
 	 * Checks if the form has been filled out sufficiently
 	 */
 	private boolean checkFormEntries() {
-        device="abc";
   		if(device==null || device.equals("")){
 			desc_l.setText(desc_l.getText()+"\nPlease select a device!");
 			return false;
