@@ -1,28 +1,18 @@
 package rtn;
 
-import java.util.ArrayList;
 import java.util.List;
-
-import com.sun.media.sound.AlawCodec;
-
 import rtn.networking.Action;
 import rtn.networking.CommandProxy;
 import rtn.networking.Configuration;
 import rtn.networking.Policy;
-import rtn.networking.SNMPManager;
 import rtn.networking.Service;
 import rtn.networking.Zone;
 import rtn.networking.device.commands.IAddPolicy;
 import rtn.networking.device.commands.IDeletePolicy;
-import rtn.networking.device.commands.IDevCommand;
 import rtn.networking.device.commands.IPullActions;
 import rtn.networking.device.commands.IPullServices;
 import rtn.networking.device.commands.IPullZones;
-import rtn.networking.device.commands.IResult;
 import rtn.networking.device.commands.IUpdatePolicy;
-import rtn.networking.device.juniper_netscreen_5gt.AddPolicy;
-import rtn.networking.device.juniper_netscreen_5gt.DeletePolicy;
-import rtn.networking.device.juniper_netscreen_5gt.UpdatePolicy;
 /**
  * 
  * @author Djuric Daniel
