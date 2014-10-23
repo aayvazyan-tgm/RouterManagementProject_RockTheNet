@@ -37,7 +37,7 @@ public class AddPolicyTest
 	@Test(expected = IllegalArgumentException.class)
 	public void testSetParamsNullEmpty() throws Exception
 	{
-		this.addPolicy.setParams(null);
+		this.addPolicy.setParams((Object[])null);
 		this.addPolicy.execute();
 		this.addPolicy.setParams();
 		this.addPolicy.execute();

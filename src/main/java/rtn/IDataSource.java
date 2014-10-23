@@ -9,6 +9,6 @@ public interface IDataSource {
 
 	public List getPolicies();
 
-	public DataLoad getThroughput(Policy policy);
+	public DataLoad getThroughput();
 
 }

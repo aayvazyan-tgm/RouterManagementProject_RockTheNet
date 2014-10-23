@@ -30,25 +30,70 @@
          </VBox.margin>
       </Label>
       <ComboBox fx:id="device_cb" prefWidth="150.0" promptText="Device Type" />
-      <TextField fx:id="ip_tf" maxWidth="600.0" promptText="IP-Adress" />
+      <Separator opacity="0.0" prefWidth="200.0" />
       <HBox alignment="CENTER" maxWidth="1.7976931348623157E308">
          <children>
-            <TextField fx:id="user_tf" minWidth="200.0" promptText="Username">
+            <TextField fx:id="ip_tf" minWidth="200.0" promptText="ip-address">
                <HBox.margin>
                   <Insets right="10.0" />
                </HBox.margin>
             </TextField>
-            <TextField fx:id="pass_tf" minWidth="200.0" promptText="Password">
+            <TextField fx:id="com_tf" minWidth="200.0" promptText="community">
                <HBox.margin>
                   <Insets left="10.0" />
                </HBox.margin>
             </TextField>
          </children>
       </HBox>
-      <TextField fx:id="snmp_tf" maxWidth="600.0" minWidth="370.0" promptText="SNMP-Port (... if empty)" />
-      <AnchorPane maxWidth="600.0" prefHeight="200.0" prefWidth="200.0">
+      <Separator opacity="0.0" prefWidth="200.0" />
+      <HBox alignment="CENTER" maxWidth="1.7976931348623157E308">
          <children>
-            <Button fx:id="connect_b" layoutX="454.0" layoutY="33.0" mnemonicParsing="false" text="Connect" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
+            <TextField fx:id="user_tf" minWidth="200.0" promptText="username">
+               <HBox.margin>
+                  <Insets right="10.0" />
+               </HBox.margin>
+            </TextField>
+            <TextField fx:id="pass_tf" minWidth="200.0" promptText="password">
+               <HBox.margin>
+                  <Insets left="10.0" />
+               </HBox.margin>
+            </TextField>
+         </children>
+      </HBox>
+      <Separator opacity="0.0" prefWidth="200.0" />
+      <HBox alignment="CENTER" maxWidth="1.7976931348623157E308">
+         <children>
+            <TextField fx:id="snmp_tf" minWidth="200.0" promptText="snmp-port (161 if empty)">
+               <HBox.margin>
+                  <Insets right="10.0" />
+               </HBox.margin>
+            </TextField>
+            <TextField fx:id="trap_tf" minWidth="200.0" promptText="trap-port (13037 if empty)">
+               <HBox.margin>
+                  <Insets left="10.0" />
+               </HBox.margin>
+            </TextField>
+         </children>
+      </HBox>
+      <HBox alignment="CENTER" maxWidth="1.7976931348623157E308">
+         <children>
+            <Separator opacity="0.0" prefWidth="200.0">
+               <HBox.margin>
+                  <Insets right="10.0" />
+               </HBox.margin>
+            </Separator>
+            <TextField fx:id="admin_tf" minWidth="200.0" promptText="admin port (enter any free port)">
+               <HBox.margin>
+                  <Insets left="10.0" />
+               </HBox.margin>
+            </TextField>
+         </children>
+      </HBox>
+      <Separator opacity="0.0" prefWidth="200.0" />
+      <TextField fx:id="mail_tf" maxWidth="600.0" minWidth="370.0" promptText="email-address (for notifications)" />
+      <AnchorPane maxWidth="600.0" prefWidth="200.0">
+         <children>
+            <Button fx:id="connect_b" layoutX="454.0" layoutY="33.0" mnemonicParsing="false" onAction="#handleConnectButton" text="Connect" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
          </children>
       </AnchorPane>
    </children>

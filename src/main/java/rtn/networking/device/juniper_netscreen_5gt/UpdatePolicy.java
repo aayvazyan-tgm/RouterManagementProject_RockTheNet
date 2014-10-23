@@ -1,11 +1,7 @@
 package rtn.networking.device.juniper_netscreen_5gt;
 
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
-
 import rtn.networking.Policy;
 import rtn.networking.admin.SSHProtocol;
-import rtn.networking.device.commands.IAddPolicy;
 import rtn.networking.device.commands.IUpdatePolicy;
 
 /**
@@ -15,8 +11,6 @@ import rtn.networking.device.commands.IUpdatePolicy;
  */
 public class UpdatePolicy implements IUpdatePolicy
 {
-    private static final Logger logger = LoggerFactory.getLogger(UpdatePolicy.class);
-
 	private Policy policy;
 	private SSHProtocol protocol;
 	

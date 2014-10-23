@@ -105,30 +105,46 @@ public class MainController {
     
     private int maxItems;
 
+    /**
+	 * Sets the instance
+	 */
     public void initialize() {
     	instance = this;
     	maxItems=1;
     	initTable();
     }
     
+    /**
+     * Handles the changeDevice Button (closes current connection and opens connectionWindow)
+     */
     @FXML
     private void handleChangeDeviceMenu() {
     	//TODO disconnect from current device
-    	MainApp.getMainStage().hide();
+
     	MainApp.getConnectionStage().show();
     }
     
+    /**
+     * Refreshes the policyTable
+     */
     @FXML
     private void handleRefreshMenu() {
     	refreshTable();
     }
     
+    /**
+     * Opens the autoRefreshWindow
+     */
     @FXML
     private void handleAutoRefreshMenu() {
     	MainApp.getAutoRefreshStage().show();
+
     	//TODO insert current refresh-rate
     }
     
+    /**
+     * Opens the graphTab
+     */
     @FXML
     private void handleDisplayGraphMenu() {
     	tabPane.getSelectionModel().select(graphTab);
@@ -136,30 +152,45 @@ public class MainController {
     	//TODO add selected rule to graph
     }
     
+    /**
+     * Opens the changeRuleWindow for each selected policy
+     */
     @FXML
     private void handleChangeRuleMenu() {
     	MainApp.getChangeRuleStage().show();
-    	
+
     	//TODO fill current values into changeRule form
     	//Example: ChangeRuleControler.setNameField(table.getSelectionModel().getSelectedItem().getName());
     }
     
+    /**
+     * Opens the maxItemsWindow
+     */
     @FXML
     private void handleMaxItemsMenu() {
     	MainApp.getMaxItemStage().show();
     	MaxItemController.getInstance().getTextfield().setText(""+maxItems);
     }
     
+    /**
+     * Opens the helpWindow
+     */
     @FXML
     private void handleHelpMenu() {
     	//TODO show HelpWindow
     }
     
+    /**
+     * Opens the guideWindow
+     */
     @FXML
     private void handleGuideMenu() {
     	//TODO Show GuideWindow
     }
     
+    /**
+     * Initializes the policyTable, sets the value types to TableRule
+     */
     private void initTable() {
     	nameColumn.setCellValueFactory(new PropertyValueFactory<TableRule, String>("name"));
     	zoneInColumn.setCellValueFactory(new PropertyValueFactory<TableRule, String>("zoneIn"));
@@ -173,7 +204,10 @@ public class MainController {
     	refreshTable();
     }
     
-    private void refreshTable() {
+    /**
+     * Refreshes the policyTable
+     */
+    public void refreshTable() {
 		tableData.clear();
 		
 		tableData.add(new TableRule("Rule#1","abc","def","Service","Action","1.1.1.1","2.2.2.2",true)); //Testrow #1
@@ -185,6 +219,8 @@ public class MainController {
 	}
 
 	/**
+	 * Returns the current instance
+	 * 
 	 * @return the instance
 	 */
 	public static MainController getInstance() {
@@ -192,13 +228,8 @@ public class MainController {
 	}
 
 	/**
-	 * @param instance the instance to set
-	 */
-	public static void setInstance(MainController instance) {
-		MainController.instance = instance;
-	}
-
-	/**
+	 * Gets the data manager.
+	 *
 	 * @return the dataManager
 	 */
 	public IDataSource getDataManager() {
@@ -206,6 +237,8 @@ public class MainController {
 	}
 
 	/**
+	 * Sets the data manager.
+	 *
 	 * @param dataManager the dataManager to set
 	 */
 	public void setDataManager(IDataSource dataManager) {
@@ -213,6 +246,8 @@ public class MainController {
 	}
 
 	/**
+	 * Gets the table data.
+	 *
 	 * @return the tableData
 	 */
 	public ObservableList<TableRule> getTableData() {
@@ -220,6 +255,8 @@ public class MainController {
 	}
 
 	/**
+	 * Sets the table data.
+	 *
 	 * @param tableData the tableData to set
 	 */
 	public void setTableData(ObservableList<TableRule> tableData) {
@@ -227,6 +264,8 @@ public class MainController {
 	}
 
 	/**
+	 * Gets the zone in column.
+	 *
 	 * @return the zoneInColumn
 	 */
 	public TableColumn<TableRule, String> getZoneInColumn() {
@@ -234,6 +273,8 @@ public class MainController {
 	}
 
 	/**
+	 * Sets the zone in column.
+	 *
 	 * @param zoneInColumn the zoneInColumn to set
 	 */
 	public void setZoneInColumn(TableColumn<TableRule, String> zoneInColumn) {
@@ -241,6 +282,8 @@ public class MainController {
 	}
 
 	/**
+	 * Gets the guide menu.
+	 *
 	 * @return the guideMenu
 	 */
 	public MenuItem getGuideMenu() {
@@ -248,6 +291,8 @@ public class MainController {
 	}
 
 	/**
+	 * Sets the guide menu.
+	 *
 	 * @param guideMenu the guideMenu to set
 	 */
 	public void setGuideMenu(MenuItem guideMenu) {
@@ -255,6 +300,8 @@ public class MainController {
 	}
 
 	/**
+	 * Gets the graph menu.
+	 *
 	 * @return the graphMenu
 	 */
 	public Menu getGraphMenu() {
@@ -262,6 +309,8 @@ public class MainController {
 	}
 
 	/**
+	 * Sets the graph menu.
+	 *
 	 * @param graphMenu the graphMenu to set
 	 */
 	public void setGraphMenu(Menu graphMenu) {
@@ -269,6 +318,8 @@ public class MainController {
 	}
 
 	/**
+	 * Gets the zone out column.
+	 *
 	 * @return the zoneOutColumn
 	 */
 	public TableColumn<TableRule, String> getZoneOutColumn() {
@@ -276,6 +327,8 @@ public class MainController {
 	}
 
 	/**
+	 * Sets the zone out column.
+	 *
 	 * @param zoneOutColumn the zoneOutColumn to set
 	 */
 	public void setZoneOutColumn(TableColumn<TableRule, String> zoneOutColumn) {
@@ -283,6 +336,8 @@ public class MainController {
 	}
 
 	/**
+	 * Gets the menu bar.
+	 *
 	 * @return the menuBar
 	 */
 	public MenuBar getMenuBar() {
@@ -290,6 +345,8 @@ public class MainController {
 	}
 
 	/**
+	 * Sets the menu bar.
+	 *
 	 * @param menuBar the menuBar to set
 	 */
 	public void setMenuBar(MenuBar menuBar) {
@@ -297,6 +354,8 @@ public class MainController {
 	}
 
 	/**
+	 * Gets the rules tab.
+	 *
 	 * @return the rulesTab
 	 */
 	public Tab getRulesTab() {
@@ -304,6 +363,8 @@ public class MainController {
 	}
 
 	/**
+	 * Sets the rules tab.
+	 *
 	 * @param rulesTab the rulesTab to set
 	 */
 	public void setRulesTab(Tab rulesTab) {
@@ -311,6 +372,8 @@ public class MainController {
 	}
 
 	/**
+	 * Gets the change device menu.
+	 *
 	 * @return the changeDeviceMenu
 	 */
 	public MenuItem getChangeDeviceMenu() {
@@ -318,6 +381,8 @@ public class MainController {
 	}
 
 	/**
+	 * Sets the change device menu.
+	 *
 	 * @param changeDeviceMenu the changeDeviceMenu to set
 	 */
 	public void setChangeDeviceMenu(MenuItem changeDeviceMenu) {
@@ -325,6 +390,8 @@ public class MainController {
 	}
 
 	/**
+	 * Gets the name column.
+	 *
 	 * @return the nameColumn
 	 */
 	public TableColumn<TableRule, String> getNameColumn() {
@@ -332,6 +399,8 @@ public class MainController {
 	}
 
 	/**
+	 * Sets the name column.
+	 *
 	 * @param nameColumn the nameColumn to set
 	 */
 	public void setNameColumn(TableColumn<TableRule, String> nameColumn) {
@@ -339,6 +408,8 @@ public class MainController {
 	}
 
 	/**
+	 * Gets the refresh menu.
+	 *
 	 * @return the refreshMenu
 	 */
 	public MenuItem getRefreshMenu() {
@@ -346,6 +417,8 @@ public class MainController {
 	}
 
 	/**
+	 * Sets the refresh menu.
+	 *
 	 * @param refreshMenu the refreshMenu to set
 	 */
 	public void setRefreshMenu(MenuItem refreshMenu) {
@@ -353,6 +426,8 @@ public class MainController {
 	}
 
 	/**
+	 * Gets the help menu item.
+	 *
 	 * @return the helpMenuItem
 	 */
 	public MenuItem getHelpMenuItem() {
@@ -360,6 +435,8 @@ public class MainController {
 	}
 
 	/**
+	 * Sets the help menu item.
+	 *
 	 * @param helpMenuItem the helpMenuItem to set
 	 */
 	public void setHelpMenuItem(MenuItem helpMenuItem) {
@@ -367,6 +444,8 @@ public class MainController {
 	}
 
 	/**
+	 * Gets the display graph menu.
+	 *
 	 * @return the displayGraphMenu
 	 */
 	public MenuItem getDisplayGraphMenu() {
@@ -374,6 +453,8 @@ public class MainController {
 	}
 
 	/**
+	 * Sets the display graph menu.
+	 *
 	 * @param displayGraphMenu the displayGraphMenu to set
 	 */
 	public void setDisplayGraphMenu(MenuItem displayGraphMenu) {
@@ -381,6 +462,8 @@ public class MainController {
 	}
 
 	/**
+	 * Gets the table.
+	 *
 	 * @return the table
 	 */
 	public TableView<TableRule> getTable() {
@@ -388,6 +471,8 @@ public class MainController {
 	}
 
 	/**
+	 * Sets the table.
+	 *
 	 * @param table the table to set
 	 */
 	public void setTable(TableView<TableRule> table) {
@@ -395,6 +480,8 @@ public class MainController {
 	}
 
 	/**
+	 * Gets the rules menu.
+	 *
 	 * @return the rulesMenu
 	 */
 	public Menu getRulesMenu() {
@@ -402,6 +489,8 @@ public class MainController {
 	}
 
 	/**
+	 * Sets the rules menu.
+	 *
 	 * @param rulesMenu the rulesMenu to set
 	 */
 	public void setRulesMenu(Menu rulesMenu) {
@@ -409,6 +498,8 @@ public class MainController {
 	}
 
 	/**
+	 * Gets the action column.
+	 *
 	 * @return the actionColumn
 	 */
 	public TableColumn<TableRule, String> getActionColumn() {
@@ -416,6 +507,8 @@ public class MainController {
 	}
 
 	/**
+	 * Sets the action column.
+	 *
 	 * @param actionColumn the actionColumn to set
 	 */
 	public void setActionColumn(TableColumn<TableRule, String> actionColumn) {
@@ -423,6 +516,8 @@ public class MainController {
 	}
 
 	/**
+	 * Gets the address in column.
+	 *
 	 * @return the addressInColumn
 	 */
 	public TableColumn<TableRule, String> getAddressInColumn() {
@@ -430,6 +525,8 @@ public class MainController {
 	}
 
 	/**
+	 * Sets the address in column.
+	 *
 	 * @param addressInColumn the addressInColumn to set
 	 */
 	public void setAddressInColumn(TableColumn<TableRule, String> addressInColumn) {
@@ -437,6 +534,8 @@ public class MainController {
 	}
 
 	/**
+	 * Gets the logged column.
+	 *
 	 * @return the loggedColumn
 	 */
 	public TableColumn<TableRule, Boolean> getLoggedColumn() {
@@ -444,6 +543,8 @@ public class MainController {
 	}
 
 	/**
+	 * Sets the logged column.
+	 *
 	 * @param loggedColumn the loggedColumn to set
 	 */
 	public void setLoggedColumn(TableColumn<TableRule, Boolean> loggedColumn) {
@@ -451,6 +552,8 @@ public class MainController {
 	}
 
 	/**
+	 * Gets the graph tab.
+	 *
 	 * @return the graphTab
 	 */
 	public Tab getGraphTab() {
@@ -458,6 +561,8 @@ public class MainController {
 	}
 
 	/**
+	 * Sets the graph tab.
+	 *
 	 * @param graphTab the graphTab to set
 	 */
 	public void setGraphTab(Tab graphTab) {
@@ -465,6 +570,8 @@ public class MainController {
 	}
 
 	/**
+	 * Gets the service column.
+	 *
 	 * @return the serviceColumn
 	 */
 	public TableColumn<TableRule, String> getServiceColumn() {
@@ -472,6 +579,8 @@ public class MainController {
 	}
 
 	/**
+	 * Sets the service column.
+	 *
 	 * @param serviceColumn the serviceColumn to set
 	 */
 	public void setServiceColumn(TableColumn<TableRule, String> serviceColumn) {
@@ -479,6 +588,8 @@ public class MainController {
 	}
 
 	/**
+	 * Gets the max items menu.
+	 *
 	 * @return the maxItemsMenu
 	 */
 	public MenuItem getMaxItemsMenu() {
@@ -486,6 +597,8 @@ public class MainController {
 	}
 
 	/**
+	 * Sets the max items menu.
+	 *
 	 * @param maxItemsMenu the maxItemsMenu to set
 	 */
 	public void setMaxItemsMenu(MenuItem maxItemsMenu) {
@@ -493,6 +606,8 @@ public class MainController {
 	}
 
 	/**
+	 * Gets the help menu.
+	 *
 	 * @return the helpMenu
 	 */
 	public Menu getHelpMenu() {
@@ -500,6 +615,8 @@ public class MainController {
 	}
 
 	/**
+	 * Sets the help menu.
+	 *
 	 * @param helpMenu the helpMenu to set
 	 */
 	public void setHelpMenu(Menu helpMenu) {
@@ -507,6 +624,8 @@ public class MainController {
 	}
 
 	/**
+	 * Gets the application menu.
+	 *
 	 * @return the applicationMenu
 	 */
 	public Menu getApplicationMenu() {
@@ -514,6 +633,8 @@ public class MainController {
 	}
 
 	/**
+	 * Sets the application menu.
+	 *
 	 * @param applicationMenu the applicationMenu to set
 	 */
 	public void setApplicationMenu(Menu applicationMenu) {
@@ -521,6 +642,8 @@ public class MainController {
 	}
 
 	/**
+	 * Gets the graph.
+	 *
 	 * @return the graph
 	 */
 	public LineChart<?, ?> getGraph() {
@@ -528,6 +651,8 @@ public class MainController {
 	}
 
 	/**
+	 * Sets the graph.
+	 *
 	 * @param graph the graph to set
 	 */
 	public void setGraph(LineChart<?, ?> graph) {
@@ -535,6 +660,8 @@ public class MainController {
 	}
 
 	/**
+	 * Gets the auto refresh menu.
+	 *
 	 * @return the autoRefreshMenu
 	 */
 	public MenuItem getAutoRefreshMenu() {
@@ -542,6 +669,8 @@ public class MainController {
 	}
 
 	/**
+	 * Sets the auto refresh menu.
+	 *
 	 * @param autoRefreshMenu the autoRefreshMenu to set
 	 */
 	public void setAutoRefreshMenu(MenuItem autoRefreshMenu) {
@@ -549,6 +678,8 @@ public class MainController {
 	}
 
 	/**
+	 * Gets the change rule menu.
+	 *
 	 * @return the changeRuleMenu
 	 */
 	public MenuItem getChangeRuleMenu() {
@@ -556,6 +687,8 @@ public class MainController {
 	}
 
 	/**
+	 * Sets the change rule menu.
+	 *
 	 * @param changeRuleMenu the changeRuleMenu to set
 	 */
 	public void setChangeRuleMenu(MenuItem changeRuleMenu) {
@@ -563,6 +696,8 @@ public class MainController {
 	}
 
 	/**
+	 * Gets the address out column.
+	 *
 	 * @return the addressOutColumn
 	 */
 	public TableColumn<TableRule, String> getAddressOutColumn() {
@@ -570,6 +705,8 @@ public class MainController {
 	}
 
 	/**
+	 * Sets the address out column.
+	 *
 	 * @param addressOutColumn the addressOutColumn to set
 	 */
 	public void setAddressOutColumn(TableColumn<TableRule, String> addressOutColumn) {
@@ -577,6 +714,8 @@ public class MainController {
 	}
 
 	/**
+	 * Gets the tab pane.
+	 *
 	 * @return the tabPane
 	 */
 	public TabPane getTabPane() {
@@ -584,6 +723,8 @@ public class MainController {
 	}
 
 	/**
+	 * Sets the tab pane.
+	 *
 	 * @param tabPane the tabPane to set
 	 */
 	public void setTabPane(TabPane tabPane) {
@@ -591,6 +732,8 @@ public class MainController {
 	}
 
 	/**
+	 * Gets the graph items pane.
+	 *
 	 * @return the graphItemsPane
 	 */
 	public FlowPane getGraphItemsPane() {
@@ -598,6 +741,8 @@ public class MainController {
 	}
 
 	/**
+	 * Sets the graph items pane.
+	 *
 	 * @param graphItemsPane the graphItemsPane to set
 	 */
 	public void setGraphItemsPane(FlowPane graphItemsPane) {
@@ -605,6 +750,8 @@ public class MainController {
 	}
 
 	/**
+	 * Gets the max items.
+	 *
 	 * @return the maxItems
 	 */
 	public int getMaxItems() {
@@ -612,6 +759,8 @@ public class MainController {
 	}
 
 	/**
+	 * Sets the max items.
+	 *
 	 * @param maxItems the maxItems to set
 	 */
 	public void setMaxItems(int maxItems) {

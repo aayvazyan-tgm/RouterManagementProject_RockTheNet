@@ -1,7 +1,5 @@
 package rtn.networking.device.juniper_netscreen_5gt;
 
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
 import rtn.networking.Policy;
 import rtn.networking.admin.SSHProtocol;
 import rtn.networking.device.commands.IDeletePolicy;
@@ -13,8 +11,6 @@ import rtn.networking.device.commands.IDeletePolicy;
  */
 public class DeletePolicy implements IDeletePolicy
 {
-    private static final Logger logger = LoggerFactory.getLogger(DeletePolicy.class);
-
 	private Policy policy;
 	private SSHProtocol protocol;
 	
@@ -35,10 +31,11 @@ public class DeletePolicy implements IDeletePolicy
 	}
 
 	/**
+	 * @throws Exception 
 	 * @see rtn.networking.device.commands.IDevCommand#execute()
 	 */
 	@Override
-	public void execute()
+	public void execute() throws Exception
 	{
 		if(policy == null) throw new IllegalArgumentException("Policy can not be null!");
 		if(policy.getId() == null || policy.getId() < 0) throw new IllegalArgumentException("Id is out of range");
