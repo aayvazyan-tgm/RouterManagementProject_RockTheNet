@@ -81,7 +81,6 @@ public class Test_GuiceModule {
                 rtn.networking.device.commands.IPullActions.class,
                 //rtn.networking.device.commands.IParametrized.class,
                 rtn.networking.device.commands.IPullPolicies.class,
-                rtn.gui.view.AlertWindow.class,
                 rtn.gui.controller.AutoRefreshController.class,
                 rtn.gui.controller.AlertController.class,
                 rtn.gui.controller.MainController.class,
