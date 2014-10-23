@@ -1,10 +1,13 @@
 package rtn;
 
 import javafx.application.Application;
+import javafx.event.EventHandler;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
 import javafx.scene.layout.Pane;
+import javafx.stage.Modality;
 import javafx.stage.Stage;
+import javafx.stage.WindowEvent;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -45,27 +48,33 @@ public class MainApp extends Application {
 	 */
 	private void initMainStage() {
         String layoutPath = "rtn/gui/view/MainWindow.fxml";
-		mainStage = new Stage();
-		mainStage.setTitle("RockTheNet");
-		
-		FXMLLoader loader = new FXMLLoader();
+        mainStage = new Stage();
+        mainStage.setTitle("RockTheNet");
+
+        FXMLLoader loader = new FXMLLoader();
         loader.setLocation(getClass().getClassLoader().getResource(layoutPath));
-        
+
         try {
-			mainLayout = loader.load();
-		} catch (IOException e) {
-			logger.error("Could not load layout: " + layoutPath, e);
-		}
-        
+            mainLayout = loader.load();
+        } catch (IOException e) {
+            logger.error("Could not load layout: " + layoutPath, e);
+        }
+
         Scene scene = new Scene(mainLayout);
         mainStage.setScene(scene);
-        mainStage.hide();
-	}
+        mainStage.show();
+        mainStage.setOnCloseRequest(new EventHandler<WindowEvent>() {
+            public void handle(WindowEvent we) {
+                //TODO close all the connection stuff;
+            }
+        });
+    }
 
-	/**
-	 * Loads the .fxml file and initializes the connectionStage
-	 */
-	private void initConnectionStage() {
+                /**
+                 * Loads the .fxml file and initializes the connectionStage
+                 */
+
+    private void initConnectionStage() {
         String layoutPath = "rtn/gui/view/ConnectionWindow.fxml";
 
 		connectionStage = new Stage();
@@ -81,6 +90,10 @@ public class MainApp extends Application {
 		}
         
         Scene scene = new Scene(connectionLayout);
+
+        connectionStage.initModality(Modality.WINDOW_MODAL);
+        connectionStage.initOwner(mainStage.getScene().getWindow());
+
         connectionStage.setScene(scene);
         connectionStage.show();
 	}
@@ -104,6 +117,10 @@ public class MainApp extends Application {
 		}
         
         Scene scene = new Scene(maxItemLayout);
+
+        maxItemStage.initModality(Modality.WINDOW_MODAL);
+        maxItemStage.initOwner(mainStage.getScene().getWindow());
+
         maxItemStage.setScene(scene);
         maxItemStage.hide();
 	}
@@ -127,6 +144,10 @@ public class MainApp extends Application {
 		}
         
         Scene scene = new Scene(autoRefreshLayout);
+
+        autoRefreshStage.initModality(Modality.WINDOW_MODAL);
+        autoRefreshStage.initOwner(mainStage.getScene().getWindow());
+
         autoRefreshStage.setScene(scene);
         autoRefreshStage.hide();
 	}
@@ -150,8 +171,12 @@ public class MainApp extends Application {
 		}
         
         Scene scene = new Scene(addRuleLayout);
+
+        addRuleStage.initModality(Modality.WINDOW_MODAL);
+        addRuleStage.initOwner(mainStage.getScene().getWindow());
+
         addRuleStage.setScene(scene);
-        addRuleStage.show();
+        addRuleStage.hide();
 	}
 	
 	/**
@@ -173,6 +198,10 @@ public class MainApp extends Application {
 		}
         
         Scene scene = new Scene(removeRuleLayout);
+
+        removeRuleStage.initModality(Modality.WINDOW_MODAL);
+        removeRuleStage.initOwner(mainStage.getScene().getWindow());
+
         removeRuleStage.setScene(scene);
         removeRuleStage.hide();
 	}
@@ -196,6 +225,10 @@ public class MainApp extends Application {
 		}
         
         Scene scene = new Scene(changeRuleLayout);
+
+        changeRuleStage.initModality(Modality.WINDOW_MODAL);
+        changeRuleStage.initOwner(mainStage.getScene().getWindow());
+
         changeRuleStage.setScene(scene);
         changeRuleStage.hide();
 	}
