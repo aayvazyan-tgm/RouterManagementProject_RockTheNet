@@ -22,10 +22,17 @@ public class MaxItemController {
 
 	private static MaxItemController instance;
 
+	/**
+	 * Sets the instance
+	 */
 	public void initialize() {
     	instance = this;
     }
 	
+	/**
+	 * Handles the confirm button, checks if a correct value has been entered
+	 * (int, range:1-10)
+	 */
 	private void handleConfirm() {
 		String text = textfield.getText();
 		
@@ -53,6 +60,8 @@ public class MaxItemController {
 	}
 
 	/**
+	 * Gets the confirm.
+	 *
 	 * @return the confirm
 	 */
 	public Button getConfirm() {
@@ -60,6 +69,8 @@ public class MaxItemController {
 	}
 
 	/**
+	 * Sets the confirm.
+	 *
 	 * @param confirm the confirm to set
 	 */
 	public void setConfirm(Button confirm) {
@@ -67,6 +78,8 @@ public class MaxItemController {
 	}
 
 	/**
+	 * Gets the textfield.
+	 *
 	 * @return the textfield
 	 */
 	public TextField getTextfield() {
@@ -74,6 +87,8 @@ public class MaxItemController {
 	}
 
 	/**
+	 * Sets the textfield.
+	 *
 	 * @param textfield the textfield to set
 	 */
 	public void setTextfield(TextField textfield) {
@@ -81,6 +96,8 @@ public class MaxItemController {
 	}
 
 	/**
+	 * Gets the title.
+	 *
 	 * @return the title
 	 */
 	public Text getTitle() {
@@ -88,6 +105,8 @@ public class MaxItemController {
 	}
 
 	/**
+	 * Sets the title.
+	 *
 	 * @param title the title to set
 	 */
 	public void setTitle(Text title) {
@@ -95,6 +114,8 @@ public class MaxItemController {
 	}
 
 	/**
+	 * Gets the single instance of MaxItemController.
+	 *
 	 * @return the instance
 	 */
 	public static MaxItemController getInstance() {
@@ -102,6 +123,8 @@ public class MaxItemController {
 	}
 
 	/**
+	 * Sets the instance.
+	 *
 	 * @param instance the instance to set
 	 */
 	public static void setInstance(MaxItemController instance) {
