@@ -119,7 +119,7 @@ public class SNMPManager {
 	}
 	
 	/**
-	 * 
+	 * Returns the current target
 	 * @return The target
 	 */
 	public Target getTarget() {
