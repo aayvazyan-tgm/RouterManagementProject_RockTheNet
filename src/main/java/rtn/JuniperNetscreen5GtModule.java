@@ -1,6 +1,10 @@
 package rtn;
 
 import com.google.inject.AbstractModule;
+import com.google.inject.Provides;
+import org.snmp4j.smi.Address;
+import org.snmp4j.smi.GenericAddress;
+import rtn.networking.Configuration;
 import rtn.networking.device.commands.*;
 import rtn.networking.device.juniper_netscreen_5gt.*;
 
@@ -21,5 +25,14 @@ public class JuniperNetscreen5GtModule extends AbstractModule {
         bind(IPullThroughput.class).to(PullThroughput.class);
         bind(IPullZones.class).to(PullZones.class);
         bind(IUpdatePolicy.class).to(UpdatePolicy.class);
+    }
+
+    @Provides
+    public static Address getRouterAddress() {
+        String remote = Configuration.getInstance().getRemoteip();
+        int port = 162;
+        Address address = GenericAddress.parse("udp://" + remote + "/" + String.valueOf(port));
+
+        return address;
     }
 }
