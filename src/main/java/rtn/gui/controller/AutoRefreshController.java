@@ -35,6 +35,7 @@ public class AutoRefreshController {
 	 * 
 	 * no auto-refresh, if 0 was entered
 	 */
+    @FXML
 	private void handleConfirm() {
 		String text = textfield.getText();
 
@@ -43,7 +44,12 @@ public class AutoRefreshController {
 			try {
 				int time = Integer.parseInt(text);
 				if(time>=0 && time<=10) {
-					//TODO start auto-refresh
+                    if(time==0) {
+                        MainController.getInstance().stopAutoRefresh();
+                    }
+					else {
+                        MainController.getInstance().startAutoRefresh(time);
+                    }
 					StageLoader.getAutoRefreshStage().hide();
 				}
 				else {
@@ -53,7 +59,6 @@ public class AutoRefreshController {
 			catch(NumberFormatException nfe) {
 				title.setText("Only numbers from 1-10");
 			}
-			
 		}
 		else {
 			title.setText("Only numbers from 1-10");
