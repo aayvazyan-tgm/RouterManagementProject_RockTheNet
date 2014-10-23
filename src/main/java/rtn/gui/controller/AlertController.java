@@ -4,6 +4,10 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import rtn.ICommandCentre;
 
+/**
+ * Controller that handles the AlertWIndow
+ * @author Fabian Freudensprung
+ */
 public class AlertController {
     private static final Logger logger = LoggerFactory.getLogger(AlertController.class);
 
@@ -11,6 +15,9 @@ public class AlertController {
 	
 	private ICommandCentre commandCentre;
 
+	/**
+	 * Sets the instance
+	 */
 	public void initialize() {
     	instance = this;
     }

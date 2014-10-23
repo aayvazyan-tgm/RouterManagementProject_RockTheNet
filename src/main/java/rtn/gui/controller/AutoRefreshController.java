@@ -22,17 +22,27 @@ public class AutoRefreshController {
 
 	private static AutoRefreshController instance;
 
+	/**
+	 * Sets the instance
+	 */
 	public void initialize() {
     	instance = this;
     }
 	
+	/**
+	 * Handles the confirm button and checks if a correct value has been entered 
+	 * (int, range: 0-10) <s>
+	 * 
+	 * no auto-refresh, if 0 was entered
+	 */
 	private void handleConfirm() {
 		String text = textfield.getText();
 		
+		//Checks if the textfield is empty
 		if(text!=null && !text.isEmpty()) {
 			try {
 				int time = Integer.parseInt(text);
-				if(time>=1 && time<=10) {
+				if(time>=0 && time<=10) {
 					//TODO start auto-refresh
 					MainApp.getAutoRefreshStage().hide();
 				}

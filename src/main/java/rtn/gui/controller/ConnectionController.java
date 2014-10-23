@@ -55,10 +55,16 @@ public class ConnectionController {
     
 	private static ConnectionController instance;
     
+	/**
+	 * Sets the instance
+	 */
     public void initialize() {
     	instance = this;
     }
     
+    /**
+     * Handles the connect Button (connects to Device and closes connectionWindow)
+     */
     @FXML
     private void handleConnectButton() {
     	errorText.setText("");
