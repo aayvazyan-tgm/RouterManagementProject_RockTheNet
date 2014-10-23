@@ -40,6 +40,8 @@ PullServices, PullZones & tests   2014-10-20 20:40 21:45   01:05
 SNMPManager fix                   2014-10-21 09:40 10:05   00:25
 Fixing GuiceModule tests          2014-10-22 10:20 10:30   00:10
 Fixing GuiceModule tests, UML     2014-10-22 10:45 11:15   00:30
-FIxing JavaDocs                   2014-10-22 11:30 11:35   00:05
-**TOTAL**                                                **34:55**
+Fixing JavaDocs                   2014-10-22 11:30 11:35   00:05
+Device documentation, JavaDoc     2014-10-23 10:40 11:30   00:50
+JavaDoc, fixing RulesAdminContr.  2014-10-23 12:10 12:45   00:35
+**TOTAL**                                                **36:20**
 ================================= ========== ===== ===== =========
