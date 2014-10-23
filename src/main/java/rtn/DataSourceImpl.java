@@ -36,12 +36,17 @@ public class DataSourceImpl implements IDataSource {
 	}
 
 	@Override
-	public DataLoad getThroughput(Policy policy)
+	public DataLoad getThroughput()
 	{
 		try {
 			IPullThroughput ipt =(IPullThroughput)CommandProxy.getCommand("PullThroughPut",  
 					Configuration.getInstance().getDevice());
-			ipt.
+			try {
+				ipt.execute();
+			} catch (Exception e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
 		} catch (ClassNotFoundException | InstantiationException
 				| IllegalAccessException e) {
 			// TODO Auto-generated catch block

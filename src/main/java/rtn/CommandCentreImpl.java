@@ -27,7 +27,11 @@ import rtn.networking.device.juniper_netscreen_5gt.AddPolicy;
 import rtn.networking.device.juniper_netscreen_5gt.DeletePolicy;
 import rtn.networking.device.juniper_netscreen_5gt.TableEvent;
 import rtn.networking.device.juniper_netscreen_5gt.UpdatePolicy;
-
+/**
+ * 
+ * @author Djuric Daniel
+ *
+ */
 public class CommandCentreImpl implements ICommandCentre {
 	@Override
 	public boolean enableAlarm() {
@@ -36,6 +40,7 @@ public class CommandCentreImpl implements ICommandCentre {
 		boolean b = false;
 		try {
 			//
+			
 			CommandProxy.getCommand("enableAlarm", Configuration.getInstance()
 					.getDevice());
 			b = true;
