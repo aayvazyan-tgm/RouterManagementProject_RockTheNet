@@ -25,33 +25,33 @@ public class TableRule {
     /**
      * Creates a new TableRule object.
      * 
-     * @param n Name of the zone
-     * @param zi The inbound zone
-     * @param zo The outbound zone
-     * @param s The service of the policy
-     * @param a The action to perform
-     * @param ai The source address
-     * @param ao The destination address
-     * @param l Enable logging yes/no
+     * @param name Name of the zone
+     * @param zoneIn The inbound zone
+     * @param zoneOut The outbound zone
+     * @param service The service of the policy
+     * @param action The action to perform
+     * @param addressIn The source address
+     * @param addressOut The destination address
+     * @param log Enable logging yes/no
      */
-	public TableRule(String n, String zi, String zo, String s, String a, String ai, String ao, Boolean l) {
-        this.name = new SimpleStringProperty(n);
-        this.zoneIn = new SimpleStringProperty(zi);
-        this.zoneOut = new SimpleStringProperty(zo);
-        this.service = new SimpleStringProperty(s);
-        this.action = new SimpleStringProperty(a);
-        this.addressIn = new SimpleStringProperty(ai);
-        this.addressOut = new SimpleStringProperty(ao);
-        this.logged = new SimpleBooleanProperty(l);
+	public TableRule(String name, String zoneIn, String zoneOut, String service, String action, String addressIn, String addressOut, Boolean log) {
+        this.name = new SimpleStringProperty(name);
+        this.zoneIn = new SimpleStringProperty(zoneIn);
+        this.zoneOut = new SimpleStringProperty(zoneOut);
+        this.service = new SimpleStringProperty(service);
+        this.action = new SimpleStringProperty(action);
+        this.addressIn = new SimpleStringProperty(addressIn);
+        this.addressOut = new SimpleStringProperty(addressOut);
+        this.logged = new SimpleBooleanProperty(log);
     }
 
 	/**
-	 * sets the name
+	 * Sets the name
 	 * 
-	 * @param n Name of the zone
+	 * @param name Name of the policy
 	 */
-	public void setName(String n) {
-		name.set(n);
+	public void setName(String name) {
+		this.name.set(name);
 	}
 	/**
 	 * @return the name
@@ -61,98 +61,125 @@ public class TableRule {
 	}
 
 	/**
-	 * sets the zoneIn
-	 * @param zi The inbound zone
+	 * Rets the inbound zone
+     *
+	 * @param zoneIn The inbound zone
 	 */
-	public void setZoneIn(String zi) {
-		zoneIn.set(zi);
+	public void setZoneIn(String zoneIn) {
+		this.zoneIn.set(zoneIn);
 	}
-	/**
-	 * @return the zoneIn
-	 */
+
+    /**
+     * Returns the inbound zone
+     *
+     * @return the inbound zone
+     */
 	public String getZoneIn() {
 		return zoneIn.get();
 	}
 
 	/**
-	 * sets the zoneOut
-	 * @param zo The outbound zone
+	 * Sets the outbound zone
+     *
+	 * @param zoneOut The outbound zone
 	 */
-	public void setZoneOut(String zo) {
-		zoneOut.set(zo);
+	public void setZoneOut(String zoneOut) {
+		this.zoneOut.set(zoneOut);
 	}
-	/**
-	 * @return the zoneOut
+
+    /**
+     * Returns the outbound zone
+     *
+	 * @return the outbound zone
 	 */
 	public String getZoneOut() {
 		return zoneOut.get();
 	}
 
 	/**
-	 * sets the service
-	 * @param s The zone
+	 * Sets the service
+     *
+	 * @param service The service of the policy
 	 */
-	public void setService(String s) {
-		service.set(s);
+	public void setService(String service) {
+		this.service.set(service);
 	}
-	/**
-	 * @return the service
+
+    /**
+     * Returns the service of the policy
+     *
+	 * @return the service of the policy
 	 */
 	public String getService() {
 		return service.get();
 	}
 
 	/**
-	 * sets the action
-	 * @param a The action to perform
+	 * Sets the action to perform
+     *
+	 * @param action The action to perform
 	 */
-	public void setAction(String a) {
-		action.set(a);
+	public void setAction(String action) {
+		this.action.set(action);
 	}
-	/**
-	 * @return the action
+
+    /**
+     * Returns the action to perform
+     *
+	 * @return the action to perform
 	 */
 	public String getAction() {
 		return action.get();
 	}
 
 	/**
-	 * sets the addressIn
-	 * @param ai The inbound address
+	 * Sets the inbound address
+     *
+	 * @param addressIn The inbound address
 	 */
-	public void setAddressIn(String ai) {
-		addressIn.set(ai);
+	public void setAddressIn(String addressIn) {
+		this.addressIn.set(addressIn);
 	}
-	/**
-	 * @return the addressIn
+
+    /**
+     * Returns the inbound address
+     *
+	 * @return the inbound address
 	 */
 	public String getAddressIn() {
 		return addressIn.get();
 	}
 
 	/**
-	 * sets the addressOut
-	 * @param ao The outbound address
+	 * Sets the outbound address
+     *
+	 * @param addressOut The outbound address
 	 */
-	public void setAddressOut(String ao) {
-		addressOut.set(ao);
+	public void setAddressOut(String addressOut) {
+		this.addressOut.set(addressOut);
 	}
-	/**
-	 * @return the addressOut
+
+    /**
+     * Returns the outbound address
+     *
+	 * @return the outbound address
 	 */
 	public String getAddressOut() {
 		return addressOut.get();
 	}
 
 	/**
-	 * sets the logged
-	 * @param l Enable/Disable logging
+	 * Enables/Disables logging
+     *
+	 * @param logged Enable/Disable logging
 	 */
-	public void setLogged(Boolean l) {
-		logged.set(l);
+	public void setLogged(Boolean logged) {
+		this.logged.set(logged);
 	}
 	/**
-	 * @return the logged
+     * Returns, if the policy is logged
+     *
+	 * @return is logged
 	 */
 	public Boolean getLogged() {
 		return logged.get();
