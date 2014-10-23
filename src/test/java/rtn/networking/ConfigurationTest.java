@@ -104,7 +104,11 @@ public class ConfigurationTest
 	public void testGetInstance_1()
 		throws Exception
 	{
-
+		Configuration conf = new Configuration();
+		conf.setTrapListeningPort(13037);
+		conf.setSnmpport(161);
+		conf.setAdminport(0);
+		Configuration.setInstance(conf);
 		Configuration result = Configuration.getInstance();
 
 		assertNotNull(result);
@@ -116,7 +120,7 @@ public class ConfigurationTest
 		assertEquals(161, result.getSnmpport());
 		assertEquals(0, result.getAdminport());
 		assertEquals(null, result.getRemoteip());
-		assertEquals(null, result.getCommunity());
+		assertEquals(null, result.getCommunity()); 
 	}
 
 	/**
@@ -128,7 +132,11 @@ public class ConfigurationTest
 	public void testGetInstance_2()
 		throws Exception
 	{
-
+		Configuration conf = new Configuration();
+		conf.setTrapListeningPort(13037);
+		conf.setSnmpport(161);
+		conf.setAdminport(0);
+		Configuration.setInstance(conf);
 		Configuration result = Configuration.getInstance();
 
 		assertNotNull(result);

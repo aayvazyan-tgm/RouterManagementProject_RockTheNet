@@ -8,11 +8,8 @@ import org.mockito.Mockito;
 import org.mockito.MockitoAnnotations;
 import org.mockito.Spy;
 
-import rtn.networking.Action;
 import rtn.networking.Configuration;
 import rtn.networking.Policy;
-import rtn.networking.Service;
-import rtn.networking.Zone;
 import rtn.networking.admin.SSHProtocol;
 
 public class DeletePolicyTest
@@ -37,7 +34,7 @@ public class DeletePolicyTest
 	@Test(expected = IllegalArgumentException.class)
 	public void testSetParamsNullEmpty() throws Exception
 	{
-		this.deletePolicy.setParams(null);
+		this.deletePolicy.setParams((Object[])null);
 		this.deletePolicy.execute();
 		this.deletePolicy.setParams();
 		this.deletePolicy.execute();
