@@ -109,7 +109,7 @@ public class Main {
         logger.debug("Letting the listener listen for a while.");
         try {
             //noinspection InfiniteLoopStatement
-            for(int i = 1; i<=10; i++) {
+            for(int i = 1; i<=100; i++) {
                 Thread.sleep(1000);
                 logger.debug(String.valueOf(i));
             }
@@ -120,5 +120,6 @@ public class Main {
         }
 
         logger.debug("Leaving: #main()");
+        System.exit(0);
     }
 }
