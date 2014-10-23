@@ -120,7 +120,7 @@ public class MainController {
     @FXML
     private void handleChangeDeviceMenu() {
     	//TODO disconnect from current device
-    	MainApp.getMainStage().hide();
+
     	MainApp.getConnectionStage().show();
     }
     
@@ -138,6 +138,7 @@ public class MainController {
     @FXML
     private void handleAutoRefreshMenu() {
     	MainApp.getAutoRefreshStage().show();
+
     	//TODO insert current refresh-rate
     }
     
@@ -157,7 +158,7 @@ public class MainController {
     @FXML
     private void handleChangeRuleMenu() {
     	MainApp.getChangeRuleStage().show();
-    	
+
     	//TODO fill current values into changeRule form
     	//Example: ChangeRuleControler.setNameField(table.getSelectionModel().getSelectedItem().getName());
     }
@@ -206,7 +207,7 @@ public class MainController {
     /**
      * Refreshes the policyTable
      */
-    private void refreshTable() {
+    public void refreshTable() {
 		tableData.clear();
 		
 		tableData.add(new TableRule("Rule#1","abc","def","Service","Action","1.1.1.1","2.2.2.2",true)); //Testrow #1
