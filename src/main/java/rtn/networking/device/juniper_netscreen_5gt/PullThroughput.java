@@ -31,7 +31,14 @@ public class PullThroughput implements IPullThroughput {
 	{
 
 		OID[] columns = new OID[]{
-				new OID("1.3.6.1.4.1.3224.10.1.1.1")};
+                new OID("1.3.6.1.4.1.3224.10.2.1.6"),
+                new OID("1.3.6.1.4.1.3224.10.2.1.6.1.0"),
+                new OID("1.3.6.1.4.1.3224.10.2.1.1.1"),
+                new OID("1.3.6.1.4.1.3224.10.2.1.6.3.0"),
+                new OID("1.3.6.1.4.1.3224.10.2.1.6.8.0"),
+                new OID("1.3.6.1.4.1.3224.10.2.1.6.42.0"),
+                new OID("1.3.6.1.4.1.3224.10.2.1.6.43.0")};
+
 		
 		// TODO Auto-generated method stub
 		
