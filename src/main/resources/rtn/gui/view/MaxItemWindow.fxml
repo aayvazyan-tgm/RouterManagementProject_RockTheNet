@@ -9,6 +9,6 @@
    <children>
       <Text fx:id="title" strokeType="OUTSIDE" strokeWidth="0.0" text="max items in graph" AnchorPane.bottomAnchor="75.0" AnchorPane.leftAnchor="5.0" AnchorPane.topAnchor="5.0" />
       <TextField fx:id="textfield" alignment="CENTER_RIGHT" maxHeight="25.0" AnchorPane.bottomAnchor="40.0" AnchorPane.leftAnchor="5.0" AnchorPane.rightAnchor="5.0" />
-      <Button fx:id="confirm" mnemonicParsing="false" text="confirm" AnchorPane.bottomAnchor="5.0" AnchorPane.rightAnchor="5.0" />
+      <Button fx:id="confirm" mnemonicParsing="false" text="confirm" AnchorPane.bottomAnchor="5.0" AnchorPane.rightAnchor="5.0" onAction="#handleConfirm"/>
    </children>
 </AnchorPane>

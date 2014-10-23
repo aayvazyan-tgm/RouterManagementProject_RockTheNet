@@ -33,6 +33,7 @@ public class MaxItemController {
 	 * Handles the confirm button, checks if a correct value has been entered
 	 * (int, range:1-10)
 	 */
+	@FXML
 	private void handleConfirm() {
 		String text = textfield.getText();
 		
