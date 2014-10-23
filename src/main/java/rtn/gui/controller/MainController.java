@@ -12,20 +12,23 @@ import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.layout.FlowPane;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import rtn.DataSourceImpl;
 import rtn.IDataSource;
 import rtn.gui.model.TableRule;
 import rtn.gui.view.StageLoader;
+import rtn.networking.Policy;
 
+import java.util.ArrayList;
+import java.util.List;
 import java.util.concurrent.CountDownLatch;
 
 public class MainController {
-    int i=0;
 
     private static final Logger logger = LoggerFactory.getLogger(MainController.class);
 
 	private static MainController instance;
 	
-	private IDataSource dataManager;
+	private IDataSource dataManager = new DataSourceImpl();;
 	
 	private ObservableList<TableRule> tableData = FXCollections.observableArrayList();;
 
@@ -221,30 +224,14 @@ public class MainController {
     public void refreshTable() {
 		tableData.clear();
 
-        if(i==0){
-            tableData.add(new TableRule("Rule#1","abc","def","Service","Action","1.1.1.1","2.2.2.2",true)); //Testrow #1
-            tableData.add(new TableRule("Rule#2","abc","def","Service","Action","3.3.3.3","4.4.4.4",false)); //Testrow #2
+        List<Policy> policies= dataManager.getPolicies();
+
+        for(int i=0; i<policies.size(); i++) {
+            Policy p = policies.get(i);
+            tableData.add(new TableRule(""+p.getId(),p.getInzone().getName(), p.getOutzone().getName(),p.getService().getName(),p.getAction().getName(),p.getSource(),p.getDestination(),false));
+            //TODO WTF is meant by logged?, ask Willinger
         }
 
-        if(i==1) {
-            tableData.add(new TableRule("Rule#3","abc","def","Service","Action","1.1.1.1","2.2.2.2",true)); //Testrow #1
-            tableData.add(new TableRule("Rule#4","abc","def","Service","Action","3.3.3.3","4.4.4.4",false)); //Testrow #2
-        }
-
-        if(i==2) {
-            tableData.add(new TableRule("Rule#5","abc","def","Service","Action","1.1.1.1","2.2.2.2",true)); //Testrow #1
-            tableData.add(new TableRule("Rule#6","abc","def","Service","Action","3.3.3.3","4.4.4.4",false)); //Testrow #2
-        }
-
-        if(i==3) {
-            tableData.add(new TableRule("Rule#7","abc","def","Service","Action","1.1.1.1","2.2.2.2",true)); //Testrow #1
-            tableData.add(new TableRule("Rule#8","abc","def","Service","Action","3.3.3.3","4.4.4.4",false)); //Testrow #2
-        }
-
-        i++;
-		
-		//TODO load rules from FW and add them to tableData
-		
 		table.setItems(tableData);
 	}
 
