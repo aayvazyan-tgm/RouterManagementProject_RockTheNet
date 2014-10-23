@@ -37,7 +37,7 @@ public class AutoRefreshController {
 	 */
 	private void handleConfirm() {
 		String text = textfield.getText();
-		
+
 		//Checks if the textfield is empty
 		if(text!=null && !text.isEmpty()) {
 			try {

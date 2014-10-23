@@ -157,7 +157,7 @@ public class MainController {
      */
     @FXML
     private void handleChangeRuleMenu() {
-    	StageLoader.getChangeRuleStage().show();
+    	StageLoader.getEditRuleStage().show();
 
     	//TODO fill current values into changeRule form
     	//Example: ChangeRuleControler.setNameField(table.getSelectionModel().getSelectedItem().getName());

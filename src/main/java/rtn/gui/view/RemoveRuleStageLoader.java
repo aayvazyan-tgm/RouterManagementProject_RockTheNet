@@ -21,22 +21,22 @@ public class RemoveRuleStageLoader {
     }
 
     public void init() {
-        String layoutPath = "rtn/gui/view/RemoveRuleWindow.fxml";
-        Stage removeRuleStage = new Stage();
-        removeRuleStage.setTitle("RockTheNet - RemoveRuleWindow");
+        String layoutPath = "rtn/gui/view/DeleteRuleWindow.fxml";
+        Stage deleteRuleStage = new Stage();
+        deleteRuleStage.setTitle("RockTheNet - DeleteRuleWindow");
 
         FXMLLoader loader = new FXMLLoader();
         loader.setLocation(getClass().getClassLoader().getResource(layoutPath));
 
         try {
-            Pane removeRuleLayout = loader.load();
-            Scene scene = new Scene(removeRuleLayout);
-            removeRuleStage.setScene(scene);
-            removeRuleStage.initModality(Modality.WINDOW_MODAL);
-            removeRuleStage.initOwner(StageLoader.getMainStage().getScene().getWindow());
-            removeRuleStage.hide();
-            StageLoader.setRemoveRuleStage(removeRuleStage);
-            StageLoader.setRemoveRuleLayout(removeRuleLayout);
+            Pane deleteRuleLayout = loader.load();
+            Scene scene = new Scene(deleteRuleLayout);
+            deleteRuleStage.setScene(scene);
+            deleteRuleStage.initModality(Modality.WINDOW_MODAL);
+            deleteRuleStage.initOwner(StageLoader.getMainStage().getScene().getWindow());
+            deleteRuleStage.hide();
+            StageLoader.setDeleteRuleStage(deleteRuleStage);
+            StageLoader.setDeleteRuleLayout(deleteRuleLayout);
         } catch (IOException e) {
             MainApp.getInstance().getLogger().error("Could not load layout: " + layoutPath, e);
         }

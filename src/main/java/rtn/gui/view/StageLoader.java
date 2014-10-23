@@ -12,16 +12,16 @@ public class StageLoader {
     private static Stage mainStage;
     private static Stage connectionStage;
     private static Stage addRuleStage;
-    private static Stage removeRuleStage;
-    private static Stage changeRuleStage;
+    private static Stage deleteRuleStage;
+    private static Stage editRuleStage;
     private static Stage maxItemStage;
     private static Stage autoRefreshStage;
 
     private static Pane mainLayout;
     private static Pane connectionLayout;
     private static Pane addRuleLayout;
-    private static Pane removeRuleLayout;
-    private static Pane changeRuleLayout;
+    private static Pane deleteRuleLayout;
+    private static Pane editRuleLayout;
     private static Pane maxItemLayout;
     private static Pane autoRefreshLayout;
 
@@ -36,7 +36,7 @@ public class StageLoader {
         MaxItemStageLoader.getInstance().init();
         AutoRefreshStageLoader.getInstance().init();
         AddRuleStageLoader.getInstance().init();
-        ChangeRuleStageLoader.getInstance().init();
+        EditRuleStageLoader.getInstance().init();
         RemoveRuleStageLoader.getInstance().init();
     }
 
@@ -68,20 +68,20 @@ public class StageLoader {
         StageLoader.addRuleStage = addRuleStage;
     }
 
-    public static Stage getRemoveRuleStage() {
-        return removeRuleStage;
+    public static Stage getDeleteRuleStage() {
+        return deleteRuleStage;
     }
 
-    public static void setRemoveRuleStage(Stage removeRuleStage) {
-        StageLoader.removeRuleStage = removeRuleStage;
+    public static void setDeleteRuleStage(Stage deleteRuleStage) {
+        StageLoader.deleteRuleStage = deleteRuleStage;
     }
 
-    public static Stage getChangeRuleStage() {
-        return changeRuleStage;
+    public static Stage getEditRuleStage() {
+        return editRuleStage;
     }
 
-    public static void setChangeRuleStage(Stage changeRuleStage) {
-        StageLoader.changeRuleStage = changeRuleStage;
+    public static void setEditRuleStage(Stage editRuleStage) {
+        StageLoader.editRuleStage = editRuleStage;
     }
 
     public static Stage getMaxItemStage() {
@@ -124,20 +124,20 @@ public class StageLoader {
         StageLoader.addRuleLayout = addRuleLayout;
     }
 
-    public static Pane getRemoveRuleLayout() {
-        return removeRuleLayout;
+    public static Pane getDeleteRuleLayout() {
+        return deleteRuleLayout;
     }
 
-    public static void setRemoveRuleLayout(Pane removeRuleLayout) {
-        StageLoader.removeRuleLayout = removeRuleLayout;
+    public static void setDeleteRuleLayout(Pane deleteRuleLayout) {
+        StageLoader.deleteRuleLayout = deleteRuleLayout;
     }
 
-    public static Pane getChangeRuleLayout() {
-        return changeRuleLayout;
+    public static Pane getEditRuleLayout() {
+        return editRuleLayout;
     }
 
-    public static void setChangeRuleLayout(Pane changeRuleLayout) {
-        StageLoader.changeRuleLayout = changeRuleLayout;
+    public static void setEditRuleLayout(Pane editRuleLayout) {
+        StageLoader.editRuleLayout = editRuleLayout;
     }
 
     public static Pane getMaxItemLayout() {
