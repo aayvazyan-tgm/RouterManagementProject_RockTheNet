@@ -9,11 +9,12 @@ import javafx.scene.control.Button;
 import javafx.scene.control.ComboBox;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
-import javafx.scene.text.Text;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-import rtn.MainApp;
+import rtn.gui.view.StageLoader;
 
+import javax.mail.internet.AddressException;
+import javax.mail.internet.InternetAddress;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
@@ -22,38 +23,52 @@ public class ConnectionController {
 	
 	private String device;
 	private String ip;
+    private String com;
 	private String user;
 	private String pass;
-	private String port;
+	private String snmp;
+    private String trap;
+    private String admin;
+    private String mail;
 
     @FXML
-    private Button connectButton;
+    private TextField trap_tf;
 
     @FXML
-    private TextField snmpTextField;
+    private Button connect_b;
 
     @FXML
-    private Text errorText;
+    private TextField snmp_tf;
 
     @FXML
-    private TextField ipTextField;
+    private TextField ip_tf;
 
     @FXML
-    private Label descLabel;
+    private Label desc_l;
 
     @FXML
-    private ComboBox<?> deviceComboBox;
+    private ComboBox<?> device_cb;
 
     @FXML
-    private Label welcomeLabel;
+    private Label welcome_l;
 
     @FXML
-    private TextField passTextField;
+    private TextField pass_tf;
 
     @FXML
-    private TextField userTextField;
-    
-	private static ConnectionController instance;
+    private TextField user_tf;
+
+    @FXML
+    private TextField mail_tf;
+
+    @FXML
+    private TextField com_tf;
+
+    @FXML
+    private TextField admin_tf;
+
+
+    private static ConnectionController instance;
     
 	/**
 	 * Sets the instance
@@ -67,14 +82,14 @@ public class ConnectionController {
      */
     @FXML
     private void handleConnectButton() {
-    	errorText.setText("");
+        readForm();
+        desc_l.setText("Please fill out this form to establish a connection to your device!\n" +
+                "You have to at least select a device and enter an IP address!");
     	if(!checkFormEntries()){}
     	else {
-    		readForm();
     		//TODO establish a connection to the device
-    		//TODO load rules into table
-    		MainApp.getConnectionStage().hide();
-    		MainApp.getMainStage().show();
+    		StageLoader.getConnectionStage().hide();
+            MainController.getInstance().refreshTable();
     	}
     	
     }
@@ -83,34 +98,54 @@ public class ConnectionController {
      * Reads the values from the form and stores them in the local variables
      */
 	private void readForm() {
-		device = (String) deviceComboBox.getValue();
-		ip = ipTextField.getText();
-		user = userTextField.getText();
-		pass = passTextField.getText();
-		port = snmpTextField.getText();
+		device = (String) device_cb.getValue();
+		ip = ip_tf.getText();
+        com = com_tf.getText();
+		user = user_tf.getText();
+		pass = pass_tf.getText();
+		snmp = snmp_tf.getText();
+        trap = trap_tf.getText();
+        admin = admin_tf.getText();
+        mail = mail_tf.getText();
+
+        ip=ip.replaceAll("\\s+", "");
+        com= com.replaceAll("\\s+", "");
+		user=user.replaceAll("\\s+","");
+		pass=pass.replaceAll("\\s+","");
+		snmp=snmp.replaceAll("\\s+", "");
+        trap=trap.replaceAll("\\s+", "");
+        admin=admin.replaceAll("\\s+", "");
+        mail=mail.replaceAll("\\s+", "");
+
 		
-		user.replaceAll("\\s+","");
-		pass.replaceAll("\\s+","");
-		port.replaceAll("\\s+","");
-		
-		if(port==null || port.equals("")) {port="161";} //TODO set standard portnumber
+		if(snmp==null || snmp.equals("")) {snmp="161";}
+        if(trap==null || trap.equals("")) {snmp="13037";}
 	}
 
 	/**
 	 * Checks if the form has been filled out sufficiently
 	 */
 	private boolean checkFormEntries() {
-		String device = (String) deviceComboBox.getValue();
-		if(device==null || device==""){
-			errorText.setText(errorText.getText()+"Please select a device!\n");
+        device="abc";
+  		if(device==null || device.equals("")){
+			desc_l.setText(desc_l.getText()+"\nPlease select a device!");
 			return false;
 		}
-		
-		String ip = ipTextField.getText();
+
 		if(!validIP(ip)){
-			errorText.setText(errorText.getText()+"Please enter a valid IPv4 address!\n");
+            desc_l.setText(desc_l.getText()+"\nPlease enter a valid IPv4 address!");
 			return false;
-		}		
+		}
+
+        if(com==null || com.equals("")) {
+            desc_l.setText(desc_l.getText()+"\nPlease enter a valid community!");
+            return false;
+        }
+
+        if (!validMail(mail)) {
+            desc_l.setText(desc_l.getText()+"\nPlease enter a valid email-address!");
+            return false;
+        }
 		
 		return true;
 	}
@@ -130,5 +165,16 @@ public class ConnectionController {
 	    Matcher matcher = pattern.matcher(ip);
 	    return matcher.matches();
 	}
+
+    public static boolean validMail(String email) {
+        boolean result = true;
+        try {
+            InternetAddress emailAddr = new InternetAddress(email);
+            emailAddr.validate();
+        } catch (AddressException ex) {
+            result = false;
+        }
+        return result;
+    }
 
 }

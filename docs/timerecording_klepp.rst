@@ -45,5 +45,8 @@ SNMP trap                         2014-10-19 19:10 20:15   01:05
 SNMP trap -> send email           2014-10-19 21:45 22:20   00:35
 fixed some Unit fails             2014-10-21 12:50 13:15   00:25
 fixed some Unit fails             2014-10-22 10:40 11:10   00:30
-**TOTAL**                                                **39:45**
+testing TrapReceiver              2014-10-23 08:20 08:40   00:20
+testing TrapReceiver              2014-10-23 10:15 11:30   01:15
+reading on installing TrapRecvr.  2014-10-23 17:00 18:15   01:15
+**TOTAL**                                                **42:35**
 ================================= ========== ===== ===== =========

@@ -1,7 +1,10 @@
 package rtn.gui.controller;
 
+import javafx.application.Platform;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
+import javafx.concurrent.Service;
+import javafx.concurrent.Task;
 import javafx.fxml.FXML;
 import javafx.scene.chart.LineChart;
 import javafx.scene.control.*;
@@ -9,18 +12,29 @@ import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.layout.FlowPane;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import rtn.DataSourceImpl;
 import rtn.IDataSource;
-import rtn.MainApp;
 import rtn.gui.model.TableRule;
+import rtn.gui.view.StageLoader;
+import rtn.networking.Policy;
+
+import java.util.ArrayList;
+import java.util.List;
+import java.util.concurrent.CountDownLatch;
 
 public class MainController {
+
     private static final Logger logger = LoggerFactory.getLogger(MainController.class);
 
 	private static MainController instance;
 	
-	private IDataSource dataManager;
+	private IDataSource dataManager = new DataSourceImpl();;
 	
 	private ObservableList<TableRule> tableData = FXCollections.observableArrayList();;
+
+    private Service<Void> autoRefresher;
+
+    private int refreshTime;
 
 	@FXML
     private TableColumn<TableRule, String> zoneInColumn;
@@ -120,8 +134,8 @@ public class MainController {
     @FXML
     private void handleChangeDeviceMenu() {
     	//TODO disconnect from current device
-    	MainApp.getMainStage().hide();
-    	MainApp.getConnectionStage().show();
+
+    	StageLoader.getConnectionStage().show();
     }
     
     /**
@@ -137,7 +151,8 @@ public class MainController {
      */
     @FXML
     private void handleAutoRefreshMenu() {
-    	MainApp.getAutoRefreshStage().show();
+    	StageLoader.getAutoRefreshStage().show();
+
     	//TODO insert current refresh-rate
     }
     
@@ -156,8 +171,8 @@ public class MainController {
      */
     @FXML
     private void handleChangeRuleMenu() {
-    	MainApp.getChangeRuleStage().show();
-    	
+    	StageLoader.getEditRuleStage().show();
+
     	//TODO fill current values into changeRule form
     	//Example: ChangeRuleControler.setNameField(table.getSelectionModel().getSelectedItem().getName());
     }
@@ -167,7 +182,7 @@ public class MainController {
      */
     @FXML
     private void handleMaxItemsMenu() {
-    	MainApp.getMaxItemStage().show();
+    	StageLoader.getMaxItemStage().show();
     	MaxItemController.getInstance().getTextfield().setText(""+maxItems);
     }
     
@@ -206,16 +221,56 @@ public class MainController {
     /**
      * Refreshes the policyTable
      */
-    private void refreshTable() {
+    public void refreshTable() {
 		tableData.clear();
-		
-		tableData.add(new TableRule("Rule#1","abc","def","Service","Action","1.1.1.1","2.2.2.2",true)); //Testrow #1
-		tableData.add(new TableRule("Rule#2","abc","def","Service","Action","3.3.3.3","4.4.4.4",false)); //Testrow #2
-		
-		//TODO load rules from FW and add them to tableData
-		
+
+        List<Policy> policies= dataManager.getPolicies();
+
+        for(int i=0; i<policies.size(); i++) {
+            Policy p = policies.get(i);
+            tableData.add(new TableRule(""+p.getId(),p.getInzone().getName(), p.getOutzone().getName(),p.getService().getName(),p.getAction().getName(),p.getSource(),p.getDestination(),false));
+            //TODO WTF is meant by logged?, ask Willinger
+        }
+
 		table.setItems(tableData);
 	}
+
+    public void startAutoRefresh(int refreshTime) {
+        this.refreshTime = refreshTime;
+        autoRefresher = new Service<Void>() {
+            @Override
+            protected Task<Void> createTask() {
+                return new Task<Void>() {
+                    @Override
+                    protected Void call() throws Exception {
+                        //Background work
+                        final CountDownLatch latch = new CountDownLatch(1);
+                        Platform.runLater(new Runnable() {
+                            @Override
+                            public void run() {
+                                try {
+                                    Thread.sleep(refreshTime*1000);
+                                    MainController.getInstance().refreshTable();
+                                } catch (InterruptedException e) {
+                                } finally {
+                                    latch.countDown();
+                                }
+                            }
+                        });
+                        latch.await();
+                        return null;
+                    }
+                };
+            }
+        };
+        autoRefresher.start();
+    }
+
+    public void stopAutoRefresh() {
+        if(autoRefresher!=null && autoRefresher.isRunning()) {
+            autoRefresher.cancel();
+        }
+    }
 
 	/**
 	 * Returns the current instance
@@ -765,5 +820,5 @@ public class MainController {
 	public void setMaxItems(int maxItems) {
 		this.maxItems = maxItems;
 	}
-	
+
 }

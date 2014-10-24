@@ -23,12 +23,12 @@ public class TrapReceiver implements CommandResponder {
             throws IOException {
 
         ThreadPool threadPool = ThreadPool.create("DispatcherPool", 10);
-        MessageDispatcher mDispathcher = new MultiThreadedMessageDispatcher(
+        MessageDispatcher mDispatcher = new MultiThreadedMessageDispatcher(
                 threadPool, new MessageDispatcherImpl());
 
         // add message processing models
-        mDispathcher.addMessageProcessingModel(new MPv1());
-        mDispathcher.addMessageProcessingModel(new MPv2c());
+        mDispatcher.addMessageProcessingModel(new MPv1());
+        mDispatcher.addMessageProcessingModel(new MPv2c());
 
         // add all security protocols
         SecurityProtocols.getInstance().addDefaultProtocols();
@@ -38,7 +38,7 @@ public class TrapReceiver implements CommandResponder {
         CommunityTarget target = new CommunityTarget();
         target.setCommunity(new OctetString("public"));
 
-        Snmp snmp = new Snmp(mDispathcher, transport);
+        Snmp snmp = new Snmp(mDispatcher, transport);
         snmp.addCommandResponder(this);
 
         transport.listen();
