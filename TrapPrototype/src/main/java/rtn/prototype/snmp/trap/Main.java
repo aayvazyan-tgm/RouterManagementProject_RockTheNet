@@ -12,7 +12,6 @@ import org.snmp4j.TransportMapping;
 import org.snmp4j.mp.SnmpConstants;
 import org.snmp4j.smi.*;
 import org.snmp4j.transport.DefaultUdpTransportMapping;
-import rtn.GuiceModule;
 import rtn.prototype.snmp.trap.guice.Module;
 
 import java.io.IOException;
@@ -52,8 +51,6 @@ public class Main {
      */
     public void sendTestTrap() throws IOException {
         logger.debug("Entering: #setup()");
-
-        Injector injector = Guice.createInjector(new GuiceModule());
 
         PDU trap = new PDU();
         trap.setType(PDU.TRAP);  // its a trap
