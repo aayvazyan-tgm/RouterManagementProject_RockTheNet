@@ -103,7 +103,7 @@ public class SNMPManager {
 	 */
 	public List<TableEvent> getTable(OID[] oid) {
 		if(!this.connect()) return null;
-		
+
 		PDUFactory pF = new DefaultPDUFactory (PDU.GETNEXT);
 	      
 		TableUtils tableUtils = new TableUtils(snmp, pF);

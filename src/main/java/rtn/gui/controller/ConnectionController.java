@@ -13,7 +13,9 @@ import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import rtn.email.EMail;
 import rtn.gui.view.StageLoader;
+import rtn.networking.Configuration;
 
 import javax.mail.internet.AddressException;
 import javax.mail.internet.InternetAddress;
@@ -78,7 +80,7 @@ public class ConnectionController {
 	 * Sets the instance
 	 */
     public void initialize() {
-        device_cb.getItems().add("Juniper Netscreen 5gt");
+        device_cb.getItems().add("juniper_netscreen_5gt");
         instance = this;
     }
     
@@ -92,9 +94,35 @@ public class ConnectionController {
                 "You have to at least select a device and enter an IP address!");
     	if(!checkFormEntries()){}
     	else {
-            //TODO set device information
-            //TODO establish a connection to the device
-    		StageLoader.getConnectionStage().hide();
+            //Required
+            Configuration.getInstance().setDevice(device);
+            Configuration.getInstance().setRemoteip(ip);
+            EMail email = new EMail();
+            email.setSubject(mail);
+            Configuration.getInstance().setReferenceEMail(email);
+            Configuration.getInstance().setCommunity(com);
+
+            //For Admin Access
+            try {
+                Configuration.getInstance().setUsername(user);
+                Configuration.getInstance().setPassword(pass);
+                Configuration.getInstance().setAdminport(Integer.parseInt(admin));
+            } catch(NumberFormatException e) {
+                Configuration.getInstance().setUsername(null);
+                Configuration.getInstance().setPassword(null);
+            }
+
+            //Changeable Ports
+            try {
+                Configuration.getInstance().setSnmpport(Integer.parseInt(trap));
+            } catch(NumberFormatException e) {}
+            try {
+                Configuration.getInstance().setTrapListeningPort(Integer.parseInt(snmp));
+            } catch(NumberFormatException e) {}
+
+
+            //GUI-Stuff
+            StageLoader.getConnectionStage().hide();
             MainController.getInstance().refreshTable();
     	}
     	

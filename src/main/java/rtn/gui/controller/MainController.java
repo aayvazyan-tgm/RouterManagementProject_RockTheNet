@@ -12,13 +12,13 @@ import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.layout.FlowPane;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import rtn.CommandCentreImpl;
 import rtn.DataSourceImpl;
 import rtn.IDataSource;
 import rtn.gui.model.TableRule;
 import rtn.gui.view.StageLoader;
 import rtn.networking.Policy;
 
-import java.util.ArrayList;
 import java.util.List;
 import java.util.concurrent.CountDownLatch;
 
@@ -214,8 +214,6 @@ public class MainController {
     	addressInColumn.setCellValueFactory(new PropertyValueFactory<TableRule, String>("addressIn"));
     	addressOutColumn.setCellValueFactory(new PropertyValueFactory<TableRule, String>("addressOut"));
     	loggedColumn.setCellValueFactory(new PropertyValueFactory<TableRule, Boolean>("logged"));
-    	
-    	refreshTable();
     }
     
     /**
@@ -228,8 +226,7 @@ public class MainController {
 
         for(int i=0; i<policies.size(); i++) {
             Policy p = policies.get(i);
-            tableData.add(new TableRule(""+p.getId(),p.getInzone().getName(), p.getOutzone().getName(),p.getService().getName(),p.getAction().getName(),p.getSource(),p.getDestination(),false));
-            //TODO WTF is meant by logged?, ask Willinger
+            tableData.add(new TableRule(""+p.getId(),p.getInzone().getName(), p.getOutzone().getName(),p.getService().getName(),p.getAction().getName(),p.getSource(),p.getDestination(),p.isLog()));
         }
 
 		table.setItems(tableData);
