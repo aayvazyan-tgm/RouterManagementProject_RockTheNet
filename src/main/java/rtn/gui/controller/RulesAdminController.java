@@ -19,6 +19,7 @@ import org.slf4j.LoggerFactory;
 
 import rtn.GuiceModule;
 import rtn.ICommandCentre;
+import rtn.gui.view.StageLoader;
 import rtn.networking.Action;
 import rtn.networking.Policy;
 import rtn.networking.Service;
@@ -26,11 +27,20 @@ import rtn.networking.Zone;
 
 import com.google.inject.Guice;
 import com.google.inject.Injector;
+import rtn.networking.device.commands.IPullActions;
+import rtn.networking.device.commands.IPullPolicies;
+import rtn.networking.device.commands.IPullServices;
+import rtn.networking.device.commands.IPullZones;
+import rtn.networking.device.juniper_netscreen_5gt.PullActions;
+import rtn.networking.device.juniper_netscreen_5gt.PullServices;
+import rtn.networking.device.juniper_netscreen_5gt.PullZones;
+
+import java.util.ArrayList;
+import java.util.Collection;
+import java.util.List;
 
 /**
  * Controller class for AddRuleWindow, EditRuleWindow and DeleteRuleWindow
- * 
- * @author Andreas Willinger
  */
 @SuppressWarnings("deprecation")
 public class RulesAdminController
@@ -82,11 +92,32 @@ public class RulesAdminController
 	
 	@FXML
 	private Button bCancel;
-	
-	public void initialize()
+
+    private static int instanceNr=0;
+
+    private static RulesAdminController addInstance;
+    private static RulesAdminController editInstance;
+    private static RulesAdminController removeInstance;
+
+    private static boolean editDropsFilled = false;
+    private static boolean addDropsFilled = false;
+
+    public void initialize()
 	{
 		Injector injector = Guice.createInjector(new GuiceModule());
 	    this.commandCentre = injector.getInstance(ICommandCentre.class);
+        if(instanceNr==0) {
+            addInstance=this;
+            instanceNr++;
+        }
+        if(instanceNr==1) {
+            editInstance=this;
+            instanceNr++;
+        }
+        if(instanceNr==2) {
+            removeInstance=this;
+            instanceNr++;
+        }
     }
 	
 	/**
@@ -203,32 +234,129 @@ public class RulesAdminController
 	{
 		return (value == null || value.isEmpty());
 	}
-	
-	/**
-	 * TO BE REMOVED
-	 * 
-	 * @param event The source event
-	 */
-	public void handleCheckBoxAction(ActionEvent event)
-	{
-		ObservableList<String> zoneData = FXCollections.observableArrayList();
-		ObservableList<String> serviceData = FXCollections.observableArrayList();
-		ObservableList<String> actionData = FXCollections.observableArrayList();
-		
-		zoneData.add("untrusted");
-		zoneData.add("trusted");
-		zoneData.add("special");
-		
-		serviceData.add("SSH");
-		serviceData.add("FTP");
-		
-		actionData.add("permit");
-		actionData.add("deny");
-		actionData.add("tunnel");
-		
-		this.cbZoneIn.setItems(zoneData);
-		this.cbZoneOut.setItems(zoneData);
-		this.cbService.setItems(serviceData);
-		this.cbAction.setItems(actionData);
-	}
+
+    /**
+     * Loads services, zones and actions into the comboboxes of Edit
+     */
+	public void fillAddDropdowns() {
+        cbZoneIn= (ComboBox) StageLoader.getAddRuleStage().getScene().lookup("#cbZoneIn");
+        cbZoneOut= (ComboBox) StageLoader.getAddRuleStage().getScene().lookup("#cbZoneOut");
+        cbService= (ComboBox) StageLoader.getAddRuleStage().getScene().lookup("#cbService");
+        cbAction= (ComboBox) StageLoader.getAddRuleStage().getScene().lookup("#cbAction");
+
+        IPullServices service = new PullServices();
+        IPullZones zone = new PullZones();
+        IPullActions action = new PullActions();
+
+        try {
+            service.execute();
+            zone.execute();
+            action.execute();
+        } catch (Exception e) {}
+
+        ArrayList<Service> services = (ArrayList) service.getResult();
+        ArrayList<Zone> zones = (ArrayList) zone.getResult();
+        ArrayList<Action> actions = (ArrayList) action.getResult();
+
+        ObservableList<String> zoneData = FXCollections.observableArrayList();
+        ObservableList<String> serviceData = FXCollections.observableArrayList();
+        ObservableList<String> actionData = FXCollections.observableArrayList();
+
+        for(int i=0; i<services.size(); i++) {
+            serviceData.add(services.get(i).getName());
+        }
+        for(int i=0; i<zones.size(); i++) {
+            zoneData.add(zones.get(i).getName());
+        }
+        for(int i=0; i<actions.size(); i++) {
+            actionData.add(actions.get(i).getName());
+        }
+
+        this.cbZoneIn.setItems(zoneData);
+        this.cbZoneOut.setItems(zoneData);
+        this.cbService.setItems(serviceData);
+        this.cbAction.setItems(actionData);
+
+        addDropsFilled=true;
+    }
+
+    /**
+     * Loads services, zones and actions into the comboboxes of Edit
+     */
+    public void fillEditDropdowns() {
+        cbZoneIn= (ComboBox) StageLoader.getEditRuleStage().getScene().lookup("#cbZoneIn");
+        cbZoneOut= (ComboBox) StageLoader.getEditRuleStage().getScene().lookup("#cbZoneOut");
+        cbService= (ComboBox) StageLoader.getEditRuleStage().getScene().lookup("#cbService");
+        cbAction= (ComboBox) StageLoader.getEditRuleStage().getScene().lookup("#cbAction");
+
+        IPullServices service = new PullServices();
+        IPullZones zone = new PullZones();
+        IPullActions action = new PullActions();
+
+        try {
+            service.execute();
+            zone.execute();
+            action.execute();
+        } catch (Exception e) {}
+
+        ArrayList<Service> services = (ArrayList) service.getResult();
+        ArrayList<Zone> zones = (ArrayList) zone.getResult();
+        ArrayList<Action> actions = (ArrayList) action.getResult();
+
+        ObservableList<String> zoneData = FXCollections.observableArrayList();
+        ObservableList<String> serviceData = FXCollections.observableArrayList();
+        ObservableList<String> actionData = FXCollections.observableArrayList();
+
+        for(int i=0; i<services.size(); i++) {
+            serviceData.add(services.get(i).getName());
+        }
+        for(int i=0; i<zones.size(); i++) {
+            zoneData.add(zones.get(i).getName());
+        }
+        for(int i=0; i<actions.size(); i++) {
+            actionData.add(actions.get(i).getName());
+        }
+
+        this.cbZoneIn.setItems(zoneData);
+        this.cbZoneOut.setItems(zoneData);
+        this.cbService.setItems(serviceData);
+        this.cbAction.setItems(actionData);
+
+        editDropsFilled=true;
+    }
+
+    /**
+     * Loads the values of the selected Policy into the form
+     */
+    public void fillChangeValues() {
+
+    }
+
+    /**
+     * Cleans the form
+     */
+    public void cleanChangeValues() {
+
+    }
+
+
+    public static boolean isEditDropsFilled() {
+        return editDropsFilled;
+    }
+
+    public static boolean isAddDropsFilled() {
+        return addDropsFilled;
+    }
+
+    public static RulesAdminController getAddInstance() {
+        return addInstance;
+    }
+
+    public static RulesAdminController getEditInstance() {
+        return editInstance;
+    }
+
+    public static RulesAdminController getRemoveInstance() {
+        return removeInstance;
+    }
 }

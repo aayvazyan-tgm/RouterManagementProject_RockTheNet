@@ -36,9 +36,18 @@ public class MainController {
 
     private int refreshTime;
 
+    @FXML
+    private Button delete_b;
+
+    @FXML
+    private Button edit_b;
+
+    @FXML
+    private ToolBar toolbar;
+
 	@FXML
     private TableColumn<TableRule, String> zoneInColumn;
-	
+
     @FXML
     private MenuItem guideMenu;
 
@@ -106,7 +115,7 @@ public class MainController {
     private MenuItem autoRefreshMenu;
 
     @FXML
-    private MenuItem changeRuleMenu;
+    private MenuItem addRuleMenu;
 
     @FXML
     private TableColumn<TableRule, String> addressOutColumn;
@@ -165,16 +174,44 @@ public class MainController {
     	
     	//TODO add selected rule to graph
     }
-    
+
+    /**
+     * Opens the addRuleWindow for each selected policy
+     */
+    @FXML
+    private void handleAddRuleMenu() {
+        StageLoader.getAddRuleStage().show();
+        if(!RulesAdminController.getAddInstance().isAddDropsFilled()){
+            RulesAdminController.getAddInstance().fillAddDropdowns();
+        }
+
+        //TODO fill current values into addRule form
+        //Example: ChangeRuleControler.setNameField(table.getSelectionModel().getSelectedItem().getName());
+    }
+
     /**
      * Opens the changeRuleWindow for each selected policy
      */
     @FXML
     private void handleChangeRuleMenu() {
     	StageLoader.getEditRuleStage().show();
+        if(!RulesAdminController.getEditInstance().isEditDropsFilled()){
+            RulesAdminController.getEditInstance().fillEditDropdowns();
+        }
 
     	//TODO fill current values into changeRule form
     	//Example: ChangeRuleControler.setNameField(table.getSelectionModel().getSelectedItem().getName());
+    }
+
+    /**
+     * Opens the removeRuleWindow for each selected policy
+     */
+    @FXML
+    private void handleRemoveRuleMenu() {
+        StageLoader.getDeleteRuleStage().show();
+
+        //TODO fill current values into deleteRule form
+        //Example: ChangeRuleControler.setNameField(table.getSelectionModel().getSelectedItem().getName());
     }
     
     /**
@@ -733,8 +770,8 @@ public class MainController {
 	 *
 	 * @return the changeRuleMenu
 	 */
-	public MenuItem getChangeRuleMenu() {
-		return changeRuleMenu;
+	public MenuItem getAddRuleMenu() {
+		return addRuleMenu;
 	}
 
 	/**
@@ -742,8 +779,8 @@ public class MainController {
 	 *
 	 * @param changeRuleMenu the changeRuleMenu to set
 	 */
-	public void setChangeRuleMenu(MenuItem changeRuleMenu) {
-		this.changeRuleMenu = changeRuleMenu;
+	public void setAddRuleMenu(MenuItem changeRuleMenu) {
+		this.addRuleMenu = changeRuleMenu;
 	}
 
 	/**

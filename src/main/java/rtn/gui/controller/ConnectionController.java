@@ -11,6 +11,7 @@ import javafx.scene.control.Button;
 import javafx.scene.control.ComboBox;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
+import org.controlsfx.dialog.Dialogs;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import rtn.email.EMail;
@@ -73,6 +74,8 @@ public class ConnectionController {
     @FXML
     private TextField admin_tf;
 
+    String error = "";
+
 
     private static ConnectionController instance;
     
@@ -90,9 +93,8 @@ public class ConnectionController {
     @FXML
     private void handleConnectButton() {
         readForm();
-        desc_l.setText("Please fill out this form to establish a connection to your device!\n" +
-                "You have to at least select a device and enter an IP address!");
-    	if(!checkFormEntries()){}
+        error="";
+    	if(!checkFormEntries()){Dialogs.create().owner(StageLoader.getConnectionStage().getScene().getWindow()).title("Rock the Net - Error").masthead("An Error occured").message(error).showError();}
     	else {
             //Required
             Configuration.getInstance().setDevice(device);
@@ -114,17 +116,16 @@ public class ConnectionController {
 
             //Changeable Ports
             try {
-                Configuration.getInstance().setSnmpport(Integer.parseInt(trap));
+                Configuration.getInstance().setSnmpport(Integer.parseInt(snmp));
             } catch(NumberFormatException e) {}
             try {
-                Configuration.getInstance().setTrapListeningPort(Integer.parseInt(snmp));
+                Configuration.getInstance().setTrapListeningPort(Integer.parseInt(trap));
             } catch(NumberFormatException e) {}
-
 
             //GUI-Stuff
             StageLoader.getConnectionStage().hide();
             MainController.getInstance().refreshTable();
-    	}
+        }
     	
     }
 
@@ -153,7 +154,7 @@ public class ConnectionController {
 
 		
 		if(snmp==null || snmp.equals("")) {snmp="161";}
-        if(trap==null || trap.equals("")) {snmp="13037";}
+        if(trap==null || trap.equals("")) {trap="13037";}
 	}
 
 	/**
@@ -161,25 +162,23 @@ public class ConnectionController {
 	 */
 	private boolean checkFormEntries() {
   		if(device==null || device.equals("")){
-			desc_l.setText(desc_l.getText()+"\nPlease select a device!");
-			return false;
+			error+="Please select a device!\n";
 		}
 
 		if(!validIP(ip)){
-            desc_l.setText(desc_l.getText()+"\nPlease enter a valid IPv4 address!");
-			return false;
+            error+="Please enter a valid ip-address!\n";
 		}
 
         if(com==null || com.equals("")) {
-            desc_l.setText(desc_l.getText()+"\nPlease enter a valid community!");
-            return false;
+           error+="Please enter a community!\n";
         }
 
         if (!validMail(mail)) {
-            desc_l.setText(desc_l.getText()+"\nPlease enter a valid email-address!");
-            return false;
+            error+="Please enter a valid email-address!\n";
         }
-		
+
+        if(error!="") {return false;}
+
 		return true;
 	}
 	

@@ -37,6 +37,7 @@ public class AddRuleStageLoader {
             addRuleStage.hide();
             StageLoader.setAddRuleStage(addRuleStage);
             StageLoader.setAddRuleLayout(addRuleLayout);
+
         } catch (IOException e) {
             MainApp.getInstance().getLogger().error("Could not load layout: " + layoutPath, e);
         }

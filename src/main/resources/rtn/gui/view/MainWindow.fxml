@@ -15,23 +15,23 @@
         <menus>
             <Menu fx:id="applicationMenu" mnemonicParsing="false" text="Application">
               <items>
-                <MenuItem fx:id="changeDeviceMenu" mnemonicParsing="false" text="Change Device" onAction="#handleChangeDeviceMenu"/>
+                <MenuItem fx:id="changeDeviceMenu" mnemonicParsing="false" onAction="#handleChangeDeviceMenu" text="Change Device" />
               </items>
             </Menu>
           <Menu fx:id="rulesMenu" mnemonicParsing="false" text="Rules">
             <items>
-              <MenuItem fx:id="refreshMenu" mnemonicParsing="false" text="Refresh" onAction="#handleRefreshMenu">
+              <MenuItem fx:id="refreshMenu" mnemonicParsing="false" onAction="#handleRefreshMenu" text="Refresh">
                      <accelerator>
                         <KeyCodeCombination alt="UP" code="F5" control="UP" meta="UP" shift="UP" shortcut="ANY" />
                      </accelerator>
                   </MenuItem>
-                  <MenuItem fx:id="autoRefreshMenu" mnemonicParsing="false" text="Set Auto-Refresh ..." onAction="#handleAutoRefreshMenu"/>
-                  <MenuItem fx:id="displayGraphMenu" mnemonicParsing="false" text="Display in Graph" onAction="#handleDisplayGraphMenu">
+                  <MenuItem fx:id="autoRefreshMenu" mnemonicParsing="false" onAction="#handleAutoRefreshMenu" text="Set Auto-Refresh ..." />
+                  <MenuItem fx:id="displayGraphMenu" mnemonicParsing="false" onAction="#handleDisplayGraphMenu" text="Display in Graph">
                      <accelerator>
                         <KeyCodeCombination alt="UP" code="D" control="DOWN" meta="UP" shift="UP" shortcut="UP" />
                      </accelerator>
                   </MenuItem>
-                  <MenuItem fx:id="changeRuleMenu" mnemonicParsing="false" text="Change Rule" onAction="#handleChangeRuleMenu">
+                  <MenuItem fx:id="addRuleMenu" mnemonicParsing="false" onAction="#handleAddRuleMenu" text="Add Rule">
                      <accelerator>
                         <KeyCodeCombination alt="UP" code="R" control="DOWN" meta="UP" shift="UP" shortcut="UP" />
                      </accelerator>
@@ -40,17 +40,17 @@
           </Menu>
             <Menu fx:id="graphMenu" mnemonicParsing="false" text="Graph">
               <items>
-                <MenuItem fx:id="maxItemsMenu" mnemonicParsing="false" text="Set Max Items ..." onAction="#handleMaxItemsMenu"/>
+                <MenuItem fx:id="maxItemsMenu" mnemonicParsing="false" onAction="#handleMaxItemsMenu" text="Set Max Items ..." />
               </items>
             </Menu>
             <Menu fx:id="helpMenu" mnemonicParsing="false" text="Help">
               <items>
-                <MenuItem fx:id="helpMenuItem" mnemonicParsing="false" text="Help" onAction="#handleHelpMenu">
+                <MenuItem fx:id="helpMenuItem" mnemonicParsing="false" onAction="#handleHelpMenu" text="Help">
                      <accelerator>
                         <KeyCodeCombination alt="UP" code="H" control="DOWN" meta="UP" shift="UP" shortcut="UP" />
                      </accelerator>
                   </MenuItem>
-                  <MenuItem fx:id="guideMenu" mnemonicParsing="false" text="Guide" onAction="#handleGuideMenu">
+                  <MenuItem fx:id="guideMenu" mnemonicParsing="false" onAction="#handleGuideMenu" text="Guide">
                      <accelerator>
                         <KeyCodeCombination alt="UP" code="G" control="DOWN" meta="UP" shift="UP" shortcut="UP" />
                      </accelerator>
@@ -83,6 +83,14 @@
                            </columnResizePolicy>
                         </TableView>
                      </center>
+                     <bottom>
+                        <ToolBar fx:id="toolbar" nodeOrientation="RIGHT_TO_LEFT" BorderPane.alignment="CENTER_RIGHT">
+                          <items>
+                              <Button fx:id="delete_b" mnemonicParsing="false" onAction="#handleRemoveRuleMenu" text="Delete Rule" />
+                              <Button fx:id="edit_b" mnemonicParsing="false" onAction="#handleChangeRuleMenu" text="Edit Rule" />
+                          </items>
+                        </ToolBar>
+                     </bottom>
                   </BorderPane>
                </content>
                <graphic>
