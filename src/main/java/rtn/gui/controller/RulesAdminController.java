@@ -32,6 +32,7 @@ import rtn.networking.device.commands.IPullPolicies;
 import rtn.networking.device.commands.IPullServices;
 import rtn.networking.device.commands.IPullZones;
 import rtn.networking.device.juniper_netscreen_5gt.PullActions;
+import rtn.networking.device.juniper_netscreen_5gt.PullPolicies;
 import rtn.networking.device.juniper_netscreen_5gt.PullServices;
 import rtn.networking.device.juniper_netscreen_5gt.PullZones;
 
@@ -190,11 +191,13 @@ public class RulesAdminController
 		{
 			if(!this.commandCentre.updatePolicy(policy)) Dialogs.create().owner(source.getScene().getWindow()).title("Rock the Net - Error").masthead("An Error occured").message("Could not update policy on the device!\nPlease check whether or not your network/access settings are correct!")
 			.showError();
+            else StageLoader.getEditRuleStage().hide();
 		}
 		else if(source == this.bCreate)
 		{
 			if(!this.commandCentre.addPolicy(policy)) Dialogs.create().owner(source.getScene().getWindow()).title("Rock the Net - Error").masthead("An Error occured").message("Could not create policy on the device!\nPlease check whether or not your network/access settings are correct!")
 			.showError();
+            else StageLoader.getAddRuleStage().hide();
 		}
 	}
 	
@@ -222,6 +225,7 @@ public class RulesAdminController
 		
 		if(!this.commandCentre.deletePolicy(policy)) Dialogs.create().owner(source.getScene().getWindow()).title("Rock the Net - Error").masthead("An Error occured").message("Could not delete policy from the device!\nPlease check whether or not your network/access settings are correct!")
 		.showError();
+        else StageLoader.getDeleteRuleStage().hide();
 	}
 	
 	/**
@@ -328,15 +332,43 @@ public class RulesAdminController
     /**
      * Loads the values of the selected Policy into the form
      */
-    public void fillChangeValues() {
-
+    public void fillChangeValues(Long id) {
+        IPullPolicies policies = new PullPolicies();
+        try {
+            policies.execute();
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        ArrayList<Policy> policyList = (ArrayList) policies.getResult();
+        for(int i=0; i<policyList.size(); i++) {
+            Policy p = policyList.get(i);
+            if(id==p.getId()) {
+                txtDisplayname.setText(p.getDisplayname());
+                txtIpOutbound.setText(p.getDestination());
+                txtIpOutbound.setText(p.getSource());
+                txtpolicyId.setText("" + p.getId());
+                cLog.setSelected(p.isLog());
+                cbAction.setValue(p.getAction().getName());
+                cbService.setValue(p.getService().getName());
+                cbZoneIn.setValue(p.getInzone().getName());
+                cbZoneOut.setValue(p.getOutzone().getName());
+            }
+        }
     }
 
     /**
      * Cleans the form
      */
     public void cleanChangeValues() {
-
+        txtDisplayname.setText("");
+        txtIpInbound.setText("");
+        txtIpOutbound.setText("");
+        txtpolicyId.setText("");
+        cLog.setSelected(false);
+        cbAction.setValue("");
+        cbService.setValue("");
+        cbZoneIn.setValue("");
+        cbZoneOut.setValue("");
     }
 
 

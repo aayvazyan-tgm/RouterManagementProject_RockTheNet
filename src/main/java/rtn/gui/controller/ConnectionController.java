@@ -94,6 +94,9 @@ public class ConnectionController {
     private void handleConnectButton() {
         readForm();
         error="";
+        MainController.getInstance().getAddRuleMenu().setDisable(true);
+        MainController.getInstance().getEdit_b().setDisable(true);
+        MainController.getInstance().getDelete_b().setDisable(true);
     	if(!checkFormEntries()){Dialogs.create().owner(StageLoader.getConnectionStage().getScene().getWindow()).title("Rock the Net - Error").masthead("An Error occured").message(error).showError();}
     	else {
             //Required
@@ -109,6 +112,10 @@ public class ConnectionController {
                 Configuration.getInstance().setUsername(user);
                 Configuration.getInstance().setPassword(pass);
                 Configuration.getInstance().setAdminport(Integer.parseInt(admin));
+
+                MainController.getInstance().getAddRuleMenu().setDisable(false);
+                MainController.getInstance().getEdit_b().setDisable(false);
+                MainController.getInstance().getDelete_b().setDisable(false);
             } catch(NumberFormatException e) {
                 Configuration.getInstance().setUsername(null);
                 Configuration.getInstance().setPassword(null);
@@ -121,6 +128,7 @@ public class ConnectionController {
             try {
                 Configuration.getInstance().setTrapListeningPort(Integer.parseInt(trap));
             } catch(NumberFormatException e) {}
+
 
             //GUI-Stuff
             StageLoader.getConnectionStage().hide();

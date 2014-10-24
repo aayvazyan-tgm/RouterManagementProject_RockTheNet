@@ -181,9 +181,11 @@ public class MainController {
     @FXML
     private void handleAddRuleMenu() {
         StageLoader.getAddRuleStage().show();
+        String t= (String) table.getSelectionModel().getSelectedCells().get(0).getTableColumn().getCellData(table.getSelectionModel().getSelectedIndex());
         if(!RulesAdminController.getAddInstance().isAddDropsFilled()){
             RulesAdminController.getAddInstance().fillAddDropdowns();
         }
+        RulesAdminController.getEditInstance().fillChangeValues(Long.parseLong(t));
 
         //TODO fill current values into addRule form
         //Example: ChangeRuleControler.setNameField(table.getSelectionModel().getSelectedItem().getName());
@@ -855,4 +857,11 @@ public class MainController {
 		this.maxItems = maxItems;
 	}
 
+    public Button getDelete_b() {
+        return delete_b;
+    }
+
+    public Button getEdit_b() {
+        return edit_b;
+    }
 }
