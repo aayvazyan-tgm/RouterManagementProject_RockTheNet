@@ -25,6 +25,7 @@ dlock, JenkinsCI                                                2014-10-13 12:10
 dlock, JenkinsCI                                                2014-10-13 09:10 12:10   03:00
 Reverted a Bad commit, Added Guice description                  2014-10-20 09:00 10:00   01:00
 Team review, debug with djuric                                  2014-10-23 10:10 10:30   00:20
+fix djurics system                                              2014-10-23 11:00 12:00   00:30
 fixed unnecessary compiler errors                               2014-10-23 12:00 12:30   00:30
-*TOTAL*                                                                                **32:10**
+*TOTAL*                                                                                **32:40**
 =============================================================== ========== ===== ===== =========
