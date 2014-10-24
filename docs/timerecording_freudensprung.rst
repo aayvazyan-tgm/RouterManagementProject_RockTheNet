@@ -21,5 +21,8 @@ Seperated StageLoaders            2014-10-23 12:30 13:40   01:10
 Fixes                             2014-10-23 14:10 15:00   00:50
 AutoRefresh                       2014-10-23 23:00 23:45   00:45
 LoadIntoTable                     2014-10-23 23:00 00:00   00:15
-**TOTAL**                                                **18:48**
+Fixing problems with Willinger    2014-10-24 08:20 09:40   01:20
+Fixing problems with Willinger    2014-10-24 09:50 11:30   01:40
+CRUD Controller                   2014-10-24 13:00 15:20   02:20
+**TOTAL**                                                **24:08**
 ================================= ========== ===== ===== =========
