@@ -48,6 +48,23 @@ dependencies {
 jar {
     manifest {
         attributes 'Main-Class': 'rtn.MainApp'
+        
+        def manifestCp = configurations.runtime.files.collect  {
+            File file = it
+            "lib/${file.name}"
+        }.join(' ')
+
+         configurations.runtime.getAllDependencies().withType(ProjectDependency).each {dep->
+
+            def depProj = dep.getDependencyProject()
+            def libFilePaths = project(depProj.path).libsDir.list().collect{ inFile-> "lib/${inFile}"  }.join(' ')
+            logger.info"Adding libs from project ${depProj.name}: [- ${libFilePaths} -]"
+            manifestCp += ' '+libFilePaths
+        }
+
+        logger.lifecycle("")
+        logger.lifecycle("---Manifest-Class-Path: ${manifestCp}")
+        attributes 'Class-Path': manifestCp
     }
 }
 
