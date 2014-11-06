@@ -45,6 +45,12 @@ dependencies {
     testCompile 'org.controlsfx:controlsfx:8.20.7'
 }
 
+jar {
+    manifest {
+        attributes 'Main-Class': 'rtn.MainApp'
+    }
+}
+
 project (':EMailExample') {
     apply plugin: 'java'
     apply plugin: 'application'
